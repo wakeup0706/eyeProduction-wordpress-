@@ -1,0 +1,335 @@
+:root {
+    --section-title: #84C225;
+    --section-title-underline: #00814D;
+    --seeMore-button: #37BEB0;
+    --card-type: #84C225;
+    --text-black: #323232;
+    --background: #EDF2F6;
+}
+
+/*  all visionDictionary content */
+.allVision{
+    position: relative;
+    padding-block: 140px 280px;
+}
+.visionDictionaryTitle{
+    position: relative;
+}
+.visionDictionaryIcon{
+    position: relative;
+    width: 58px;
+    z-index: 1;
+    top: -8px;
+    left: 14px;
+}
+@media only screen and (max-width: 725px) {
+    .allVision{
+        padding-block: 105px 280px;
+    }
+}
+@media only screen and (max-width: 610px) {
+    .visionDictionaryIcon{
+        width: 40px;
+        top: -3px;
+        left: 3px;
+    }
+}
+
+.allVisionArticles{
+    margin-block: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(244px, 1fr)); /* Ensures equal width */
+    gap: 25px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    justify-items: center;
+    margin-top: 35px;
+}
+.allVisionArticles .seeMoreArticle{
+    border-radius:5px;
+    max-width: 340px;
+    width: 100%;
+    background-color: white;
+    max-height: 320px;
+    box-shadow: 0 3px 3px #0000004a;
+    overflow: hidden;
+}
+.allVisionArticles .seeMoreArticle .articleImg{
+    height: 70%;
+    overflow: hidden;
+}
+.allVisionArticles .seeMoreArticle .articleImg img{
+    height: 100%;
+    object-fit: cover;
+}
+.allVisionArticles .articleContent{
+    position: relative;
+    max-height: 25px;
+}
+.allVisionArticles .articleContent .articleType{
+    margin-top: -10px;
+    position: relative;
+}
+.allVisionArticles .articleContent .articleType .articleType-text {
+    max-width: 180px;
+    width: fit-content;
+    margin-inline: auto;
+    color: #ffffff;
+    font-size: 12px;
+    padding-inline: 5px;
+    background-color: var(--card-type);
+    border: 1px solid var(--card-type);
+}
+
+.allVisionArticles .articleContent .articleType .articleType-mark{
+    max-width: 28px;
+    max-height: 28px;
+    position: absolute;
+    right: 13px;
+    bottom: 0;
+}
+.allVisionArticles .articleContent .articleContent-text{
+    max-height: 55px;
+    padding: 4px 20px;
+    font-size: 15px;
+    color: var(--text-black);
+    overflow: hidden;
+}
+.allVisionArticles .articleContent .articleContent-date{
+    color: #888888;
+    font-size: 14px;
+    padding-left: 20px;
+}
+.allVision .pagenation{
+    width: fit-content;
+    margin-inline: auto;
+    align-items: center;
+    margin-top: 35px;
+}
+.allVision .pagenation >div{
+    width: 35px;
+    height: 35px;
+    background-color: #FFF;
+    border-radius: 50%;
+    margin-inline: 5px;
+    box-shadow: 0 0 5px #0000004a;
+    padding-top: 5px;
+    padding-left: 13px;
+    cursor: pointer;
+}
+.allVision .pagenation img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.allVision .pagenation .before,.allVision .pagenation .after{
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.allVision .pagenation .before span,.allVision .pagenation span{
+    position: absolute;
+    font-size: 30px;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%,-50%);
+}
+.allVision .pagenation .action{
+    color: #fff;
+    background-color: var(--seeMore-button);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 14px;
+}
+@media only screen and (max-width: 440px) {
+    .allVisionArticles{
+        padding-inline: 20px;
+    }
+}
+/* end all visionDictionary content */
+
+/* visionImproment content */
+.visionImproment{
+    position: relative;
+    height: 500px;
+}
+.visionImproment .backgroundImg{
+    width: 100%;
+    height: 286px;
+    margin-top: -270px;
+    background-image: url(../../img/backgrounds/visionImproment.png);
+    background-size: cover;
+    background-position: center;
+}
+.baners{
+    max-width: 900px;
+    margin-inline: auto;
+    position: relative;
+    margin-top: -195px;
+    gap: 10px;
+}
+.baners .baner{
+    width: 400px;
+    max-height: 280px;
+    height: 280px;
+    cursor: pointer;
+}
+.leftBaner{
+    background-image: url('../../img/land_banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    border-radius: 0 150px 0 150px;
+    border: 10px solid #ffffff;
+}
+.rightBaner{
+    background-image: url('../../img/land_banner2.jpg');
+    background-size: cover;
+    background-position: center;
+    right: 0;
+    border-radius: 150px 0 150px 0;
+    border: 10px solid #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+    .baners .baner{
+        height: 300px;
+    }
+    .leftBaner, .rightBaner{
+        border-width: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .visionImproment{
+        height: auto;
+    }
+    .visionImproment .backgroundImg{
+        height: 230px;
+        margin-top: -270px;
+    }
+    .baners{
+        margin-top: -150px;
+        gap: 15px;
+    }
+    .baners .baner{
+        height: 200px;
+    }
+    .leftBaner{
+        border-radius: 0 100px 0 100px;
+    }
+    .rightBaner{
+        border-radius: 100px 0 100px 0;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .visionImproment .backgroundImg{
+        height: 370px;
+        margin-top: -277px;
+    }
+    .baners{
+        margin-top: -300px;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .baners .baner{
+        width: 90%;
+        height: 200px;
+    }
+    .leftBaner, .rightBaner{
+        border-width: 10px;
+        border-radius: 0 50px 0 50px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .visionImproment .backgroundImg {
+        height: 280px;
+        margin-top: -282px;
+    }
+    .baners{
+        margin-top: -200px;
+    }
+    .baners .baner{
+        height: 150px;
+    }
+}
+/* end visionImproment content */
+
+/* endBanner content */
+.endBanner{
+    background-image: linear-gradient(var(--background), #ffffff);
+}
+/* end endBanner content */
+
+.fromShop{
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    color: #bdbdbd;
+    top: 150px;
+    right: 0;
+    width: 565px;
+}
+@media screen and (max-width: 1070px) {
+    .fromShop{
+        font-size: 26px;
+        top: 166px;
+        width: 481px;
+    }
+}
+@media screen and (max-width: 960px) {
+    .fromShop{
+        font-size: 20px;
+        top: 180px;
+        width: 365px;
+    }
+}
+@media screen and (max-width: 800px) {
+    .fromShop{
+        font-size: 17px;
+        top: 186px;
+        width: 308px;
+    }
+}
+@media screen and (max-width: 725px) {
+    .fromShop{
+        font-size: 17px;
+        top: 153px;
+        width: 594px;
+    }
+}
+@media screen and (max-width: 610px) {
+    .fromShop{
+        font-size: 14px;
+        top: 141px;
+        width: 490px;
+    }
+}
+@media screen and (max-width: 504px) {
+    .popularArticle{
+        margin-top: 26px;
+    }
+    .popularArticle .bestPopular{
+        margin-top: 30px;
+    }
+    .fromShop{
+        font-size: 14px;
+        top: 142px;
+        width: 350px;
+    }
+    .allVision{
+        padding-block: 60px 280px;
+    }
+}
+@media screen and (max-width: 354px) {
+    .fromShop{
+        width: 253px;
+    }
+}

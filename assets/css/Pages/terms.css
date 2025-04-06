@@ -1,0 +1,143 @@
+.terms-color{
+    background-color: #FFFFFF;
+    color: #323232;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.subject{
+    font-size: 48px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.title{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 43px;
+}
+.title-list{
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 26px;
+    line-height: 30px;
+}
+.title-list-content{
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 18px;
+    line-height: 30px;
+}
+.paper{
+    border-radius: 10px;
+    margin-bottom: 40px;
+    padding-block: 60px;
+}
+.left-space{
+    padding-left: 30px;
+}
+.indent{
+    text-indent: -20px;
+    padding-left: 20px;
+}
+.no-indent{
+    text-indent: 0px;
+    margin-left: -20px;
+}
+.end-date{
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 40px;
+}
+/*  */
+
+/* terms */
+.row{
+    display: grid;
+    grid-template-columns: 3fr 7fr;
+    gap: 20px;
+    border-bottom: 1px solid gray;
+    padding-block: 41px 32px;
+}
+.row-title{
+    margin-inline: auto;
+}
+.sp-space{
+    display: none;
+}
+/* privacy */
+.middle-list{
+    font-size: 36px;
+    font-weight: 500;
+    margin-block: 60px 40px;
+    border-bottom: 3px solid #21726A;
+}
+.privacy-title{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+.bottom-space{
+    margin-bottom: 40px;
+}
+@media screen and (max-width: 1190px){
+    .paper{
+        border-radius: 5px;
+    }
+    .indent{
+        padding-left: 40px;
+    }
+}
+@media screen and (max-width: 768px){
+    .subject{
+        font-size: 38px;
+        margin-bottom: 20px;
+    }
+    .row{
+        font-size: 18px;
+        padding-block: 30px 25px;
+    }
+    .middle-list{
+        font-size: 28px;
+        margin-block: 40px 20px;
+    }
+    .privacy-title {
+        font-size: 18px;
+        line-height: 28px;
+    }
+}
+@media screen and (max-width: 580px){
+    .subject{
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+    .title-list-content {
+        font-size: 15px;
+        margin-top: 16px;
+        line-height: 26px;
+    }
+    .title {
+        margin-top: 22px;
+    }
+    .title-list {
+        font-size: 16px;
+        margin-top: 12px;
+        line-height: 26px;
+    }
+    .row {
+        font-size: 14px;
+        padding-block: 12px 10px;
+    }
+    .middle-list {
+        font-size: 24px;
+        margin-block: 16px 10px;
+    }
+    .privacy-title {
+        font-size: 16px;
+        line-height: 25px;
+        font-weight: 400;
+    }
+    .mail-address{
+        font-size: 13px;
+    }
+    .sp-space{
+        display: block;
+    }
+}

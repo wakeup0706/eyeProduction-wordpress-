@@ -1,0 +1,737 @@
+:root {
+    --section-title: #84C225;
+    --section-title-underline: #00814D;
+    --seeMore-button: #37BEB0;
+    --card-type: #84C225;
+    --text-black: #323232;
+    --background: #EDF2F6;
+}
+
+/* Article content */
+.visionPossibility{
+    position: relative;    
+}
+.breadcrumb{
+    position: relative;
+    font-size: 14px;
+    margin-block: 10px;
+    color: var(--text-black);
+}
+.breadcrumb span{
+    margin-inline: 6px;
+    cursor: pointer;
+}
+.visionPossibility .categoryName{
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-block: 50px 30px;
+    color: var(--text-black);
+}
+
+@media only screen and (max-width: 610px) {
+    .popularTitleIcon{
+        position: relative;
+        width: 50px;
+        top: -17px;
+    }
+}
+
+.visionPossibiliting {
+    position: relative;
+    height: 615px;
+    margin: 30px auto;
+  }
+.visionPossibiliting .indicatorFooter {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    z-index: 4;
+    bottom: 0;
+    left: 0;
+  }
+.visionPossibiliting .indicatorFooter .indicator {
+    position: relative;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-left: 15px;
+    background-color: lightgrey;
+  }
+.visionPossibiliting .indicatorFooter .indicator:first-of-type {
+    margin-left: 0;
+  }
+  
+.visionPossibiliting .content {
+    box-sizing: border-box;
+    overflow: hidden;
+    z-index: 5;
+    display: block;
+    position: absolute;
+    background: #ffffff54;
+    height: 547px;
+    width: 100%;
+    box-shadow: 3px 2px 33px -19px rgba(0, 0, 0, 0.8);
+  }
+.visionPossibiliting .content .content__box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    right: 1200px;
+    padding: 30px 40px;
+    top: 0;
+  }
+
+.visionPossibiliting .content .content__box.visible__no-animation {
+    right: 0;
+  }
+.visionPossibiliting .content .content__box.slide-in {
+    animation: slide-in 500ms ease-in-out forwards;
+  }
+.visionPossibiliting .content .content__box.slide-out {
+    animation: slide-out 500ms ease-in-out forwards;
+  }
+  .visionPossibiliting .content .body {
+    text-align: center;
+    padding: 20px;
+  }
+  .visionPossibiliting .content .body button {
+    margin: 20px;
+  }
+
+/* end responsive */
+  
+  content-1 {
+    text-align: center;
+  }
+  content-1 p {
+    text-align: center;
+  }
+  
+  div.visionPossibiliting div.indicatorFooter span.active {
+    background-color: lightgreen;
+  }
+  
+  @keyframes slide-in {
+    0% {
+      left: 1200px;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  @keyframes slide-out {
+    0% {
+      right: 0;
+    }
+    100% {
+      right: 1200px;
+    }
+  }
+  
+  @keyframes slide-in2 {
+    0% {
+      left: -1200px;
+    }
+    100% {
+      right: 0;
+    }
+  }
+  @keyframes slide-out2 {
+    0% {
+      right: 0;
+    }
+    100% {
+      right: -1200px;
+    }
+  }
+
+.visionPossibiliting .content .description {
+  font-size: 26px;
+  font-weight: 600;
+  margin-block: 20px;
+  text-align: center;
+  color: var(--text-black);
+}
+
+.bnbutton{
+  height: 40px;
+  text-align: center;
+  margin-block: 35px;
+  position: absolute;
+  bottom: 20px;
+  width: 445px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.bnbutton button{
+  position: relative;
+  width: 200px;
+  height: 40px;
+  background-color: var(--seeMore-button);
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-inline: 10px;
+  cursor: pointer;
+}
+.bnbutton button::after{
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  right: 26px;
+  top: 50%;
+}
+.bnbutton .beforeButton{
+  background-color: #EE6354;
+}
+@media only screen and (max-width: 768px) {
+  .bnbutton{
+      margin-block: 35px;
+  }
+  .bnbutton button{
+      width: 150px;
+      height: 40px;
+  }
+}
+@media only screen and (max-width: 485px) {
+  .bnbutton{
+      height:30px;
+      margin-block: 20px;
+      width: 300px;
+      bottom: 60px;
+  }
+  .bnbutton button{
+      width: 150px;
+      height: 35px;
+      padding-top: 5px;
+      margin-block: 10px;
+  }
+  .bnbutton button::after{
+      display: none;
+  }
+  .visionPossibiliting .content .content__box {
+    padding: 30px 30px;
+  }
+}
+.sectionBack{
+  position: absolute;
+  bottom: -100px;
+}
+input[type=text], select {
+  width: 100%;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid var(--section-title-underline);
+  box-shadow: inset 0 1px 3px #ddd;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+input{
+  margin-right: 10px;
+}
+/* step-1 */
+.year-input{
+  margin-top: 80px;
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+/* step-2 */
+.naVision{
+  display: flex;
+  max-width: 675px;
+  margin-inline: auto;
+  gap: 25px;
+}
+.naVision .year-input{
+  position: relative;
+  max-width: 285px;
+  padding-left: 85px;
+  font-size: 32px;
+}
+.naVision .year-input::before{
+  content: "右";
+  position: absolute;
+  font-size: 40px;
+  background-color: white;
+  border-radius: 50%;
+  left: 0px;
+  text-align: center;
+  padding: 7px 15px;
+  box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.8);
+}
+.naVision .left-eye::before{
+  content: "左";
+}
+@media only screen and (max-width: 768px) {
+  .naVision{
+    flex-direction: column;
+  }
+  /* .year-input {
+    margin-top: 20px;
+  } */
+}
+
+/* step-3, step-4 */
+.step-3 .description::before, .step-4 .description::before{
+  content: "右";
+  font-size: 40px;
+  background-color: white;
+  border-radius: 50%;
+  left: 0px;
+  text-align: center;
+  padding: 7px 15px;
+  box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.8);
+  margin-right: 20px;
+}
+.step-4 .description::before{
+  content: "左";
+}
+.step-3 .statuses, .step-4 .statuses, .step-12 .statuses, .step-13 .statuses{
+  margin-block: 100px;
+  display: flex;
+  max-width: 670px;
+  font-size: 32px;
+  gap: 10px;
+  margin-inline: auto;
+  justify-content: space-between;
+}
+.step-3 .statuses input, .step-4 .statuses input{
+  margin: 15px;
+}
+@media only screen and (max-width: 560px) {
+  .step-3 .statuses, .step-4 .statuses, .step-13 .statuses{
+    flex-direction: column;
+    margin-block: 50px;
+    align-items: center;
+  }
+}
+
+/* step-5, step-6, step-8, step-10, step-11 */
+.step-5 .description::before, .step-6 .description::before{
+  content: "右";
+  font-size: 40px;
+  background-color: white;
+  border-radius: 50%;
+  left: 0px;
+  text-align: center;
+  padding: 7px 15px;
+  box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.8);
+  margin-right: 20px;
+}
+.step-6 .description::before{
+  content: "左";
+}
+.step-5 .statuses, .step-6 .statuses, .step-8 .statuses, .step-10 .statuses, .step-11 .statuses, .step-16 .statuses{
+  margin-block: 100px;
+  display: flex;
+  max-width: 400px;
+  font-size: 32px;
+  gap: 10px;
+  margin-inline: auto;
+  justify-content: space-between;
+}
+.step-5 .statuses input, .step-6 .statuses input{
+  margin: 15px;
+}
+@media only screen and (max-width: 768px) {
+  .step-8 .statuses{
+    margin-block: 50px;
+  }
+  .visionPossibiliting  .step-8 .description{
+    font-size: 28px;
+  }
+}
+
+/* step-7*/
+.step-7 .statuses, .step-14 .statuses{
+  margin-block: 100px;
+  display: flex;
+  max-width: 670px;
+  font-size: 32px;
+  gap: 10px;
+  margin-inline: auto;
+  justify-content: space-between;
+}
+.step-7 .statuses input{
+  margin: 15px;
+}
+@media only screen and (max-width: 855px) {
+  .step-7 .statuses, .step-14 .statuses{
+    flex-direction: column;
+    margin-block: 50px;
+    font-size: 22px;
+    align-items: center;
+  }
+}
+
+/* step-9 */
+.step-9 .statuses >div{
+  width: fit-content;
+}
+.step-9 .statuses{
+  margin-block: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 680px;
+  font-size: 28px;
+  gap: 10px;
+  margin-inline: auto;
+  justify-content: space-between;
+
+}
+@media only screen and (max-width: 880px) {
+  .visionPossibiliting .step-9 .description{
+    font-size: 24px;
+  }
+  .step-9 .statuses{
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 646px) {
+  .visionPossibiliting .step-9 .description{
+    font-size: 24px;
+  }
+  .step-9 .statuses{
+    margin-block: 10px;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    align-items: center;
+  }
+  .step-9 .bnbutton{
+    bottom: -25px;
+  }
+}
+@media only screen and (max-width: 485px) {
+  .step-9 .bnbutton{
+    bottom: 25px;
+  }
+  .step-9 .bnbutton button{
+    margin-block: 10px;
+  }
+  .visionPossibiliting .step-9 .description{
+    font-size: 19px;
+  }
+  .step-9 .statuses{
+    font-size: 17px;
+  }
+}
+
+/* step-12 */
+.step-12 .statuses{
+  flex-direction: column;
+  font-size: 28px;
+}
+@media only screen and (max-width: 532px) {
+  .step-12 .statuses{
+    font-size: 22px;
+    margin-block: 50px;
+  }
+  .visionPossibiliting .content .step-12 .description{
+    font-size: 26px;
+  }
+}
+
+/* step-13 */
+.visionPossibiliting .step-13 .description{
+  max-width: 900px;
+  margin-inline: auto;
+}
+@media only screen and (max-width: 740px) {
+  .visionPossibiliting .step-13 .description{
+    font-size: 26px;
+  }
+  .step-13 .statuses{
+    font-size: 24px;
+    margin-block: 50px;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .visionPossibiliting .step-13 .description{
+    font-size: 20px;
+  }
+  .step-13 .statuses{
+    font-size: 20px;
+    margin-block: 40px;
+  }
+  .visionPossibiliting .indicatorFooter .indicator{
+    margin-left: 7px;
+  }
+}
+
+/* step-15 */
+.step-15 .note{
+  max-width: 900px;
+  margin-inline: auto;
+  font-size: 20px;
+}
+.step-15 .statuses >div{
+  width: fit-content;
+}
+.step-15 .statuses{
+  margin-block: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 670px;
+  font-size: 28px;
+  gap: 10px;
+  margin-inline: auto;
+  justify-content: space-between;
+
+}
+@media only screen and (max-width: 880px) {
+  .visionPossibiliting .step-15 .description{
+    font-size: 24px;
+  }
+  .step-15 .statuses{
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 646px) {
+  .visionPossibiliting .step-15 .description{
+    font-size: 24px;
+  }
+  .step-15 .statuses{
+    margin-block: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 485px) {
+  .step-15 .bnbutton button{
+    margin-block: 10px;
+  }
+  .visionPossibiliting .step-15 .description{
+    font-size: 19px;
+  }
+  .step-15 .statuses{
+    font-size: 17px;
+  }
+  .step-15 .note{
+    font-size: 16px;
+  }
+}
+
+/* step-16 */
+@media only screen and (max-width: 504px) {
+  .step-16 .statuses{
+    flex-direction: column;
+    margin-block: 50px;
+    align-items: center;
+  }
+}
+
+/* step-17 */
+.step-17 .statuses {
+  display: flex;
+  max-width: 675px;
+  margin-inline: auto;
+  gap: 25px;
+}
+.step-17 .statuses .statuse{
+  position: relative;
+  max-width: 700px;
+  margin-inline: auto;
+  padding-left: 65px;
+}
+.step-17 .statuses .statuse::before {
+  content: "左";
+  position: absolute;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 50%;
+  left: 0px;
+  top: 12px;
+  text-align: center;
+  padding: 5px 12px;
+  box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.8);
+}
+.step-17 .statuses .right-eye::before{
+  content: "右";
+}
+.step-17 .bnbutton{
+  bottom: -15px;
+}
+@media only screen and (max-width: 780px){
+  .visionPossibiliting .content .step-17 .description{
+    font-size: 16px;
+  }
+  .visionPossibiliting .content .step-17 .statuses .statuse input[type=text], select{
+    padding-block: 5px;
+  }
+  .step-17 .statuses .statuse::before{
+    top: 9px;
+    font-size: 14px;
+    padding: 5px 9px;
+  }
+  .step-17 .statuses .statuse{
+    padding-left: 40px;
+  }
+  .step-17 .note{
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 485px){
+  .step-17 .bnbutton {
+    bottom: 40px;
+  }
+}
+@media only screen and (max-width: 390px){
+  .step-17 .note{
+    font-size: 12px;
+  }
+}
+
+/* step-20 */
+.step-20 .year-input::before{
+  content: "メールアドレスを登録する";
+}
+.step-20 .note{
+  max-width: 450px;
+  margin-inline: auto;
+}
+.step-20 .bnbutton{
+  bottom: 50px;
+}
+.step-20 .confirm{
+  margin-block: 20px;
+}
+
+/* modeal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 211px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  max-width: 1024px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+.modal-content input[type='text'], .modal-content select{
+  padding-block: 3px;
+  width: 100px;
+}
+.modal-body .row1, .modal-body .row2, .modal-body .row3{
+  display: flex;
+  gap: 100px;
+}
+
+.modal-body .row2 >div::before, .modal-body .row3 >div::before{
+  content: "右";
+  font-size: 18px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  padding: 3px 7px;
+  box-shadow: 0px 0px 17px -5px rgba(0, 0, 0, 0.8);
+  margin-right: 9px;
+}
+.modal-body .row2 >div:nth-child(2):before, .modal-body .row3 >div:nth-child(2):before{
+  content: "左";
+}
+.causes{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.modal-body .mailForm input{
+  width: 200px;
+}
+.modal-footer .bnbutton{
+  position: relative;
+  margin-block: 0;
+  transform: none;
+  left: 0;
+  bottom: 0;
+  margin-inline: auto;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: var(--section-title-underline);
+  color: white;
+}
+.modal-header h2{
+  margin: 8px;
+}
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 9px 16px;
+  background-color: var(--section-title-underline);
+  color: white;
+}
+@media only screen and (max-width: 485px){
+  .modal-body .row1, .modal-body .row2, .modal-body .row3{
+    flex-direction: column;
+    gap: 0;
+  }
+  .modal-footer {
+    height: 125px;
+  }
+  .visionPossibility .categoryName{
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,550 @@
+:root {
+    --section-title: #84C225;
+    --section-title-underline: #00814D;
+    --seeMore-button: #37BEB0;
+    --card-type: #84C225;
+    --text-black: #323232;
+    --background: #EDF2F6;
+}
+.breadcrumb{
+    position: relative;
+    font-size: 14px;
+    margin-block: 10px;
+    color: var(--text-black);
+}
+.breadcrumb span{
+    margin-inline: 6px;
+    cursor: pointer;
+}
+.kindleBooksDetail-content{
+    width: 100%;
+    gap:20px;
+}
+
+/* SNS Content */
+main .sns-content{
+    max-width: 185px;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+main .sns-content.flex{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+main .sns-content div{
+    width: 31px;
+    cursor: pointer;
+    height: 31px;
+    margin: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+main .sns-content div:hover{
+    transform: translateY(-3px);
+}
+main .sns-content img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1);
+    transition: filter 0.3s ease;
+}
+main .sns-content img:hover{
+    filter: brightness(1.1);
+}
+.flex-left .title{
+    padding-inline: 15px;
+    padding-block: 3px;
+    border-bottom: 3px solid var(--section-title-underline);
+    margin-block: 20px 5px;
+}
+.flex-left .title .text{
+    max-width: 675px;
+    width: 675px;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-black);
+}
+.flex-left .releaseDate{
+    padding-inline: 15px;
+}
+.flex-left .releaseDate .like{
+    display: flex;
+    align-items: center;
+    float: left;
+}
+.flex-left .releaseDate .like .tag{
+    position: relative;
+    width: 112px;
+}
+.flex-left .releaseDate .like .name{
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-black);
+}
+.flex-left .releaseDate .update{
+    float: right;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-black);
+    margin-right: 30px;
+}
+.flex-left .releaseDate .view{
+    float: right;
+    display: flex;
+    top: 0;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-black);
+}
+.flex-left .releaseDate .view span{
+    font-size: 20px;
+}
+
+.flex-left .banner{
+    width: 100%;
+    object-fit: contain;
+    aspect-ratio: 7 / 4;
+    margin-block: 10px;
+}
+.flex-left .banner img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.flex-left .properties{
+    padding-inline: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-block: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.flex-left .properties .during{
+    font-size: 20px;
+    font-weight: 700;
+}
+.flex-left .properties .keep{
+    background-color: #d9d9d9;
+    padding: 12px 40px;
+    border-radius: 40px;
+}
+.flex-left .properties .keep .keepButton{
+    cursor: pointer;
+}
+
+.flex-left .infor{
+    margin-top: 15px;
+}
+.flex-left .infor .infor-title{
+    position: relative;
+    font-size: 24px;
+    font-weight: 700;
+    padding: 7px 60px;              
+    max-width:714px;
+    background-color: var(--seeMore-button);
+    color: white;
+}
+.flex-left .infor .infor-title::before{
+    content: "»";
+    margin-right: 10px;
+    font-size: 40px;
+    position:absolute;
+    top: 40%;
+    left: 15px;
+    color: #FFFDAB;
+    transform: translateY(-50%);
+}
+.flex-left .infor .infor-content{
+    padding-inline: 25px;
+    margin-block: 20px 40px;
+}
+.flex-left .infor .infor-content >p{
+    margin-block: 18px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-black);
+}
+.flex-left .infor .infor-content a{
+    color: #e39f00;
+    text-decoration:underline;
+}
+.flex-left .infor .infor-content .image{
+    max-width: 500px;
+    max-height: 500px;
+    overflow: hidden;
+    margin-inline: auto;
+    margin-bottom: 40px;
+}
+.flex-left .infor .infor-content .ingridient{
+    max-width: 610px;
+    margin-inline: auto;
+    padding-block: 8px;
+    border-block:1px solid #e0e0e0;
+}
+.flex-left .infor .infor-content ul li{
+    margin-block: 15px;
+}
+.flex-left .infor .infor-content ul li::marker{
+    color: var(--section-title-underline);
+}
+.flex-left .infor .infor-content ul li span{
+    font-weight: 700;
+}
+.like-button {
+    font-size: 48px;
+}
+
+.flex-left .button-img{
+    max-width: 80px;
+    max-height: 70px;
+    object-fit: contain;
+    overflow: hidden;
+}
+.flex-left.button-text{
+    max-width:150px;
+    max-height: 100px;
+    color: var(--text-black);   
+    overflow: hidden;
+    font-size: 14px;
+}
+.flex-left .nextButton{
+    right: 0;
+    flex-direction: row-reverse;
+}
+.flex-left .nextButton::after{
+    content: "次のレシピ ⮚";
+    position: absolute;
+    top: -25px;
+    right: 10px;
+    min-width:100px;
+}
+
+.flex-left .beforeButton{
+    left: 0;
+}
+.flex-left .beforeButton::after{
+    content: "⮘ 前のレシピ";
+    position: absolute;
+    top: -25px;
+    left: 10px;
+    min-width:100px;
+}
+.flex-left .under-button{
+    padding: 10px;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-between;
+}
+.flex-left .buttons{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    gap: 10px;
+    width: 242px;
+}
+.flex-left .buttons .button-text{
+    max-height: 70px;
+    overflow: hidden;
+}
+
+.flex-right .title{
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+    padding-block: 8px;
+    border-radius: 20px;
+    background-color: var(--seeMore-button);
+    text-align: center;
+    color: white;
+}
+.flex-right .banner{
+    width: 100%;
+    object-fit: contain;
+    margin-block: 15px;
+}
+.flex-right .otherCategory{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-height: 180px;
+    margin-block: 40px;
+    height: 180px;
+}
+.flex-right .otherCategory .otherCategory-item{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    background-color: var(--seeMore-button);
+}
+.flex-right .otherCategory .otherCategory-item .otherCategory-item-img{
+    margin-inline: auto;
+    padding-top:10%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: var(--seeMore-button);
+}
+.flex-right .otherCategory .otherCategory-item .otherCategory-item-text{
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    padding-top: 10%;
+}
+
+
+.flex-right .searchBox{
+    margin-block: 10px;
+    padding-inline: 20px;
+    width: 100%;
+}
+.flex-right .searchBox .search-Button{
+    width: 100%;
+    display: flex;
+    float: none;
+}
+.flex-right .searchBox .search-Button button{
+    width: 20%;
+    float: right;
+    min-width: 52px;
+    padding: 6px;
+    margin-top: 5px;
+    background: var(--seeMore-button);
+    color: white;
+    font-size: 17px;
+    border: 0.5px solid #01B46d;
+    cursor: pointer;
+}
+
+.categoryTag{
+    margin-block: 30px;
+}
+.categoryTag p {
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--seeMore-button);
+    padding: 0 0 10px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: var(--text-black);
+}
+.categoryTag div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: .3em;
+    padding: 0;
+    margin: 0;
+}
+.categoryTag a {
+    color: #fff;
+    font-size: 13px;
+    background: var(--seeMore-button);
+    padding: .2em .7em;
+    margin: 4px 3px;
+    border-radius: 100vw;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.popularArticles{
+    margin-block: 30px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+}
+.popularArticles >p{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--seeMore-button);
+    padding: 0 0 10px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: var(--text-black);
+}
+.popularArticles .item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-block: 20px;
+}
+.popularArticles .item img{
+    max-width: 130px;
+    max-height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.popularArticles .item .item-title{
+    max-height: 85px;
+    overflow: hidden;
+}
+.popularArticles .populerOrder{
+    position: absolute;
+    top: -15px;
+    left: -5px;
+    width: 40px;
+    height: 40px;
+}
+
+
+.relativeArticles{
+    margin-block: 30px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+}
+.relativeArticles >p{
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 3px solid var(--seeMore-button);
+    padding: 0 0 10px;
+    margin-bottom: 16px;
+    text-align: center;
+    color: var(--text-black);
+}
+.relativeArticles .item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-block: 20px;
+}
+.relativeArticles .item img{
+    max-width: 130px;
+    max-height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.relativeArticles .item .item-title{
+    max-height: 85px;
+    overflow: hidden;
+}
+.relativeArticles .populerOrder{
+    position: absolute;
+    top: -15px;
+    left: -5px;
+    width: 40px;
+    height: 40px;
+}
+
+@media only screen and (max-width: 1165px) {
+    .flex-right .title{
+        font-size: 15px;
+    }
+}
+@media only screen and (max-width: 786px) {
+    main .sns-content{
+        max-width: 160px;
+        gap: 5px;
+    }
+}
+@media only screen and (max-width: 680px) {
+    .flex-left .infor .infor-title{
+        font-size: 22px;
+    }
+    .flex-left .infor .infor-content .ingridient{
+        font-size: 14px;
+    }
+    .flex-left .properties .during{
+        font-size: 16px;
+    }
+    main .sns-content{
+        max-width: 130px;
+        gap: 3px;
+    }
+    .flex-left .properties .keep {
+        padding: 7px 22px;
+    }
+    .like-button {
+        font-size: 40px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .flex-left .infor .infor-title{
+        font-size: 20px;
+    }
+    .flex-left .infor .infor-content{
+        font-size: 18px;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .flex-left .button-text{
+        display: none;
+    }
+    .flex-left .buttons{
+        width: auto;
+    }
+}
+@media only screen and (max-width: 530px) {
+    .flex-left .infor .infor-content{
+        font-size: 16px;
+    }
+    .flex-left .properties .keep{
+        font-size: 12px;
+        padding: 5px 15px;
+    }
+    .flex-left .properties .during {
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 514px) {
+    .flex-left .index .index-content{
+        padding-inline: 50px;
+    }
+    .flex-left .index .index-content .index-item{
+        font-size: 14px;
+    }
+    .flex-left .releaseDate .author{
+        gap: 5px;
+    }
+    .flex-left .releaseDate .author .name{
+        font-size: 14px;
+    }
+    .flex-left .writer .name-job .name{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 504px){
+    .flex-left .title{
+        flex-direction: column;
+    }
+    .flex-left .title .text{
+        width: 100%;
+    }
+    .flex-left .bookData .book-content{
+        margin-block: 30px;
+        padding-inline: 10px;
+    }
+    .flex-left .infor .infor-title{
+        font-size: 20px;
+    }
+    .flex-left .releaseDate .like{
+        margin-top: 5px;
+    }
+    .flex-left .releaseDate .like .tag{
+        position: relative;
+        width: 98px;
+        font-size: 14px;
+    }
+    .flex-left .releaseDate .like .name{
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 379px) {
+    .flex-left .properties{
+        padding-inline: 0px;
+        margin-block: 0px;
+    }
+}

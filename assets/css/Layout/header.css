@@ -1,0 +1,770 @@
+body {
+    padding-top: 212px;
+  }
+header {
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: fixed;
+    top: 0;
+    transition: top 0.7s ease-in-out;
+    width: 100%;
+  }
+  .nav-up {
+    top: -212px;
+  }
+
+
+/* Top Header */
+header .top-header{
+    position: relative;
+    height: 120px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .top-header.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Hamburger Menu */
+header .top-header .hamburger{
+    position: absolute;
+    left: 25px;
+    bottom:24px;
+    z-index: 2;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .top-header .hamburger .circle{
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background-color: #84C225;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+header .top-header .hamburger .circle:hover{
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+header .top-header .hamburger .circle div{
+    width: 50%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .top-header .hamburger .circle::after,
+header .top-header .hamburger .circle::before{
+    content: "";
+    width: 50%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .top-header .hamburger .circle::after{
+    top: 35%;
+}
+header .top-header .hamburger .circle::before{
+    top: 65%;
+}
+
+/* Logo Content */
+header .top-header .logo-content{
+    position: relative;
+    max-width: 960px;
+    margin-inline: auto;
+    text-align: center;
+    padding: 0 25px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .top-header .logo-content .logo{
+    cursor: pointer;
+    max-width: 480px;
+    margin-inline: auto;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .top-header .logo-content .logo img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+header .top-header .logo-content .idea{
+    margin-inline: auto;
+    width: 340px;
+    font-size: 19px;
+    margin-top: 12px;
+    color: #000000;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* SNS Content */
+header .top-header .sns-content{
+    position: absolute;
+    right: 25px;
+    top: 86px;
+    gap: 10px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .top-header .sns-content.flex{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 10;
+}
+header .top-header .sns-content div{
+    width: 31px;
+    cursor: pointer;
+    height: 31px;
+    margin: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+header .top-header .sns-content div:hover{
+    transform: translateY(-3px);
+}
+header .top-header .sns-content img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1);
+    transition: filter 0.3s ease;
+}
+header .top-header .sns-content img:hover{
+    filter: brightness(1.1);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    header .top-header .logo-content{
+        max-width: 860px;
+    }
+    header .top-header .logo-content .logo{
+        max-width: 440px;
+    }
+    header .top-header .logo-content .idea{
+        width: 315px;
+        font-size: 18px;
+    }
+    header .top-header .hamburger .circle{
+        width: 58px;
+        height: 58px;
+    }
+}
+@media screen and (max-width: 1024px) {
+    header .top-header{
+        height: 115px;
+    }
+    header .top-header .logo-content{
+        max-width: 780px;
+    }
+    header .top-header .logo-content .logo{
+        max-width: 380px;
+    }
+    header .top-header .logo-content .idea{
+        width: 295px;
+        font-size: 17px;
+    }
+    header .top-header .hamburger .circle{
+        width: 54px;
+        height: 54px;
+    }
+    header .top-header .sns-content{
+        width: 165px;
+        top: 82px;
+        right: 20px;
+        gap: 8px;
+    }
+    header .top-header .sns-content div{
+        width: 27px;
+        height: 27px;
+    }
+    body {
+        padding-top: 207px;
+    }
+}
+
+@media screen and (max-width: 801px) {
+    body {
+        padding-top: 221px;
+    }
+}
+@media screen and (max-width: 768px) {
+    header .top-header{
+        height: 88px;
+        padding: 5px 0;
+    }
+    header .top-header .logo-content{
+        padding: 0 20px;
+    }
+    header .top-header .logo-content .logo{
+        max-width: 310px;
+    }
+    header .top-header .logo-content .idea{
+        width: 257px;
+        font-size: 15px;
+        letter-spacing: 0.1px;
+    }
+    header .top-header .hamburger {
+        bottom: 18px;
+    }
+    header .top-header .hamburger .circle{
+        width: 48px;
+        height: 48px;
+        left: 18px;
+    }
+    header .top-header .sns-content{
+        top: 55px;
+        width: 145px;
+        right: 15px;
+    }
+    header .top-header .sns-content div{
+        width: 25px;
+        height: 25px;
+    }
+    body {
+        padding-top: 194px;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    header .top-header{
+        height: 78px;
+    }
+    header .top-header .hamburger .circle{
+        width: 44px;
+        height: 44px;
+        left: 12px;
+    }
+    header .top-header .logo-content .idea{
+        width: 240px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    header .top-header .logo-content .logo{
+        max-width: 270px;
+    }
+    header .top-header .sns-content{
+        top: 45px;
+        width: 115px;
+        gap: 4px;
+    }
+    body {
+        padding-top: 184px;
+    }
+}
+
+@media screen and (max-width: 585px) {
+    header .top-header .sns-content{
+        width: 90px;
+    }
+}
+@media screen and (max-width: 504px) {
+    body {
+        padding-top: 171px;
+    }
+    header .top-header{
+        height: 75px;
+    }
+    header .top-header .hamburger .circle{
+        width: 40px;
+        height: 40px;
+    }
+    header .top-header .hamburger{
+        left: -10px;
+        bottom: 10px;
+    }
+    header .top-header .sns-content.flex{
+        display: none;
+    }
+    header .top-header .logo-content{
+        margin-inline: auto 0;
+        padding: 0 15px;
+    }
+    header .top-header .logo-content .logo{
+        max-width: 210px;
+    }
+    header .top-header .logo-content .idea{
+        width: 224px;
+        min-width: 224px;
+        font-size: 13px;
+        margin-top: 18px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header .top-header{
+        height: 70px;
+    }
+    header .top-header .hamburger .circle{
+        width: 38px;
+        height: 38px;
+        left: 10px;
+    }
+    header .top-header .logo-content .logo{
+        max-width: 190px;
+    }
+    header .top-header .logo-content .idea{
+        width: 170px;
+        font-size: 12px;
+    }
+    header .top-header .sns-content{
+        left: 80px;
+        gap: 6px;
+    }
+    header .top-header .sns-content div{
+        width: 23px;
+        height: 23px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    header .top-header{
+        height: 58px;
+    }
+    header .top-header .logo-content .idea{
+        display: none;
+    }
+    header .top-header .logo-content .logo{
+        max-width: 170px;
+    }
+    header .top-header .hamburger .circle{
+        width: 36px;
+        height: 36px;
+        left: 8px;
+    }
+    header .top-header .sns-content{
+        left: 80px;
+        top: 110px;
+        gap: 5px;
+    }
+    header .top-header .sns-content div{
+        width: 22px;
+        height: 22px;
+    }
+    body {
+        padding-top: 149px;
+    }
+    header .top-header .hamburger{
+        bottom: 5px;
+    }
+}
+
+/* menu content */
+header .menu{
+    width: 100%;
+    background-color: #84C225;
+    padding-block: 20px;
+}
+.menu .container{
+    padding-right: 70px;
+}
+header .menu .menuButtons{
+    max-width: 960px;
+    margin-inline: auto;
+    transition: all 0.3s ease;
+    position: relative;
+}
+header .menu .menuButtons .menuButton{
+    width: calc(100% / 6);
+    border-inline: rgba(255, 255, 255, 0.5) solid 1px;
+    margin-inline: auto;
+    position: relative;
+}
+header .menu .menuButtons .menuButton::after{
+    content: "";
+    height: 1px;
+    width: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    position: absolute;
+    background-color: #FFFFFF;
+    transition: all 0.3s ease;
+}
+header .menu .menuButtons .menuButton:hover{
+    cursor: pointer;
+}
+header .menu .menuButtons .menuButton:hover::after{
+    content: "";
+    height: 1px;
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    position: absolute;
+    background-color: #FFFFFF;
+}
+.menuButton .icon{
+    margin-inline: auto;
+    width: 30px;
+    height: 30px;
+}
+.menuButton p{
+    color: white;
+    text-align: center;
+    margin-top: 3px;
+    font-size: 13px;
+    font-weight: 700;
+}
+.showDropdown{
+    display: block !important;
+}
+.menu .menuButtons .searchButton{
+    position: absolute;
+    width: 40px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.menu .menuButtons .searchButton .button{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: white solid 1px;
+    padding: 6px;
+    transition: all 0.3s ease;
+}
+.menu .menuButtons .searchButton .button:hover{
+    padding: 8px;
+}
+.search-dropdown{
+    display: none;
+}
+.nav-down .search-dropdown >div{ 
+    height: 50px;
+    width: 100%;
+    background-color: #E6E6E6cf;
+}
+
+.nav-down .search-dropdown .latest-link{
+    background-color: #D9D9D9cf;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.nav-down .search-dropdown .latest-link .container{
+    min-width: 432px;
+}
+.nav-down .search-dropdown .latest-link .latest-link-title{
+    gap: 20px;
+    margin-top: 10px;
+    float: right;
+    color: #0A6FC8;
+}
+
+.nav-down .search-dropdown .latest-link .latest-link-title p{
+    position: relative;
+}
+.nav-down .search-dropdown .latest-link .latest-link-title p::after{
+    content: "";
+    height: 1px;
+    width: 0%;
+    position: absolute;
+    background-color: #0A6FC8;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.nav-down .search-dropdown .latest-link .hotKeyword{
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid #0A6FC8;
+    padding-inline: 5px;
+    border-radius: 3px;
+    margin-top: -5px;
+}
+.nav-down .search-dropdown .latest-link p:hover::after{
+    content: "";
+    height: 1px;
+    width: 100%;
+    position: absolute;
+    background-color: #0A6FC8;
+    bottom: 0;
+    left: 0;
+}
+.nav-down .search-dropdown .latest-link p:hover{
+    cursor: pointer;
+    color: #323232;
+}
+.search-Button{
+    max-width: 490px;
+    width: 100%;
+    float: right;
+}
+.search-Button input[type=text] {
+    padding: 6px;
+    margin-top: 5px;
+    font-size: 17px;
+    border: 0.5px solid #01B46d;
+    border-right: none;
+    width: 80%;
+}
+.search-Button input[type=text]:focus{
+    outline: #00834E;
+}
+.search-Button button{
+    width: 20%;
+    float: right;
+    padding: 6px;
+    margin-top: 5px;
+    background: #00834E;
+    color: white;
+    font-size: 17px;
+    border: 0.5px solid #01B46d;
+    cursor: pointer;
+}
+.search-Button button:hover {
+    background: #01b46d;
+}
+
+@media only screen and (max-width: 801px) {
+    .nav-up {
+        top: -262px;
+      }
+    header .menu{
+        padding-block: 5px;
+        padding-left: 70px;
+    }
+    header .menu .menuButtons{
+        flex-wrap: wrap;
+    }
+    header .menu .menuButtons .menuButton{
+        margin-block: 3px;
+        width: calc(100% / 3);
+    }
+    .nav-down .search-dropdown .latest-link .latest-link-title{
+        font-size: 12px;
+    }
+    .menuButton .icon {
+        width: 25px;
+        height: 25px;
+    }
+    .menuButton p{
+        margin-top: 0;
+        font-size: 12px;
+    }
+
+}
+@media only screen and (max-width: 660px) {
+    header .top-header .hamburger .circle{
+        width: 40px;
+        height: 40px;
+    }
+}
+@media only screen and (max-width: 504px) {
+    .nav-up {
+        top: -160px;
+      }
+      header .menu {
+        padding-block: 3px;
+    }
+    .top-header .sns-content{
+        position: absolute;
+        left: auto;
+        left: 30px;
+        top: 65px;
+    }
+    .menu .menuButtons .searchButton{
+        right: 23px;
+        top: 45px;
+        transform: translateY(-50%);
+    }
+    .menu .menuButtons .searchButton .button {
+        width: 35px;
+        height: 35px;
+    }
+    .menuButton .icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+@media only screen and (max-width: 470px) {
+    header .menu {
+        padding-block: 3px;
+        padding-left: 22px;
+    }
+    .menu .menuButtons .searchButton {
+        right: 10px;
+    }
+    .menu .container {
+        padding-right: 55px;
+    }
+}
+@media only screen and (max-width: 407px) {
+    .menuButton p {
+        font-size: 10px;
+        font-weight: 400;
+    }
+    body{
+        padding-top: 167px;
+    };
+}
+/* sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: calc(100vh - 211px);
+    overflow-y: auto;
+    margin-top: 211px;
+    padding-block: 10px;
+    width: 280px;
+    background: #f6f6f6f6;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.8s ease;
+    z-index: 100;
+}
+
+.sidebar .close{
+    cursor: pointer;
+}
+.open {
+    left: 0;
+}
+.sidebar .close{
+    float: right;
+    font-size: 30px;
+    padding: 5px;
+    color: #84C225;
+    cursor: pointer;
+}
+.sidebar .category{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 900;
+    margin: 60px 10px 30px 10px;
+    background-image: linear-gradient(to bottom, #0dd88763, #f6f6f61a);
+}
+.sidebar .lists{
+    padding-inline: 20px;
+}
+.sidebar .lists .list{
+   padding: 5px 5px 5px 0;
+   border-block: 1px solid #DDDDDD;
+   list-style: none;
+}
+.sidebar .list .nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: --all 0.2s ease-02;
+}
+.sidebar .list .nav-link span{
+    font-weight: 700;
+    color: #323232;
+}
+.overlay{
+    position: fixed;
+    top: 211px;
+    height: 1000vh;
+    width: 200%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 1s ease;
+    background: #eeeeee82
+}
+.dark{
+    opacity: 5;
+    pointer-events: auto;
+}
+@media screen and (max-width: 1024px) {
+    .sidebar{
+        margin-top: 207px;
+        height: calc(100vh - 207px);
+        overflow-y: auto;
+    }
+}
+@media screen and (max-width: 801px) {
+    .sidebar{
+        margin-top: 221px;
+        height: calc(100vh - 221px);
+    }
+    .overlay{
+        top: 252px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .sidebar{
+        margin-top: 194px;
+        height: calc(100vh - 194px);
+    }
+}
+@media screen and (max-width: 660px) {
+    .sidebar{
+        margin-top: 184px;
+        height: calc(100vh - 184px);
+    }
+}
+@media screen and (max-width: 504px) {
+    .sidebar{
+        margin-top: 172px;
+        width: 100%;
+        height: calc(100vh - 172px);
+    }
+    .sidebar .close{
+        font-size: 20px;
+        padding: 0 20px;
+    }
+    .sidebar .category {
+        font-size: 26px;
+        font-weight: 800;
+        margin: 30px 10px 10px 10px;
+    }
+    .sidebar .lists .list{
+        padding: 0;
+    }
+    .sidebar .list .nav-link span{
+        font-weight: 600;
+    }
+}
+@media screen and (max-width: 400px) {
+    .sidebar{
+        margin-top: 160px;
+        height: calc(100vh - 160px);
+    }
+    body {
+        padding-top: 162px;
+    }
+}
+@media screen and (max-width: 360px) {
+    body {
+        padding-top: 150px;
+    }
+    .sidebar{
+        margin-top: 150px;
+        height: calc(100vh - 150px);
+    }
+}
+@media screen and (max-width: 352px) {
+    body {
+        padding-top: 165px;
+    }
+    .sidebar{
+        margin-top: 165px;
+        height: calc(100vh - 165px);
+    }
+}
+@media screen and (max-width: 322px) {
+    body {
+        padding-top: 180px;
+    }
+    .sidebar{
+        margin-top: 180px;
+        height: calc(100vh - 180px);
+    }
+    .nav-up {
+        top: -181px;
+    }
+}

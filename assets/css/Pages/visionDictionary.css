@@ -1,0 +1,293 @@
+:root {
+    --section-title: #84C225;
+    --section-title-underline: #00814D;
+    --seeMore-button: #37BEB0;
+    --card-type: #84C225;
+    --text-black: #323232;
+    --background: #EDF2F6;
+}
+
+/*  all visionDictionary content */
+.allVision{
+    position: relative;
+    padding-block: 140px 280px;
+}
+.visionDictionaryTitle{
+    position: relative;
+}
+.visionDictionaryIcon{
+    position: relative;
+    width: 58px;
+    z-index: 1;
+    top: -16px;
+}
+.allVision .sortButton{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--text-black);
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+.allVision .sortButton .selected{
+    cursor: pointer;
+}
+@media only screen and (max-width: 610px) {
+    .visionDictionaryIcon{
+        width: 40px;
+        top: -7px;
+    }
+}
+@media only screen and (max-width: 725px) {
+    .allVision{
+        padding-block: 105px 280px;
+    }
+}
+@media only screen and (max-width: 797px) {
+    .allVision .sortButton{
+        top: 55px;
+        color: var(--text-black);
+        gap: 10px;
+        font-size: 12px;
+    }
+}
+.allVisionArticles{
+    margin-block: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(244px, 1fr)); /* Ensures equal width */
+    gap: 20px;
+    margin-inline: auto;
+    padding-inline: 20px;
+    margin-top: 35px;
+    justify-items: center;
+}
+
+.allVisionArticles .seeMoreArticle{
+    border-radius:5px;
+    max-width: 340px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 3px 3px #0000004a;
+    overflow: hidden;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    .allVisionArticles .seeMoreArticle{
+        height: 350px;
+    }
+    .allVisionArticles{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    }
+}
+.allVisionArticles .seeMoreArticle img{
+    height: 55%;
+    object-fit: cover;
+}
+
+.allVisionArticles .articleContent{
+    position: relative;
+    max-height: 25px;
+}
+.allVisionArticles .articleContent .articleType{
+    margin-top: -10px;
+    position: relative;
+}
+.allVisionArticles .articleContent .articleType .articleType-text {
+    max-width: 180px;
+    width: fit-content;
+    margin-inline: auto;
+    color: #ffffff;
+    font-size: 12px;
+    padding-inline: 5px;
+    background-color: var(--card-type);
+    border: 1px solid var(--card-type);
+}
+
+.allVisionArticles .articleContent .articleType .articleType-mark{
+    max-width: 28px;
+    max-height: 28px;
+    position: absolute;
+    right: 13px;
+    bottom: 0;
+}
+.allVisionArticles .articleContent .articleContent-text{
+    max-height: 150px;
+    padding: 10px 20px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.allVisionArticles .articleContent .articleContent-date{
+    color: #888888;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+.allVision .pagenation{
+    width: fit-content;
+    margin-inline: auto;
+    align-items: center;
+    margin-top: 35px;
+}
+.allVision .pagenation >div{
+    width: 35px;
+    height: 35px;
+    background-color: #FFF;
+    border-radius: 50%;
+    margin-inline: 5px;
+    box-shadow: 0 0 5px #0000004a;
+    padding-top: 5px;
+    padding-left: 13px;
+    cursor: pointer;
+}
+.allVision .pagenation img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.allVision .pagenation .before,.allVision .pagenation .after{
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.allVision .pagenation .before span,.allVision .pagenation span{
+    position: absolute;
+    font-size: 30px;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%,-50%);
+}
+.allVision .pagenation .action{
+    color: #fff;
+    background-color: var(--seeMore-button);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 14px;
+}
+/* end all visionDictionary content */
+
+/* visionImproment content */
+.visionImproment{
+    position: relative;
+    height: 500px;
+}
+.visionImproment .backgroundImg{
+    width: 100%;
+    height: 286px;
+    margin-top: -270px;
+    background-image: url(../../img/backgrounds/visionImproment.png);
+    background-size: cover;
+    background-position: center;
+}
+.baners{
+    max-width: 900px;
+    margin-inline: auto;
+    position: relative;
+    margin-top: -150px;
+    gap: 10px;
+}
+.baners .baner{
+    width: 400px;
+    max-height: 240px;
+    height: 240px;
+    cursor: pointer;
+}
+.leftBaner{
+    background-image: url('../../img/land_banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    border-radius: 0 125px 0 125px;
+    border: 10px solid #ffffff;
+}
+.rightBaner{
+    background-image: url('../../img/land_banner2.jpg');
+    background-size: cover;
+    background-position: center;
+    right: 0;
+    border-radius: 125px 0 125px 0;
+    border: 10px solid #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+    .baners .baner{
+        height: 240px;
+    }
+    .leftBaner, .rightBaner{
+        border-width: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .visionImproment{
+        height: auto;
+    }
+    .visionImproment .backgroundImg{
+        height: 230px;
+        margin-top: -270px;
+    }
+    .baners{
+        margin-top: -150px;
+        gap: 15px;
+    }
+    .baners .baner{
+        height: 180px;
+    }
+    .leftBaner{
+        border-radius: 0 100px 0 100px;
+    }
+    .rightBaner{
+        border-radius: 100px 0 100px 0;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    .visionImproment .backgroundImg{
+        height: 370px;
+        margin-top: -277px;
+    }
+    .baners{
+        margin-top: -300px;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .baners .baner{
+        width: 90%;
+    }
+    .leftBaner, .rightBaner{
+        border-width: 10px;
+        border-radius: 0 50px 0 50px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .visionImproment .backgroundImg {
+        height: 280px;
+        margin-top: -282px;
+    }
+    .baners{
+        margin-top: -200px;
+    }
+    .baners .baner{
+        height: 150px;
+    }
+    .allVision{
+        padding-block: 60px 280px;
+    }
+    .allVisionArticles .seeMoreArticle{
+        height: 275px;
+    }
+}
+/* end visionImproment content */
+
+/* endBanner content */
+.endBanner{
+    /* height: 700px; */
+    background-image: linear-gradient(var(--background), #ffffff);
+}
+/* end endBanner content */

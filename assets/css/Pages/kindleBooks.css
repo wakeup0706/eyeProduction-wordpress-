@@ -1,0 +1,341 @@
+:root {
+    --section-title: #84C225;
+    --section-title-underline: #00814D;
+    --seeMore-button: #37BEB0;
+    --card-type: #84C225;
+    --text-black: #323232;
+    --background: #EDF2F6;
+}
+/* first content */
+
+/*  all visionDictionary content */
+.notice{
+    background-image: url(../../img/backgrounds/kindleBooks.png);
+}
+.allVision{
+    position: relative;
+    padding-block: 100px 280px;
+}
+.noticeTitle{
+    position: relative;
+}
+.noticeIcon{
+    position: relative;
+    width: 68px;
+    z-index: 1;
+    top: -10px;
+}
+.navtabs {
+    display: flex;
+    justify-content: center;
+    margin-block: 25px 20px;
+    position: relative;
+}
+.navtabs .navtab {
+    padding: 10px 90px;
+    cursor: pointer;
+    color: var(--text-black);
+    transition: color 0.3s;
+    border-bottom: 3px solid #96969696;
+}
+.navtabs .navtab:hover {
+    color: var( --section-title-underline);
+}
+.navtabs .navtab.active {
+    color: var( --section-title-underline);
+    font-weight: 600;
+}
+.navtabs .underline {
+    position: absolute;
+    bottom: 0;
+    height: 3px;
+    background: var(--seeMore-button);
+    transition: left 0.3s ease, width 0.3s ease;
+}
+.vision_articles.active{
+    display: grid;
+}
+.vision_articles{
+    display: none;
+    margin-block: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ensures equal width */
+    gap: 20px;
+    justify-items: center;
+    margin-inline: auto;
+    padding-inline: 50px;
+    margin-top: 35px;
+}
+.vision_articles .card {
+    cursor: pointer;
+    width: 100%;
+    max-width: 255px;
+    place-items: center;
+    z-index: 2;
+    aspect-ratio: 5/6;
+    isolation: isolate;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+
+    &:hover {
+        & > .card-front {
+            transform: rotateY(180deg);
+        }
+
+        & > .card-back {
+            transform: rotateY(0deg);
+            opacity: 1;
+        }
+    }   
+}
+.vision_articles .card-front,
+.vision_articles .card-back {
+    aspect-ratio: inherit;
+    transition: inherit;
+    width: 100%;
+    inset: 0;
+    position: absolute;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+.vision_articles .card-front {
+    z-index: 2;
+
+    & > img {
+        height: 100%;
+        object-fit: cover;
+        max-width: 100%;
+    }
+}
+.vision_articles .card-back {
+    background-color: #000000cc;
+    backface-visibility: hidden;
+    padding: 1.5rem;
+    z-index: 2;
+    transform: rotateY(-180deg);
+    backdrop-filter: blur(4px);
+    color: white;
+}
+
+/* end vision_articles content */
+.allVision .pagenation{
+    width: fit-content;
+    margin-inline: auto;
+    align-items: center;
+    margin-top: 35px;
+}
+.allVision .pagenation >div{
+    width: 35px;
+    height: 35px;
+    background-color: #FFF;
+    border-radius: 50%;
+    margin-inline: 5px;
+    box-shadow: 0 0 5px #0000004a;
+    padding-top: 5px;
+    padding-left: 13px;
+    cursor: pointer;
+}
+.allVision .pagenation img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.allVision .pagenation .before,.allVision .pagenation .after{
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.allVision .pagenation .before span,.allVision .pagenation span{
+    position: absolute;
+    font-size: 30px;
+    left: 50%;
+    top: 43%;
+    transform: translate(-50%,-50%);
+}
+.allVision .pagenation .action{
+    color: #fff;
+    background-color: var(--seeMore-button);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 14px;
+}
+.notice{
+    position: relative;
+}
+/* end all visionDictionary content */
+
+
+/* visionImproment content */
+.visionImproment{
+    position: relative;
+    height: 500px;
+}
+.visionImproment .backgroundImg{
+    width: 100%;
+    height: 286px;
+    margin-top: -270px;
+    background-image: url(../../img/backgrounds/visionImproment.png);
+    background-size: cover;
+    background-position: center;
+}
+.baners{
+    max-width: 900px;
+    margin-inline: auto;
+    position: relative;
+    margin-top: -150px;
+    gap: 10px;
+}
+.baners .baner{
+    width: 400px;
+    max-height: 240px;
+    height: 240px;
+    cursor: pointer;
+}
+.leftBaner{
+    background-image: url('../../img/land_banner1.jpg');
+    background-size: cover;
+    background-position: center;
+    left: 0;
+    border-radius: 0 125px 0 125px;
+    border: 10px solid #ffffff;
+}
+.rightBaner{
+    background-image: url('../../img/land_banner2.jpg');
+    background-size: cover;
+    background-position: center;
+    right: 0;
+    border-radius: 125px 0 125px 0;
+    border: 10px solid #ffffff;
+}
+
+@media screen and (max-width: 1200px) {
+    .baners .baner{
+        height: 300px;
+    }
+    .leftBaner, .rightBaner{
+        border-width: 10px;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .vision_articles{
+        grid-template-columns: repeat(auto-fit, minmax(179px, 1fr));
+    }
+}
+@media screen and (max-width: 768px) {
+    .visionImproment{
+        height: auto;
+    }
+    .visionImproment .backgroundImg{
+        height: 230px;
+        margin-top: -270px;
+    }
+    .baners{
+        margin-top: -150px;
+        gap: 15px;
+    }
+    .baners .baner{
+        height: 200px;
+    }
+    .leftBaner{
+        border-radius: 0 100px 0 100px;
+    }
+    .rightBaner{
+        border-radius: 100px 0 100px 0;
+    }
+}
+@media only screen and (max-width: 616px) {
+    .vision_articles{
+        padding-inline: 0;
+    }
+    .allVision{
+        padding-block: 55px 280px;
+    }
+    .navtabs{
+        margin-block: 30px 20px;
+    }
+    .navtabs .navtab {
+        padding: 10px 40px;
+    }
+    .allVision .pagenation .before, .allVision .pagenation .after{
+        width: 35px;
+        height: 35px;
+    }
+    .allVision .pagenation >div{
+        width: 30px;
+        height: 30px;
+        padding-top: 4px;
+        padding-left: 11px;
+    }
+    .allVision .pagenation .action{
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        padding-left: 13px;
+    }
+    .allVision .pagenation .before span, .allVision .pagenation span{
+        font-size: 25px;
+        left: 50%;
+        top: 40%;
+    }
+}
+@media only screen and (max-width: 610px) {
+    .noticeIcon{
+        width: 47px;
+        top: -4px;
+    }
+}
+@media screen and (max-width: 560px) {
+    .visionImproment .backgroundImg{
+        height: 370px;
+        margin-top: -277px;
+    }
+    .baners{
+        margin-top: -300px;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .baners .baner{
+        width: 90%;
+        height: 200px;
+    }
+    .leftBaner, .rightBaner{
+        border-width: 10px;
+        border-radius: 0 50px 0 50px;
+    }
+}
+@media screen and (max-width: 520px) {
+    .vision_articles{
+        grid-template-columns: repeat(auto-fit, minmax(147px, 1fr));
+    }
+}
+@media screen and (max-width: 380px) {
+    .vision_articles{
+        grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
+        gap: 10px;
+    }
+    .visionImproment .backgroundImg {
+        height: 280px;
+        margin-top: -282px;
+    }
+    .baners{
+        margin-top: -200px;
+    }
+    .baners .baner{
+        height: 150px;
+    }
+}
+/* end visionImproment content */
+
+/* endBanner content */
+.endBanner{
+    background-image: linear-gradient(var(--background), #ffffff);
+}
+/* end endBanner content */

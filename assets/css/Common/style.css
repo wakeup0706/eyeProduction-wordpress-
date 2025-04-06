@@ -1,0 +1,302 @@
+@font-face {
+    font-family: "NotoSansJP";
+    src: url("../../font/NotoSansJP-VariableFont_wght.ttf");
+}
+*{
+    box-sizing: border-box;
+    font-family: NotoSansJP;
+}
+html, body{
+    margin: 0;
+    background-color: #EDF2F6;
+    z-index:initial;
+    transition: all 1s;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+div{
+    position: relative;
+}
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+.inConteiner{
+    max-width: 1072px;
+    margin-inline: auto;
+}
+p{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+.flex {
+    display: flex;
+}
+.space-between {
+    justify-content:space-between;
+}
+.space-around {
+    justify-content: space-around;
+}
+.space-center {
+    justify-content: center;
+}
+.section-title{
+    position: absolute;
+    width: 400px;
+    height: 50px;
+    background-image: linear-gradient(to right, var(--section-title), var(--section-title), #ffffff00);
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    top: 0;
+    left: 60px;
+    padding-left: 25px;
+}
+.section-title::before{
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 2px;
+    background-image: linear-gradient(to right, var(--section-title-underline), var(--section-title-underline), #ffffff00);
+    bottom: 0px;
+    left: 0px;
+}
+.text-top{
+    margin-top: 7px;
+}
+main{
+    overflow: hidden;
+}
+/* background vector */
+.bg{
+    position: absolute;
+    opacity: 0.5;
+}
+.vector1{
+    top: 60px;
+    left: -10%;
+}
+.vector2{
+    top: 300px;
+    right: -20%;
+}
+.vector3{
+    top: 100px;
+    left: 30px;
+}
+.vector4{
+    top: 100px;
+    right: 0;
+}
+.vector5{
+    top: 200px;
+    left: -11%;
+}
+.vector6{
+    top: 30%;
+    right: -20%;
+}
+.vector7{
+    top: 40%;
+    left: 50%;
+}
+.vector8{
+    top: 61%;
+    left: -10%;
+}
+.vector9{
+    top: 25%;
+    opacity: 0.8;
+    left:-25%;
+}
+.vector10{
+    top: -15%;
+    right: -5%;
+}
+
+/* Article content */
+.popularArticles{
+    position: relative;    
+}
+.breadcrumb{
+    position: relative;
+    font-size: 14px;
+    margin-block: 10px;
+    color: var(--text-black);
+}
+.breadcrumb span{
+    margin-inline: 6px;
+    cursor: pointer;
+}
+.popularArticles .categoryName{
+    position: relative;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    margin-block: 50px 50px;
+    color: var(--text-black);
+}
+.popularTitle{
+    position: relative;
+}
+.popularTitleIcon{
+    position: relative;
+    z-index: 1;
+    width: 68px;
+    top: -20px;
+}
+
+.popularArticle{
+    position: relative;
+    gap: 30px;
+    padding-inline: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(236px, 1fr));
+    justify-items: center;
+}
+.popularArticle .seeMoreArticle{
+    border-radius:5px;
+    max-width: 327px;
+    max-height: 375px;
+    aspect-ratio: 1 / 1.2;
+    width: 100%;
+    box-shadow: 0 3px 3px #0000004a;
+    cursor: pointer;
+    overflow: hidden;
+    background-color: white;
+}
+.popularArticle .seeMoreArticle img{
+    height: 55%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.popularArticle .seeMoreArticle .articleContent{
+    position: relative;
+}
+.popularArticle .seeMoreArticle .articleContent .articleType{
+    margin-top: -10px;
+    position: relative;
+}
+.popularArticle .seeMoreArticle .articleContent .articleType .articleType-text {
+    max-width: 180px;
+    width: fit-content;
+    margin-inline: auto;
+    color: #ffffff;
+    font-size: 12px;
+    padding-inline: 5px;
+    background-color: var(--card-type);
+    border: 1px solid var(--card-type);
+}
+
+.popularArticle .seeMoreArticle .articleContent .articleType .articleType-mark{
+    max-width: 28px;
+    max-height: 28px;
+    position: absolute;
+    right: 13px;
+    bottom: 0;
+}
+.popularArticle .seeMoreArticle .articleContent .articleContent-text{
+    max-height: 150px;
+    padding: 20px 20px;
+    font-size: 16px;
+    overflow: hidden;
+}
+.popularArticle .seeMoreArticle .articleContent .articleContent-date{
+    color: #888888;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.flex-left{
+    position: relative;
+    max-width: 825px;
+    width: 75%;
+    background-image: linear-gradient(to bottom, #EDF2F6, #ffffff70, #ffffff70);
+    margin-bottom: 20px;
+}
+.flex-right{
+    max-width: 355px;
+    width: 100%;
+    min-width: 195px;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+      margin-inline: 30px;
+    }
+    .inConteiner{
+        padding-inline: 20px;
+    }
+}
+@media only screen and (max-width: 847px) {
+    .popularArticle >div:nth-child(5),.popularArticle >div:nth-child(6),.popularArticle >div:nth-child(7),.popularArticle >div:nth-child(8),.popularArticle >div:nth-child(9){
+        display: none;
+    }
+}
+@media only screen and (max-width: 801px) {
+    .flex-right{
+        max-width: 100%;
+    }
+    .container {
+        margin-inline: 10px;
+    }
+    .flex-left{
+        width: 100%;
+    }
+    .kindleBooksDetail-content{
+        flex-wrap: wrap;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .popularArticle .seeMoreArticle .articleContent .articleContent-text{
+        padding: 20px 20px;
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 725px) {
+    .seeMore{
+        width: 100%;
+    }
+    .popularArticles .categoryName {
+        font-size: 28px;
+        margin-block: 5px 35px;
+    }
+}
+@media only screen and (max-width: 610px) {
+    .popularTitleIcon{
+        position: relative;
+        width: 50px;
+        top: -12px;
+    }
+    .section-title{
+        width: 300px;
+        height: 38px;
+        font-size: 20px;
+        left: 36px;
+        top: 0;
+        padding-left: 30px;
+    }
+    .section-title::before{
+        width: 300px;
+        bottom: 0;
+        left: 0;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .popularArticle {
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+    }
+}
+@media only screen and (max-width: 504px) {
+    .popularArticle >div:nth-child(2),.popularArticle >div:nth-child(3),.popularArticle >div:nth-child(4){
+        display: none;
+    }
+}
