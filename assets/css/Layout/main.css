@@ -145,11 +145,12 @@ main{
     margin-inline: auto;
     overflow: hidden;
     margin-block: 40px 2px;
-    cursor: pointer;
 }
 .bestLastArticle .baner{
     width: 55%;
     height: 100%;
+    max-height: 345px;
+    overflow: hidden;
     background-color: #ffffff;
 }
 .bestLastArticle .content{
@@ -173,7 +174,7 @@ main{
 .bestLastArticle .content .articleContent{
     margin-top: 3%;
     font-size: 15px;
-    height: 40%;
+    height: 70%;
     overflow: hidden;
 }
 .bestLastArticle .content .articleDate{
@@ -402,11 +403,13 @@ main{
     border-color: var(--seeMore-button);
 }
 
-.card-list .card-link .card-image{
+.card-list .card-link img{
     width: 100%;
     aspect-ratio: 2 / 1;
-    object-fit: cover;
     border-radius: 5px;
+}
+.eyeGlossary .card-list .card-link img,.recipes .card-list .card-link img{
+    aspect-ratio: 2 / 1.5;
 }
 
 .card-list .card-link .badge{
@@ -433,6 +436,9 @@ main{
     font-size: 16px;
     color: #333;
     font-weight: 300;
+}
+.eyeGlossary .card-list .card-link .card-title,.recipes .card-list .card-link .card-title{
+    height: 60px;
 }
 
 .card-list .card-link .card-button{
@@ -501,16 +507,16 @@ main{
     background-size: cover;
     background-position: center;
     left: 0;
-    border-radius: 0 80px 0 80px;
-    border: 10px solid #ffffff;
+    border-radius: 0 40px 0 40px;
+    border: 10px solid var(--seeMore-button);
 }
 .rightBaner{
     background-image: url('../../img/land_banner2.jpg');
     background-size: cover;
     background-position: center;
     right: 0;
-    border-radius: 80px 0 80px 0;
-    border: 10px solid #ffffff;
+    border-radius: 40px 0 40px 0;
+    border: 10px solid var(--seeMore-button);
 }
 /* end visionImproment content */
 
@@ -615,7 +621,6 @@ main{
 .eyeProductCardRow img{
     max-width: 307px;
     height: 100%;
-    object-fit: cover;
     border: 1px solid #b4b4b4;
 }
 .eyeProductCardRow div{
@@ -653,7 +658,6 @@ main{
 .corner-img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
     overflow: hidden;
 }
 .eyeProductCard .corner {
@@ -764,7 +768,6 @@ border-bottom: 1px solid var(--border);
 .aboutHomework .banners img{
     max-width: 385px;
     height: 100%;
-    object-fit: cover;
     border: 1px solid #b4b4b4;
 }
 .aboutHomework .vector2{
@@ -790,7 +793,6 @@ border-bottom: 1px solid var(--border);
 .kindleBooks .books img{
     max-width: 307px;
     height: 100%;
-    object-fit: cover;
 }
 .kindleBooks .vector2{
     right: -100px;
@@ -813,7 +815,6 @@ border-bottom: 1px solid var(--border);
 .line-youtube-registration img{
     max-width: 488px;
     height: 100%;
-    object-fit: cover;
 }
 /* end line-youtube-registration content */
 
@@ -905,7 +906,6 @@ border-bottom: 1px solid var(--border);
 .subscriptionGuide img{
     max-width: 790px;
     height: 100%;
-    object-fit: cover;
 }
 /* end subscriptionGuide content */
 
@@ -1071,12 +1071,6 @@ border-bottom: 1px solid var(--border);
     .leftBaner, .rightBaner{
         border-width: 10px;
     }
-    .leftBaner{
-        border-radius: 0 100px 0 100px;
-    }
-    .rightBaner{
-        border-radius: 100px 0 100px 0;
-    }
 }
 @media screen and (max-width: 924px) {
     .baners {
@@ -1139,12 +1133,6 @@ border-bottom: 1px solid var(--border);
     }
     .baners .baner{
         height: 185px;
-    }
-    .leftBaner{
-        border-radius: 0 85px 0 85px;
-    }
-    .rightBaner{
-        border-radius: 85px 0 85px 0;
     }
     .eyeGlossaryCard-wrapper{
         margin: 0 10px 25px;
@@ -1225,7 +1213,7 @@ border-bottom: 1px solid var(--border);
         padding-top: 1px;
     }
 }
-@media screen and (max-width: 614px){
+@media screen and (max-width: 900px){
     .notice{
         padding-top: 40px;
     }
@@ -1358,7 +1346,6 @@ border-bottom: 1px solid var(--border);
     }
     .leftBaner, .rightBaner{
         border-width: 10px;
-        border-radius: 0 50px 0 50px;
     }
     .testResult{
         padding-top: 50px;
@@ -1396,11 +1383,8 @@ border-bottom: 1px solid var(--border);
     }
 }
 @media screen and (max-width: 500px){
-    .kindleBooks .books {
-        grid-auto-flow: dense;
-    }
-    .kindleBooks .books >div{
-        width: 200px;
+    .kindleBooks .books >div:nth-child(3){
+        display: none;
     }
     .line-youtube-registration div{
         gap: 10px;
@@ -1410,7 +1394,6 @@ border-bottom: 1px solid var(--border);
     .line-youtube-registration img {
         max-width: 325px;
         height: 100%;
-        object-fit: cover;
     }
     .subscriptionGuide div{
         gap: 10px;
@@ -1422,7 +1405,6 @@ border-bottom: 1px solid var(--border);
     .subscriptionGuide img {
         max-width: 325px;
         height: 100%;
-        object-fit: cover;
     }
     .subscriptionGuide{
         padding-block: 30px;
@@ -1437,6 +1419,10 @@ border-bottom: 1px solid var(--border);
     }
     .aboutHomework .banners{
         gap: 5px;
+        grid-auto-flow: dense;
+        max-width: 220px;
+        margin-inline: auto;
+        margin-top: 10px;
     }
 }
 @media only screen and (max-width: 486px) {

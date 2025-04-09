@@ -1,8 +1,6 @@
-<?php 
-    get_header();
-?>
+<?php  get_header();?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/notice.css" />
-<main>
+    <main>
         <section class="popularArticles inConteiner">
             <div class="bg vector3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/backgrounds/Vector3.png" alt=""></div>
             <div class="bg vector4"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/backgrounds/Vector4.png" alt=""></div>
@@ -17,123 +15,52 @@
                 <div class="section-title"><p class="text-top">閲覧の多いお知らせ</p></div>
             </div>
             <div class="popularArticle">
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular2.webp" alt="">
+            <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $args = array(
+                    'post_type' => 'all_notice',
+                    'posts_per_page' => 3,
+                    'paged' => $paged,
+                    'category_name' => 'お知らせ', // Add your category slug here
+                    // $args['meta_key'] = 'post_views';
+                    'orderby' => 'meta_value_num',
+                    'order' => 'DESC'
+                );
+                
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
+                        $category = get_the_category();
+                        ?>
+                <div class="seeMoreArticle" onclick="location.href='<?php echo get_permalink(); ?>';">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                    <?php else : ?>
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                    <?php endif; ?>
                     <div class="articleContent">
                         <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
+                            <div class="articleType-text"><p><?php echo esc_html($category[0]->name); ?></p></div>
                             <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
                         </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
+                        <div class="articleContent-date"><p><?php echo get_the_date('Y.m.d'); ?></p></div>
                         <div class="articleContent-text">
-                            <p>視力回復の結果を出す子の夏休みの過ごし方</p>
+                            <p><?php echo the_title(); ?></p>
                         </div>
                     </div>
                 </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    ?>
+                    <div class="no-articles">
+                        <p>記事が見つかりませんでした。</p>
                     </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular4.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular5.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular2.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>視力回復の結果を出す子の夏休みの過ごし方</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular4.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular5.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                endif;
+                ?>
             </div>
         </section>
         <section class="notice">
@@ -155,96 +82,244 @@
                     <div class="underline"></div>
                 </div>
                 <div id="all" class="vision_articles active">
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice2.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
+                    <?php
+                    // Get current page number
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    
+                    // Get sort parameter from URL
+                    $sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'newest';
+                    
+                    // Set up query arguments based on sort
+                    $args = array(
+                        'post_type' => 'all_notice',
+                        'posts_per_page' => 6,
+                        'paged' => $paged,
+                        'category_name' => 'すべてのお知らせ' // Add your category slug here
+                    );
+                    
+                    switch($sort) {
+                        case 'popular':
+                            $args['meta_key'] = 'post_views';
+                            $args['orderby'] = 'meta_value_num';
+                            $args['order'] = 'DESC';
+                            break;
+                        case 'oldest':
+                            $args['orderby'] = 'date';
+                            $args['order'] = 'ASC';
+                            break;
+                        default: // newest
+                            $args['orderby'] = 'date';
+                            $args['order'] = 'DESC';
+                    }
+                    
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            $category = get_the_category();
+                            ?>
+                    <div class="content" onclick="location.href='<?php echo get_permalink(); ?>';">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                        <?php else : ?>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                        <?php endif; ?>
+                        <div class="contentDate"><?php echo get_the_date('Y/m/d'); ?></div>
                         <div class="contentText">
-                            <p>具体的なペルソナを作るために重要な「データ分析」の進め方を解説！</p>
+                        <p><?php echo the_title(); ?></p>
                         </div>
                     </div>
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice3.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
-                        <div class="contentText">
-                            <p>『定年時代　令和7年2月上旬号』に掲載：サービスの自己負担 (介護の読者相談コーナー)　-朝日新聞(朝刊) 2025年2月3日号に同封-</p>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    else :
+                        ?>
+                        <div class="no-articles">
+                            <p>記事が見つかりませんでした。</p>
                         </div>
-                    </div>
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice4.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
-                        <div class="contentText">
-                            <p>日本初、フリーランスや副業リハビリ人材と訪問リハビリニーズをマッチングする「保険外(自費) 訪問リハビリサービス」を開始　-サービス開始に先行し、フリーランスや副業リハビリスタッフを募集-</p>
-                        </div>
-                    </div>
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice2.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
-                        <div class="contentText">
-                            <p>日本初、フリーランスや副業リハビリ人材と訪問リハビリニーズをマッチングする「保険外(自費) 訪問リハビリサービス」を開始　-サービス開始に先行し、フリーランスや副業リハビリスタッフを募集-</p>
-                        </div>
-                    </div>
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice2.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
-                        <div class="contentText">
-                            <p>具体的なペルソナを作るために重要な「データ分析」の進め方を解説！</p>
-                        </div>
-                    </div>
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice3.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
-                        <div class="contentText">
-                            <p>『定年時代　令和7年2月上旬号』に掲載：サービスの自己負担 (介護の読者相談コーナー)　-朝日新聞(朝刊) 2025年2月3日号に同封-</p>
-                        </div>
-                    </div>
+                    <?php
+                    endif;
+                    ?>
                 </div>
                 <div id="naticeTab" class="vision_articles">
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice2.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
+                    <?php
+                    // Get current page number
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    
+                    // Get sort parameter from URL
+                    $sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'newest';
+                    
+                    // Set up query arguments based on sort
+                    $args = array(
+                        'post_type' => 'all_notice',
+                        'posts_per_page' => 6,
+                        'paged' => $paged,
+                        'category_name' => 'お知らせ' // Add your category slug here
+                    );
+                    
+                    switch($sort) {
+                        case 'popular':
+                            $args['meta_key'] = 'post_views';
+                            $args['orderby'] = 'meta_value_num';
+                            $args['order'] = 'DESC';
+                            break;
+                        case 'oldest':
+                            $args['orderby'] = 'date';
+                            $args['order'] = 'ASC';
+                            break;
+                        default: // newest
+                            $args['orderby'] = 'date';
+                            $args['order'] = 'DESC';
+                    }
+                    
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            $category = get_the_category();
+                            ?>
+                    <div class="content" onclick="location.href='<?php echo get_permalink(); ?>';">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                        <?php else : ?>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                        <?php endif; ?>
+                        <div class="contentDate"><?php echo get_the_date('Y/m/d'); ?></div>
                         <div class="contentText">
-                            <p>具体的なペルソナを作るために重要な「データ分析」の進め方を解説！</p>
+                        <p><?php echo the_title(); ?></p>
                         </div>
                     </div>
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice2.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
-                        <div class="contentText">
-                            <p>日本初、フリーランスや副業リハビリ人材と訪問リハビリニーズをマッチングする「保険外(自費) 訪問リハビリサービス」を開始　-サービス開始に先行し、フリーランスや副業リハビリスタッフを募集-</p>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    else :
+                        ?>
+                        <div class="no-articles">
+                            <p>記事が見つかりませんでした。</p>
                         </div>
-                    </div>
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice2.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
-                        <div class="contentText">
-                            <p>具体的なペルソナを作るために重要な「データ分析」の進め方を解説！</p>
-                        </div>
-                    </div>
+                    <?php
+                    endif;
+                    ?>
                 </div>
                 <div id="pressRelease" class="vision_articles">
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice4.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
+                    <?php
+                    // Get current page number
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    
+                    // Get sort parameter from URL
+                    $sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'newest';
+                    
+                    // Set up query arguments based on sort
+                    $args = array(
+                        'post_type' => 'all_notice',
+                        'posts_per_page' => 6,
+                        'paged' => $paged,
+                        'category_name' => 'プレスリリース' // Add your category slug here
+                    );
+                    
+                    switch($sort) {
+                        case 'popular':
+                            $args['meta_key'] = 'post_views';
+                            $args['orderby'] = 'meta_value_num';
+                            $args['order'] = 'DESC';
+                            break;
+                        case 'oldest':
+                            $args['orderby'] = 'date';
+                            $args['order'] = 'ASC';
+                            break;
+                        default: // newest
+                            $args['orderby'] = 'date';
+                            $args['order'] = 'DESC';
+                    }
+                    
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            $category = get_the_category();
+                            ?>
+                    <div class="content" onclick="location.href='<?php echo get_permalink(); ?>';">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                        <?php else : ?>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                        <?php endif; ?>
+                        <div class="contentDate"><?php echo get_the_date('Y/m/d'); ?></div>
                         <div class="contentText">
-                            <p>日本初、フリーランスや副業リハビリ人材と訪問リハビリニーズをマッチングする「保険外(自費) 訪問リハビリサービス」を開始　-サービス開始に先行し、フリーランスや副業リハビリスタッフを募集-</p>
+                        <p><?php echo the_title(); ?></p>
                         </div>
                     </div>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    else :
+                        ?>
+                        <div class="no-articles">
+                            <p>記事が見つかりませんでした。</p>
+                        </div>
+                    <?php
+                    endif;
+                    ?>
                 </div>
                 <div id="mediaCoverage" class="vision_articles">
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice3.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
+                    <?php
+                    // Get current page number
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    
+                    // Get sort parameter from URL
+                    $sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'newest';
+                    
+                    // Set up query arguments based on sort
+                    $args = array(
+                        'post_type' => 'all_notice',
+                        'posts_per_page' => 6,
+                        'paged' => $paged,
+                        'category_name' => 'メディア掲載' // Add your category slug here
+                    );
+                    
+                    switch($sort) {
+                        case 'popular':
+                            $args['meta_key'] = 'post_views';
+                            $args['orderby'] = 'meta_value_num';
+                            $args['order'] = 'DESC';
+                            break;
+                        case 'oldest':
+                            $args['orderby'] = 'date';
+                            $args['order'] = 'ASC';
+                            break;
+                        default: // newest
+                            $args['orderby'] = 'date';
+                            $args['order'] = 'DESC';
+                    }
+                    
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            $category = get_the_category();
+                            ?>
+                    <div class="content" onclick="location.href='<?php echo get_permalink(); ?>';">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                        <?php else : ?>
+                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                        <?php endif; ?>
+                        <div class="contentDate"><?php echo get_the_date('Y/m/d'); ?></div>
                         <div class="contentText">
-                            <p>『定年時代　令和7年2月上旬号』に掲載：サービスの自己負担 (介護の読者相談コーナー)　-朝日新聞(朝刊) 2025年2月3日号に同封-</p>
+                        <p><?php echo the_title(); ?></p>
                         </div>
                     </div>
-                    <div class="content" onclick="location.href='<?php echo site_url();?>/detailPages/noticeDetail ';">
-                        <div class="contnetImage"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/notice3.png" alt=""></div>
-                        <div class="contentDate"><p>2025/01/23</p></div>
-                        <div class="contentText">
-                            <p>『定年時代　令和7年2月上旬号』に掲載：サービスの自己負担 (介護の読者相談コーナー)　-朝日新聞(朝刊) 2025年2月3日号に同封-</p>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                    else :
+                        ?>
+                        <div class="no-articles">
+                            <p>記事が見つかりませんでした。</p>
                         </div>
-                    </div>
+                    <?php
+                    endif;
+                    ?>
                 </div>
             </div>
         </section>
@@ -259,6 +334,6 @@
             <div class="container"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyetest_baner.jpg" alt="eyetest_baner"></div>
         </section>
     </main>
-    <?php
-    get_footer(); 
-?>
+    <!-- tabs -->
+<script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/tabs.js"></script>
+<?php get_footer(); ?>

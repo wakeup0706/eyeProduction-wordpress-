@@ -89,10 +89,6 @@ const scrollToTop = () => {
 };
 
 scrollToTop();
-
-
-
-
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
 
@@ -104,8 +100,29 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
-// function topFunction() {
-//   document.body.scrollTop = 0;
-//   document.documentElement.scrollTop = 0;
-// }
+//  show vision test result
+let siryoku_l_result = localStorage.getItem('siryoku_l_result');
+let siryoku_r_result = localStorage.getItem('siryoku_r_result');
+let siryoku_l_ran = localStorage.getItem('siryoku_l_ran');
+let siryoku_r_ran = localStorage.getItem('siryoku_r_ran');
+let siryoku_l_rg = localStorage.getItem('siryoku_l_rg');
+let siryoku_r_rg = localStorage.getItem('siryoku_r_rg');
+
+if (siryoku_l_result !== null) {
+  document.getElementById("view_r_result").innerHTML = siryoku_l_result;
+}
+if (siryoku_r_result !== null) {
+  document.getElementById("view_l_result").innerHTML = siryoku_r_result;
+}
+if (siryoku_l_ran !== null) {
+  document.getElementById("view_r_kinshi").innerHTML = siryoku_l_ran;
+}
+if (siryoku_r_ran !== null) {
+  document.getElementById("view_l_kinshi").innerHTML = siryoku_r_ran;
+}
+if (siryoku_l_rg !== null) {
+  document.getElementById("view_r_ranshi").innerHTML = siryoku_l_rg;
+}
+if (siryoku_r_rg !== null) {
+  document.getElementById("view_l_ranshi").innerHTML = siryoku_r_rg;
+}

@@ -1,8 +1,6 @@
-<?php 
-    get_header();
-?>
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/kindleBooks.css" />s
-<main>
+<?php  get_header();?>
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/kindleBooks.css" />
+    <main>
         <section class="popularArticles inConteiner">
             <div class="bg vector3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/backgrounds/Vector3.png" alt=""></div>
             <div class="bg vector4"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/backgrounds/Vector4.png" alt=""></div>
@@ -17,123 +15,52 @@
                 <div class="section-title"><p class="text-top">人気の書籍</p></div>
             </div>
             <div class="popularArticle">
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular2.webp" alt="">
+            <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $args = array(
+                    'post_type' => 'all_kindlebooks',
+                    'posts_per_page' => 3,
+                    'paged' => $paged,
+                    'category_name' => 'Kindleブックス', // Add your category slug here
+                    // $args['meta_key'] = 'post_views';
+                    'orderby' => 'meta_value_num',
+                    'order' => 'DESC'
+                );
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
+                        $category = get_the_category();
+                        ?>
+                <div class="seeMoreArticle" onclick="location.href='<?php echo get_permalink(); ?>';">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                    <?php else : ?>
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                    <?php endif; ?>
                     <div class="articleContent">
                         <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
+                            <div class="articleType-text"><p><?php echo esc_html($category[0]->name); ?></p></div>
                             <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
                         </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
+                        <div class="articleContent-date"><p><?php echo get_the_date('Y.m.d'); ?></p></div>
                         <div class="articleContent-text">
-                            <p>視力回復の結果を出す子の夏休みの過ごし方</p>
+                            <p><?php echo the_title(); ?></p>
                         </div>
                     </div>
                 </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    ?>
+                    <div class="no-articles">
+                        <p>記事が見つかりませんでした。</p>
                     </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular4.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular5.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular2.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>視力回復の結果を出す子の夏休みの過ごし方</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular4.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular5.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                endif;
+                ?>
+            </div>
             </div>
         </section>
         <section class="notice">
@@ -148,188 +75,111 @@
                 </div>
                 
                 <div class="navtabs">
-                    <div class="navtab active" data-target="newest">新しい順</div>
-                    <div class="navtab" data-target="oldest">古い順</div>
+                    <div class="navtab active" data-target="newest" >新しい順</div>
+                    <div class="navtab" data-target="oldest" >古い順</div>
                     <div class="underline"></div>
                 </div>
 
                 <div id="newest" class="vision_articles card-wrapper active">
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook1.png" alt="dune part 1 movie poster">
+                    <?php
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+                        // Set up query arguments based on sort
+                        $args = array(
+                        'post_type' => 'all_kindlebooks',
+                        'posts_per_page' => 8,
+                        'paged' => $paged,
+                        'category_name' => 'Kindleブックス', // Add your category slug here
+                        'orderby' => 'date',
+                        'order' => 'DESC',
+                        );
+
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            $category = get_the_category();
+                            ?>
+                        <div class="card" onclick="location.href='<?php echo get_permalink(); ?>';">
+                            <div class="card-front">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                            <?php endif; ?>
+                            </div>
+                            <div class="card-back">
+                                <h3><?php echo the_title(); ?></h3>
+                            </div>
                         </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>第十歩目「ライフスタイルを見直す</p>
+                        <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else :
+                        ?>
+                        <div class="no-articles">
+                            <p>記事が見つかりませんでした。</p>
                         </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook2.png" alt="dune part 2 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>
-                                第五歩目「とっておきの疲れ目解消法」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook3.png" alt="dune part 1 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>xバイブルシリーズ第三弾</h3>
-                            <br>
-                            <p>知って納得！明かりの秘密」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook4.png" alt="dune part 2 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>
-                                第九歩目「自宅でできる視力回復方法」
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook5.png" alt="dune part 1 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>第七歩目「眼科で近視は治る？」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook6.png" alt="dune part 2 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視第九歩目</h3>
-                            <br>
-                            <p>自宅でできる視力回復方法」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook7.png" alt="dune part 1 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>第六歩目「近視とアレルギーは関係ある！？」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook8.png" alt="dune part 2 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>第九歩目</h3>
-                            <br>
-                            <p>「自宅でできる視力回復方法」</p>
-                        </div>
-                    </div>
+                    <?php
+                    endif;
+                    ?>
                 </div>
                 <div id="oldest" class="vision_articles card-wrapper">
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook6.png" alt="dune part 2 movie poster">
+                    <?php
+                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                        // Set up query arguments based on sort
+                        $args = array(
+                        'post_type' => 'all_kindlebooks',
+                        'posts_per_page' => 8,
+                        'paged' => $paged,
+                        'category_name' => 'Kindleブックス', // Add your category slug here
+                        'orderby' => 'date',
+                        'order' => 'ASC'
+                        );
+
+                    $query = new WP_Query($args);
+
+                    if ($query->have_posts()) :
+                        while ($query->have_posts()) : $query->the_post();
+                            $category = get_the_category();
+                            ?>
+                        <div class="card" onclick="location.href='<?php echo get_permalink(); ?>';">
+                            <div class="card-front">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                            <?php endif; ?>
+                            </div>
+                            <div class="card-back">
+                                <h3><?php echo the_title(); ?></h3>
+                            </div>
                         </div>
-                        <div class="card-back">
-                            <h3>視第九歩目</h3>
-                            <br>
-                            <p>自宅でできる視力回復方法」</p>
+                        <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else :
+                        ?>
+                        <div class="no-articles">
+                            <p>記事が見つかりませんでした。</p>
                         </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook7.png" alt="dune part 1 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>第六歩目「近視とアレルギーは関係ある！？」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook8.png" alt="dune part 2 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>第九歩目</h3>
-                            <br>
-                            <p>「自宅でできる視力回復方法」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook1.png" alt="dune part 1 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>第十歩目「ライフスタイルを見直す</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook2.png" alt="dune part 2 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>
-                                第五歩目「とっておきの疲れ目解消法」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook3.png" alt="dune part 1 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>xバイブルシリーズ第三弾</h3>
-                            <br>
-                            <p>知って納得！明かりの秘密」</p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook4.png" alt="dune part 2 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>
-                                第九歩目「自宅でできる視力回復方法」
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card" onclick="location.href='<?php echo site_url();?>/detailPages/kindleBooksDetail ';">
-                        <div class="card-front">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook5.png" alt="dune part 1 movie poster">
-                        </div>
-                        <div class="card-back">
-                            <h3>視力回復への道</h3>
-                            <br>
-                            <p>第七歩目「眼科で近視は治る？」</p>
-                        </div>
-                    </div>
+                    <?php
+                    endif;
+                    ?>
                 </div>
                 <div class="pagenation flex">
-                    <div class="before"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/before.png" alt="«"><span>«</span></div>
-                    <div class="action">1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div class="after"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/after.png" alt="»"><span>»</span></div>
-                </div>
+                <?php
+                echo paginate_links(array(
+                    'total' => $query->max_num_pages,
+                    'current' => $paged,
+                    'prev_text' => '<div class="before"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/before.png" alt="«"><span>«</span></div>',
+                    'next_text' => '<div class="after"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/after.png" alt="»"><span>»</span></div>',
+                    'type' => 'list',
+                    'before_page_number' => '<div>',
+                    'after_page_number' => '</div>'
+                ));
+                ?>
+            </div>
             </div>
         </section>
         <section class="visionImproment">
@@ -343,6 +193,6 @@
             <div class="container"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyetest_baner.jpg" alt="eyetest_baner"></div>
         </section>
     </main>
-    <?php
-    get_footer(); 
-?>
+    <!-- tabs -->
+    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/tabs.js"></script>
+    <?php get_footer(); ?>

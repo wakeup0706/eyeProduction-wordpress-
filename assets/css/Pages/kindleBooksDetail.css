@@ -371,7 +371,6 @@ main .sns-content img:hover{
     
     & > img {
         height: 100%;
-        object-fit: cover;
         max-width: 100%;
     }
 }
@@ -383,53 +382,6 @@ main .sns-content img:hover{
     transform: rotateY(-180deg);
     backdrop-filter: blur(4px);
     color: white;
-}
-/* end vision_articles content */
-.allVision .pagenation{
-    width: fit-content;
-    margin-inline: auto;
-    align-items: center;
-    margin-top: 35px;
-}
-.allVision .pagenation >div{
-    width: 35px;
-    height: 35px;
-    background-color: #FFF;
-    border-radius: 50%;
-    margin-inline: 5px;
-    box-shadow: 0 0 5px #0000004a;
-    padding-top: 5px;
-    padding-left: 13px;
-    cursor: pointer;
-}
-.allVision .pagenation img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-.allVision .pagenation .before,.allVision .pagenation .after{
-    width: 40px;
-    height: 40px;
-    position: relative;
-}
-.allVision .pagenation .before span,.allVision .pagenation span{
-    position: absolute;
-    font-size: 30px;
-    left: 50%;
-    top: 43%;
-    transform: translate(-50%,-50%);
-}
-.allVision .pagenation .action{
-    color: #fff;
-    background-color: var(--seeMore-button);
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    padding-left: 14px;
 }
 .notice{
     position: relative;

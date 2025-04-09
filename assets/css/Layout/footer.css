@@ -148,6 +148,24 @@ footer .floor {
     padding-block: 30px;
     font-size: 12px;
 }
+.topButton{
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #84C225;
+    color: #FFFFFF;
+    cursor: pointer;
+    padding: 15px 11px;
+    border-radius: 50%;
+    font-size: 16px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    z-index: 80;
+}
+.topButton:hover{
+    background-color: #18AC38;
+}
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
     footer .footer-content{
@@ -235,6 +253,9 @@ footer .floor {
     footer >.container {
         height: 300px;
     }
+    .topButton{
+        padding: 10.5px 7px;
+    }
 }
 @media screen and (max-width: 480px) {
     footer >.container {
@@ -243,7 +264,7 @@ footer .floor {
     footer .footer-content{
         padding: 30px 0;
         gap: 0;
-        left: 30%;
+        left: 25%;
     }
     footer .footer-content-left .logo{
         max-width: 240px;
@@ -267,12 +288,16 @@ footer .floor {
     footer .footer-content-right ul{
         gap: 12px 30px;
         justify-content: space-between;
+        padding-left: 20px;
     }
     footer .footer-content-right ul li a{
         font-size: 14px;
     }
     footer .floor{
         height: 60px;
+    }
+    .topButton{
+        font-size: 13px;
     }
 }
 
@@ -304,28 +329,5 @@ footer .floor {
     }
     footer .floor{
         height: 50px;
-    }
-}
-.topButton{
-    display: none;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #84C225;
-    color: #FFFFFF;
-    cursor: pointer;
-    padding: 15px 11px;
-    border-radius: 50%;
-    font-size: 16px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    z-index: 80;
-}
-.topButton:hover{
-    background-color: #18AC38;
-}
-@media screen and (max-width: 500px) {
-    .topButton{
-        padding: 10.5px 7px;
     }
 }

@@ -75,7 +75,6 @@ main .sns-content img:hover{
 }
 .flex-left .releaseDate .like .tag{
     position: relative;
-    width: 112px;
 }
 .flex-left .releaseDate .like .name{
     font-size: 16px;
@@ -112,7 +111,6 @@ main .sns-content img:hover{
 }
 .flex-left .banner img{
     height: 100%;
-    object-fit: cover;
 }
 
 .flex-left .properties{
@@ -382,7 +380,6 @@ main .sns-content img:hover{
 .popularArticles .item img{
     max-width: 130px;
     max-height: 70px;
-    object-fit: cover;
     border-radius: 5px;
 }
 .popularArticles .item .item-title{
@@ -424,7 +421,6 @@ main .sns-content img:hover{
 .relativeArticles .item img{
     max-width: 130px;
     max-height: 70px;
-    object-fit: cover;
     border-radius: 5px;
 }
 .relativeArticles .item .item-title{
@@ -535,7 +531,6 @@ main .sns-content img:hover{
     }
     .flex-left .releaseDate .like .tag{
         position: relative;
-        width: 98px;
         font-size: 14px;
     }
     .flex-left .releaseDate .like .name{

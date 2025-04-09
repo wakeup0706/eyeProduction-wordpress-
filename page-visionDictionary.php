@@ -1,8 +1,6 @@
-<?php 
-    get_header();
-?>
+<?php  get_header();?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/visionDictionary.css" />
-<main>
+    <main>
         <section class="popularArticles inConteiner">
             <div class="bg vector3"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/backgrounds/Vector3.png" alt=""></div>
             <div class="bg vector4"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/backgrounds/Vector4.png" alt=""></div>
@@ -17,123 +15,52 @@
                 <div class="section-title"><p class="text-top">人気記事</p></div>
             </div>
             <div class="popularArticle">
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular2.webp" alt="">
+            <?php
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                // $sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'popular';
+                $args = array(
+                    'post_type' => 'all_articles',
+                    'posts_per_page' => 6,
+                    'paged' => $paged,
+                    'category_name' => '視力回復辞典(視力回復の真実)', // Add your category slug 
+                    // 'meta_key' => 'post_views';
+                    'orderby' => 'meta_value_num',
+                    'order' => 'DESC'
+                );
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
+                        $category = get_the_category();
+                        ?>
+                <div class="seeMoreArticle" onclick="location.href='<?php echo get_permalink(); ?>';">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                    <?php else : ?>
+                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                    <?php endif; ?>
                     <div class="articleContent">
                         <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
+                            <div class="articleType-text"><p><?php echo esc_html($category[0]->name); ?></p></div>
                             <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
                         </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
+                        <div class="articleContent-date"><p><?php echo get_the_date('Y.m.d'); ?></p></div>
                         <div class="articleContent-text">
-                            <p>視力回復の結果を出す子の夏休みの過ごし方</p>
+                            <p><?php echo the_title(); ?></p>
                         </div>
                     </div>
                 </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
+                <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    ?>
+                    <div class="no-articles">
+                        <p>記事が見つかりませんでした。</p>
                     </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular4.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular5.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular2.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>視力回復の結果を出す子の夏休みの過ごし方</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular4.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular5.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>目に優しいレシピ</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>豚肉とキャベツ、ニンジンの味噌炒め</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/popular/popular3.webp" alt="">
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p>2025/02/17</p></div>
-                        <div class="articleContent-text">
-                            <p>Ｂ判定は合格？</p>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                endif;
+                ?>
             </div>
         </section>
         <section class="allVision inConteiner">
@@ -141,134 +68,98 @@
                 <div class="visionDictionaryIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/visionDic.png" alt="testResult"></div>
                 <div class="section-title"><p class="text-top">すべての記事</p></div>
                 <div class="sortButton">
-                    <div class="selected">新しい順</div><div>|</div><div class="selected">人気順</div><div>|</div><div class="selected">古い順</div>
+                    <div onclick='location.href="<?php echo add_query_arg("sort", "newest", get_permalink()); ?>"' class="selected">新しい順</div>
+                    <div>|</div>
+                    <div onclick='location.href="<?php echo add_query_arg("sort", "popular", get_permalink()); ?>"' class="selected">人気順</div>
+                    <div>|</div>
+                    <div onclick='location.href="<?php echo add_query_arg("sort", "oldest", get_permalink()); ?>"' class="selected">古い順</div>
                 </div>
             </div>
             <div class="allVisionArticles">
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article1.webp" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>視力回復の結果を出す子の夏休みの過ごし方</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article2.webp" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>Ｂ判定は合格？</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article3.jpg" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>Ｂ判定は合格？</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article1.webp" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>視力回復の結果を出す子の夏休みの過ごし方</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article2.webp" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>Ｂ判定は合格？</p>
+                <?php
+                // Get current page number
+                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                
+                // Get sort parameter from URL
+                $sort1 = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'newest';
+                
+                // Set up query arguments based on sort
+                $args = array(
+                    'post_type' => 'all_articles',
+                    'posts_per_page' => 9,
+                    'paged' => $paged,
+                    'category_name' => '視力回復辞典(視力回復の真実)' // Add your category slug here
+                );
+                
+                switch($sort1) {
+                    case 'popular':
+                        //$args['meta_key'] = 'post_views';
+                        $args['orderby'] = 'meta_value_num';
+                        $args['order'] = 'DESC';
+                        break;
+                    case 'oldest':
+                        $args['orderby'] = 'date';
+                        $args['order'] = 'ASC';
+                        break;
+                    default: // newest
+                        $args['orderby'] = 'date';
+                        $args['order'] = 'DESC';
+                }
+                
+                $query = new WP_Query($args);
+
+                if ($query->have_posts()) :
+                    while ($query->have_posts()) : $query->the_post();
+                        $category = get_the_category();
+                        ?>
+                        <div class="seeMoreArticle" onclick="location.href='<?php echo get_permalink(); ?>';">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                            <?php endif; ?>
+                            <div class="articleContent">
+                                <div class="articleType">
+                                    <div class="articleType-text">
+                                        <p><?php echo esc_html($category[0]->name); ?></p>
+                                    </div>
+                                    <div class="articleType-mark">
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark">
+                                    </div>
+                                </div>
+                                <div class="articleContent-date">
+                                    <p><?php echo get_the_date('Y.m.d'); ?></p>
+                                </div>
+                                <div class="articleContent-text">
+                                    <p><?php echo the_title(); ?></p>
+                                </div>
                             </div>
                         </div>
+                    <?php
+                    endwhile;
+                    wp_reset_postdata();
+                else :
+                    ?>
+                    <div class="no-articles">
+                        <p>記事が見つかりませんでした。</p>
                     </div>
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article3.jpg" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>Ｂ判定は合格？</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article1.webp" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>視力回復の結果を出す子の夏休みの過ごし方</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article2.webp" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>Ｂ判定は合格？</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="seeMoreArticle" onclick="location.href='<?php echo site_url();?>/detailPages/visionDictionaryDetail ';">
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article3.jpg" alt="">
-                        <div class="articleContent">
-                            <div class="articleType">
-                                <div class="articleType-text"><p>視力回復辞典(視力回復の真実)</p></div>
-                                <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                            </div>
-                            <div class="articleContent-date"><p>2025/02/17</p></div>
-                            <div class="articleContent-text">
-                                <p>Ｂ判定は合格？</p>
-                            </div>
-                        </div>
-                    </div>
+                <?php
+                endif;
+                ?>
             </div>
-            <div class="pagenation flex">
-                <div class="before"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/before.png" alt="«"><span>«</span></div>
-                <div class="action">1</div>
-                <div>2</div>
-                <div>3</div>
-                <div class="after"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/after.png" alt="»"><span>»</span></div>
+
+            <div class="pagenation">
+                <?php
+                echo paginate_links(array(
+                    'total' => $query->max_num_pages,
+                    'current' => $paged,
+                    'prev_text' => '<div class="before"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/before.png" alt="«"><span>«</span></div>',
+                    'next_text' => '<div class="after"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/after.png" alt="»"><span>»</span></div>',
+                    'type' => 'list',
+                    'before_page_number' => '<div>',
+                    'after_page_number' => '</div>'
+                ));
+                ?>
             </div>
         </section>
         <section class="visionImproment">
@@ -282,6 +173,4 @@
             <div class="container"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyetest_baner.jpg" alt="eyetest_baner"></div>
         </section>
     </main>
-    <?php
-    get_footer(); 
-?>
+    <?php get_footer(); ?>

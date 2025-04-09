@@ -76,7 +76,6 @@ main .sns-content img:hover{
 }
 .flex-left .releaseDate .like .tag{
     position: relative;
-    width: 112px;
 }
 .flex-left .releaseDate .like .name{
     font-size: 16px;
@@ -114,7 +113,6 @@ main .sns-content img:hover{
 }
 .flex-left .banner img{
     height: 100%;
-    object-fit: cover;
 }
 
 .flex-left .properties{
@@ -168,6 +166,9 @@ main .sns-content img:hover{
     position: relative;
     padding-block: 15px;
     border-bottom: 6px solid #C4D700;
+}
+.SBC .categoryName p{
+    margin-left: 20px;
 }
 .SBC .categoryName::after{
     content: "";
@@ -418,7 +419,6 @@ main .sns-content img:hover{
 .viewRanking .item img{
     max-width: 130px;
     max-height: 70px;
-    object-fit: cover;
     border-radius: 5px;
 }
 .viewRanking .item .item-title{
@@ -458,7 +458,6 @@ main .sns-content img:hover{
 .relativeArticles .item img{
     max-width: 130px;
     max-height: 70px;
-    object-fit: cover;
     border-radius: 5px;
 }
 .relativeArticles .item .item-title{
@@ -522,9 +521,6 @@ main .sns-content img:hover{
     .flex-left .releaseDate .like .name{
         font-size: 12px;
     }
-    .flex-left .releaseDate .like .tag{
-        width: 84px;
-    }
     .flex-left .bookData .book-content{
         margin-block: 30px;
         padding-inline: 10px;
@@ -546,6 +542,15 @@ main .sns-content img:hover{
     .byCategory .categoryName{
         padding-block: 20px 10px;
         font-size: 18px;
+    }
+    .SBC .categoryName{
+        font-size: 18px;
+    }
+    .byInitial{
+        margin-top: 20px;
+    }
+    .byInitial .categoryLists{
+        margin-top: 10px;
     }
 }
 @media only screen and (max-width: 401px) {

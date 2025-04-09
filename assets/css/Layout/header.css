@@ -70,10 +70,10 @@ header .top-header .hamburger .circle::before{
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 header .top-header .hamburger .circle::after{
-    top: 35%;
+    top: 33%;
 }
 header .top-header .hamburger .circle::before{
-    top: 65%;
+    top: 63%;
 }
 
 /* Logo Content */
@@ -203,7 +203,7 @@ header .top-header .sns-content img:hover{
         padding: 5px 0;
     }
     header .top-header .logo-content{
-        padding: 0 20px;
+        padding: 0 0px;
     }
     header .top-header .logo-content .logo{
         max-width: 310px;
@@ -267,6 +267,7 @@ header .top-header .sns-content img:hover{
         width: 90px;
     }
 }
+
 @media screen and (max-width: 504px) {
     body {
         padding-top: 171px;
@@ -285,10 +286,10 @@ header .top-header .sns-content img:hover{
     header .top-header .sns-content.flex{
         display: none;
     }
-    header .top-header .logo-content{
+    /* header .top-header .logo-content{
         margin-inline: auto 0;
         padding: 0 15px;
-    }
+    } */
     header .top-header .logo-content .logo{
         max-width: 210px;
     }
@@ -331,7 +332,7 @@ header .top-header .sns-content img:hover{
         height: 58px;
     }
     header .top-header .logo-content .idea{
-        display: none;
+        margin-top: 3px;
     }
     header .top-header .logo-content .logo{
         max-width: 170px;
@@ -440,7 +441,7 @@ header .menu .menuButtons .menuButton:hover::after{
     display: none;
 }
 .nav-down .search-dropdown >div{ 
-    height: 50px;
+    height: 52px;
     width: 100%;
     background-color: #E6E6E6cf;
 }
@@ -480,7 +481,6 @@ header .menu .menuButtons .menuButton:hover::after{
     border: 1px solid #0A6FC8;
     padding-inline: 5px;
     border-radius: 3px;
-    margin-top: -5px;
 }
 .nav-down .search-dropdown .latest-link p:hover::after{
     content: "";
@@ -552,7 +552,21 @@ header .menu .menuButtons .menuButton:hover::after{
         margin-top: 0;
         font-size: 12px;
     }
-
+    .nav-down .search-dropdown .latest-link .hotKeyword{
+        font-size: 14px;
+        margin-top: -2px;
+    }
+    .nav-down .search-dropdown >div{
+        height: 40px;
+    }
+    .search-Button input[type=text]{
+        margin-top: 3px;
+        height: 33px;
+    }
+    .search-Button button{
+        height: 33px;
+        margin-top: 3px;
+    }
 }
 @media only screen and (max-width: 660px) {
     header .top-header .hamburger .circle{
@@ -562,7 +576,7 @@ header .menu .menuButtons .menuButton:hover::after{
 }
 @media only screen and (max-width: 504px) {
     .nav-up {
-        top: -160px;
+        top: -172px;
       }
       header .menu {
         padding-block: 3px;
@@ -574,13 +588,14 @@ header .menu .menuButtons .menuButton:hover::after{
         top: 65px;
     }
     .menu .menuButtons .searchButton{
-        right: 23px;
-        top: 45px;
-        transform: translateY(-50%);
+        top: -30px;
     }
     .menu .menuButtons .searchButton .button {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
+        padding: 10px;
+        background-color: #84C225;
+        border-radius: 50%;
     }
     .menuButton .icon {
         width: 22px;
@@ -590,16 +605,14 @@ header .menu .menuButtons .menuButton:hover::after{
 @media only screen and (max-width: 470px) {
     header .menu {
         padding-block: 3px;
-        padding-left: 22px;
+        padding-inline: 10px;
+    }
+    .menu .container{
+        padding-inline: 0px;
     }
     .menu .menuButtons .searchButton {
-        right: 10px;
+        right: 0px;
     }
-    .menu .container {
-        padding-right: 55px;
-    }
-}
-@media only screen and (max-width: 407px) {
     .menuButton p {
         font-size: 10px;
         font-weight: 400;
@@ -707,11 +720,12 @@ header .menu .menuButtons .menuButton:hover::after{
         height: calc(100vh - 184px);
     }
 }
+
 @media screen and (max-width: 504px) {
     .sidebar{
-        margin-top: 172px;
+        margin-top: 168px;
         width: 100%;
-        height: calc(100vh - 172px);
+        height: calc(100vh - 168px);
     }
     .sidebar .close{
         font-size: 20px;
@@ -749,21 +763,14 @@ header .menu .menuButtons .menuButton:hover::after{
 }
 @media screen and (max-width: 352px) {
     body {
-        padding-top: 165px;
+        padding-top: 145px;
     }
     .sidebar{
-        margin-top: 165px;
-        height: calc(100vh - 165px);
+        margin-top: 145px;
+        height: calc(100vh - 145px);
     }
 }
 @media screen and (max-width: 322px) {
-    body {
-        padding-top: 180px;
-    }
-    .sidebar{
-        margin-top: 180px;
-        height: calc(100vh - 180px);
-    }
     .nav-up {
         top: -181px;
     }

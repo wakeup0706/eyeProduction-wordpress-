@@ -135,7 +135,6 @@ main .sns-content img:hover{
 .flex-left  .under-banner img{
     border-radius: 40px 0 40px 0;
     border: 10px solid var(--seeMore-button);
-    object-fit: cover;
 }
 .el-input__inner{
     -webkit-appearance: none;

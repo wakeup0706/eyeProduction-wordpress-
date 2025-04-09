@@ -124,7 +124,6 @@ main .sns-content img:hover{
 }
 .flex-left .banner img{
     height: 100%;
-    object-fit: cover;
 }
 
 .flex-left .index{
@@ -429,7 +428,6 @@ main .sns-content img:hover{
 .popularArticles .item img{
     max-width: 130px;
     max-height: 70px;
-    object-fit: cover;
     border-radius: 5px;
 }
 .popularArticles .item .item-title{
@@ -469,7 +467,6 @@ main .sns-content img:hover{
 .relativeArticles .item img{
     max-width: 130px;
     max-height: 70px;
-    object-fit: cover;
     border-radius: 5px;
 }
 .relativeArticles .item .item-title{

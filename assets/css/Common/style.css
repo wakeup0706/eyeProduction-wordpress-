@@ -15,6 +15,7 @@ html, body{
 img {
     width: 100%;
     height: auto;
+    object-fit: cover;
 }
 div{
     position: relative;
@@ -172,7 +173,6 @@ main{
 }
 .popularArticle .seeMoreArticle img{
     height: 55%;
-    object-fit: cover;
     overflow: hidden;
 }
 
@@ -202,7 +202,7 @@ main{
     bottom: 0;
 }
 .popularArticle .seeMoreArticle .articleContent .articleContent-text{
-    max-height: 150px;
+    max-height: 121px;
     padding: 20px 20px;
     font-size: 16px;
     overflow: hidden;
@@ -225,6 +225,74 @@ main{
     max-width: 355px;
     width: 100%;
     min-width: 195px;
+}
+
+.pagenation{
+    margin-inline: auto;
+    width: fit-content;
+}
+.pagenation .page-numbers{
+    position: relative;
+    display: flex;
+    list-style-type: none;
+}
+.pagenation .page-numbers li{
+    width: 35px;
+    height: 35px;
+    background-color: #FFF;
+    border-radius: 50%;
+    margin-inline: 5px;
+    box-shadow: 0 0 5px #0000004a;
+}
+.pagenation img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.pagenation .before,.pagenation .after{
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+.pagenation .before span,.pagenation span{
+    font-size: 25px;
+    left: 38%;
+    top: 39%;
+    transform: translate(-50%, -50%);
+}
+.pagenation .action{
+    color: #fff;
+    background-color: var(--seeMore-button);
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    padding-left: 14px;
+}
+
+.selected{
+    cursor: pointer;
+    color: #323232;
+}
+.selected::after{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0px;
+    background-color: var(--section-title-underline);
+    transition: all .3s;
+    cursor: pointer;
+}
+.selected:hover::after{
+    content: "";
+    width: 120%;
+    height: 2px;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -267,6 +335,29 @@ main{
     .popularArticles .categoryName {
         font-size: 28px;
         margin-block: 5px 35px;
+    }
+}
+@media only screen and (max-width: 616px) {
+    .pagenation .before, .pagenation .after{
+        width: 35px;
+        height: 35px;
+    }
+    .pagenation >div{
+        width: 30px;
+        height: 30px;
+        padding-top: 4px;
+        padding-left: 11px;
+    }
+    .pagenation .action{
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        padding-left: 13px;
+    }
+    .pagenation .before span, .pagenation span{
+        font-size: 25px;
+        left: 50%;
+        top: 40%;
     }
 }
 @media only screen and (max-width: 610px) {

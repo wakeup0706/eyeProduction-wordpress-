@@ -98,6 +98,9 @@
     position: relative;
     margin-top: 30px;
 }
+.visionTesting .content .step-10 .subject{
+    margin-bottom: 30px;
+}
 .visionTesting .content .subjectIcon{
     position: relative;
     z-index: 1;
@@ -304,14 +307,12 @@
   display:block;
   margin-inline: auto;
   max-width: 455px;
-  object-fit: cover;
   border: 1px solid var(--section-title);
 }
 .visionTesting .content .visionTest-img2{
   display: none;
   margin-inline: auto;
   max-width: 300px;
-  object-fit: cover;
   border: 1px solid var(--section-title);
 }
 @media screen and (max-width: 768px) {
@@ -363,6 +364,7 @@
 .range-slider .input-range {
   height:300px;
   border-radius: 5px;
+  accent-color: gray;
   background: #ccc;
   outline: none;
   -webkit-appearance: slider-vertical;
@@ -379,6 +381,9 @@
 }
 input::-moz-focus-inner {
   border: 0;
+}
+#img_1,#img_2{
+  margin-top: -125px;
 }
 @media screen and (max-width: 504px) {
   .visionTest .categoryName{
@@ -616,7 +621,7 @@ input::-moz-focus-inner {
     top: 4px
   }
 }
-.vision-test7{
+.vision-test8{
   margin-block: 20px;
   width: 370px;
   margin-inline: auto;
@@ -626,7 +631,7 @@ input::-moz-focus-inner {
   margin-inline: auto;
 }
 @media screen and (max-width: 480px) {
-  .vision-test7{
+  .vision-test8{
     width: 270px;
   }
 }
@@ -638,7 +643,7 @@ input::-moz-focus-inner {
   max-width: 274px;
   max-height: 215px;
   border-radius: 20px;
-  padding: 15px 37px 26px 37px;
+  padding: 15px 28px 26px 28px;
   background-color: white;
   box-shadow: 0 4px 6px #00814D4a;
 }

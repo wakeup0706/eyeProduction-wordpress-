@@ -54,13 +54,9 @@
     box-shadow: 0 3px 3px #0000004a;
     overflow: hidden;
 }
-.allVisionArticles .seeMoreArticle .articleImg{
-    height: 70%;
+.allVisionArticles .seeMoreArticle img{
+    height: 67%;
     overflow: hidden;
-}
-.allVisionArticles .seeMoreArticle .articleImg img{
-    height: 100%;
-    object-fit: cover;
 }
 .allVisionArticles .articleContent{
     position: relative;
@@ -89,7 +85,7 @@
     bottom: 0;
 }
 .allVisionArticles .articleContent .articleContent-text{
-    max-height: 55px;
+    max-height: 70px;
     padding: 4px 20px;
     font-size: 15px;
     color: var(--text-black);
@@ -100,51 +96,8 @@
     font-size: 14px;
     padding-left: 20px;
 }
-.allVision .pagenation{
-    width: fit-content;
-    margin-inline: auto;
-    align-items: center;
-    margin-top: 35px;
-}
-.allVision .pagenation >div{
-    width: 35px;
-    height: 35px;
-    background-color: #FFF;
-    border-radius: 50%;
-    margin-inline: 5px;
-    box-shadow: 0 0 5px #0000004a;
-    padding-top: 5px;
-    padding-left: 13px;
-    cursor: pointer;
-}
-.allVision .pagenation img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-.allVision .pagenation .before,.allVision .pagenation .after{
-    width: 40px;
-    height: 40px;
-    position: relative;
-}
-.allVision .pagenation .before span,.allVision .pagenation span{
-    position: absolute;
-    font-size: 30px;
-    left: 50%;
-    top: 43%;
-    transform: translate(-50%,-50%);
-}
-.allVision .pagenation .action{
-    color: #fff;
-    background-color: var(--seeMore-button);
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    padding-left: 14px;
+.space{
+    display: none;
 }
 @media only screen and (max-width: 440px) {
     .allVisionArticles{
@@ -156,7 +109,7 @@
 /* visionImproment content */
 .visionImproment{
     position: relative;
-    height: 500px;
+    height: 425px;
 }
 .visionImproment .backgroundImg{
     width: 100%;
@@ -176,7 +129,7 @@
 .baners .baner{
     width: 400px;
     max-height: 280px;
-    height: 280px;
+    height: 240px;
     cursor: pointer;
 }
 .leftBaner{
@@ -184,22 +137,19 @@
     background-size: cover;
     background-position: center;
     left: 0;
-    border-radius: 0 150px 0 150px;
-    border: 10px solid #ffffff;
+    border-radius: 0 40px 0 40px;
+    border: 10px solid var(--seeMore-button);
 }
 .rightBaner{
     background-image: url('../../img/land_banner2.jpg');
     background-size: cover;
     background-position: center;
     right: 0;
-    border-radius: 150px 0 150px 0;
-    border: 10px solid #ffffff;
+    border-radius: 40px 0 40px 0;
+    border: 10px solid var(--seeMore-button);
 }
 
 @media screen and (max-width: 1200px) {
-    .baners .baner{
-        height: 300px;
-    }
     .leftBaner, .rightBaner{
         border-width: 10px;
     }
@@ -208,6 +158,7 @@
 @media screen and (max-width: 768px) {
     .visionImproment{
         height: auto;
+        margin-bottom: 20px;
     }
     .visionImproment .backgroundImg{
         height: 230px;
@@ -218,13 +169,7 @@
         gap: 15px;
     }
     .baners .baner{
-        height: 200px;
-    }
-    .leftBaner{
-        border-radius: 0 100px 0 100px;
-    }
-    .rightBaner{
-        border-radius: 100px 0 100px 0;
+        height: 180px;
     }
 }
 
@@ -241,11 +186,20 @@
     }
     .baners .baner{
         width: 90%;
-        height: 200px;
+        height: 280px;
     }
     .leftBaner, .rightBaner{
         border-width: 10px;
-        border-radius: 0 50px 0 50px;
+    }
+}
+@media screen and (max-width: 380px) {
+    .baners .baner{
+        height: 240px;
+    }
+}
+@media screen and (max-width: 405px) {
+    .baners .baner{
+        height: 190px;
     }
 }
 @media screen and (max-width: 380px) {
@@ -269,67 +223,72 @@
 /* end endBanner content */
 
 .fromShop{
-    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    margin-top: 25px;
+}
+.fromShop .goProducts{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 20px;
+    font-weight: 1000;
+    text-align: center;
+    padding-top: 15%;
+    color: white;
+    background-color: var(--seeMore-button);
+}
+.fromShop p{
+    width: fit-content;
+    color: var(--text-black);
+    font-size: 20px;
     font-weight: 700;
-    position: absolute;
-    color: #bdbdbd;
-    top: 150px;
-    right: 0;
-    width: 565px;
 }
-@media screen and (max-width: 1070px) {
-    .fromShop{
-        font-size: 26px;
-        top: 166px;
-        width: 481px;
-    }
-}
-@media screen and (max-width: 960px) {
-    .fromShop{
-        font-size: 20px;
-        top: 180px;
-        width: 365px;
-    }
-}
-@media screen and (max-width: 800px) {
-    .fromShop{
+@media screen and (max-width: 739px) {
+    .fromShop p{
         font-size: 17px;
-        top: 186px;
-        width: 308px;
     }
 }
-@media screen and (max-width: 725px) {
-    .fromShop{
-        font-size: 17px;
-        top: 153px;
-        width: 594px;
-    }
-}
-@media screen and (max-width: 610px) {
-    .fromShop{
+@media screen and (max-width: 674px) {
+    .fromShop p{
         font-size: 14px;
-        top: 141px;
-        width: 490px;
     }
-}
-@media screen and (max-width: 504px) {
+    .fromShop .goProducts{
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+        padding-top: 5%;
+    }
+} 
+@media screen and (max-width: 564px) {
     .popularArticle{
         margin-top: 26px;
     }
     .popularArticle .bestPopular{
         margin-top: 30px;
     }
-    .fromShop{
+    .fromShop p{
         font-size: 14px;
-        top: 142px;
-        width: 350px;
+        text-align: center;
+    }
+    .space{
+        display: block;
     }
     .allVision{
         padding-block: 60px 280px;
     }
 }
-@media screen and (max-width: 354px) {
-    .fromShop{
-        width: 253px;
+@media screen and (max-width: 372px) {
+    .fromShop p {
+        font-size: 12px;
+        text-align: center;
+    }
+    .fromShop .goProducts {
+        width: 25px;
+        height: 25px;
+        font-size: 16px;
+        padding-top: 1%;
     }
 }
