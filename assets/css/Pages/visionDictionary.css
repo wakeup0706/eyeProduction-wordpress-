@@ -10,7 +10,7 @@
 /*  all visionDictionary content */
 .allVision{
     position: relative;
-    padding-block: 140px 280px;
+    padding-block: 70px 280px;
 }
 .visionDictionaryTitle{
     position: relative;
@@ -30,41 +30,20 @@
     gap: 20px;
     justify-content: flex-end;
 }
-
-@media only screen and (max-width: 610px) {
-    .visionDictionaryIcon{
-        width: 40px;
-        top: -7px;
-    }
-}
-@media only screen and (max-width: 725px) {
-    .allVision{
-        padding-block: 105px 280px;
-    }
-}
-@media only screen and (max-width: 797px) {
-    .allVision .sortButton{
-        top: 55px;
-        color: var(--text-black);
-        gap: 10px;
-        font-size: 12px;
-    }
-}
-.allVisionArticles{
+.cvf-universal-content{
     margin-block: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(244px, 1fr)); /* Ensures equal width */
     gap: 20px;
     margin-inline: auto;
     padding-inline: 20px;
-    margin-top: 35px;
     justify-items: center;
-}
 
-.allVisionArticles .seeMoreArticle{
+}
+.seeMoreArticle{
     border-radius:5px;
     max-width: 340px;
-    max-height: 370px;
+    height: 340px;
     width: 100%;
     background-color: white;
     box-shadow: 0 3px 3px #0000004a;
@@ -72,12 +51,12 @@
     cursor: pointer;
 }
 @media only screen and (max-width: 847px) {
-    .allVisionArticles .seeMoreArticle:nth-child(7),.allVisionArticles .seeMoreArticle:nth-child(8),.allVisionArticles .seeMoreArticle:nth-child(9){
+    .seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
         display: none;
     }
 }
 @media only screen and (max-width: 600px) {
-    .allVisionArticles .seeMoreArticle{
+    .seeMoreArticle{
         height: 350px;
     }
     .allVisionArticles{
@@ -85,23 +64,23 @@
     }
 }
 @media only screen and (max-width: 504px) {
-    .allVisionArticles .seeMoreArticle:nth-child(4),.allVisionArticles .seeMoreArticle:nth-child(5),.allVisionArticles .seeMoreArticle:nth-child(6),.allVisionArticles .seeMoreArticle:nth-child(7),.allVisionArticles .seeMoreArticle:nth-child(8),.allVisionArticles .seeMoreArticle:nth-child(9){
+    .seeMoreArticle:nth-child(4),.seeMoreArticle:nth-child(5),.seeMoreArticle:nth-child(6),.seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
         display: none;
     }
 }
-.allVisionArticles .seeMoreArticle img{
+.seeMoreArticle img{
     height: 55%;
 }
 
-.allVisionArticles .articleContent{
+.articleContent{
     position: relative;
     max-height: 25px;
 }
-.allVisionArticles .articleContent .articleType{
+.articleContent .articleType{
     margin-top: -10px;
     position: relative;
 }
-.allVisionArticles .articleContent .articleType .articleType-text {
+.articleContent .articleType .articleType-text {
     max-width: 180px;
     width: fit-content;
     margin-inline: auto;
@@ -112,20 +91,20 @@
     border: 1px solid var(--card-type);
 }
 
-.allVisionArticles .articleContent .articleType .articleType-mark{
+.articleContent .articleType .articleType-mark{
     max-width: 28px;
     max-height: 28px;
     position: absolute;
     right: 13px;
     bottom: 0;
 }
-.allVisionArticles .articleContent .articleContent-text{
+.articleContent .articleContent-text{
     max-height: 150px;
     padding: 10px 20px;
     font-size: 16px;
     overflow: hidden;
 }
-.allVisionArticles .articleContent .articleContent-date{
+.articleContent .articleContent-date{
     color: #888888;
     font-size: 14px;
     padding-left: 20px;
@@ -180,7 +159,17 @@
         border-width: 10px;
     }
 }
-
+@media only screen and (max-width: 797px) {
+    .allVision .sortButton{
+        top: 55px;
+        color: var(--text-black);
+        gap: 10px;
+        font-size: 12px;
+    }
+    .cvf-universal-content{
+        margin-top: 10px;
+    }
+}
 @media screen and (max-width: 768px) {
     .visionImproment{
         height: auto;
@@ -198,7 +187,20 @@
         height: 180px;
     }
 }
-
+@media only screen and (max-width: 725px) {
+    .allVision{
+        padding-block: 60px 280px;
+    }
+}
+@media only screen and (max-width: 610px) {
+    .visionDictionaryIcon{
+        width: 40px;
+        top: -7px;
+    }
+    .cvf-universal-content{
+        margin-top: 30px;
+    }
+}
 @media screen and (max-width: 560px) {
     .visionImproment .backgroundImg{
         height: 370px;
@@ -240,9 +242,9 @@
         height: 150px;
     }
     .allVision{
-        padding-block: 60px 280px;
+        padding-block: 40px 280px;
     }
-    .allVisionArticles .seeMoreArticle{
+    .seeMoreArticle{
         height: 275px;
     }
 }

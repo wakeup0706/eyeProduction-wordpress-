@@ -154,16 +154,16 @@ main{
 
 .popularArticle{
     position: relative;
-    gap: 30px;
+    gap: 20px;
     padding-inline: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(236px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(244px, 1fr));
     justify-items: center;
 }
 .popularArticle .seeMoreArticle{
     border-radius:5px;
-    max-width: 327px;
-    max-height: 375px;
+    max-width: 340px;
+    max-height: 340px;
     aspect-ratio: 1 / 1.2;
     width: 100%;
     box-shadow: 0 3px 3px #0000004a;
@@ -227,52 +227,6 @@ main{
     min-width: 195px;
 }
 
-.pagenation{
-    margin-inline: auto;
-    width: fit-content;
-}
-.pagenation .page-numbers{
-    position: relative;
-    display: flex;
-    list-style-type: none;
-}
-.pagenation .page-numbers li{
-    width: 35px;
-    height: 35px;
-    background-color: #FFF;
-    border-radius: 50%;
-    margin-inline: 5px;
-    box-shadow: 0 0 5px #0000004a;
-}
-.pagenation img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-}
-.pagenation .before,.pagenation .after{
-    width: 40px;
-    height: 40px;
-    position: relative;
-}
-.pagenation .before span,.pagenation span{
-    font-size: 25px;
-    left: 38%;
-    top: 39%;
-    transform: translate(-50%, -50%);
-}
-.pagenation .action{
-    color: #fff;
-    background-color: var(--seeMore-button);
-    width: 40px;
-    height: 40px;
-    font-size: 20px;
-    padding-left: 14px;
-}
-
 .selected{
     cursor: pointer;
     color: #323232;
@@ -294,6 +248,7 @@ main{
     width: 120%;
     height: 2px;
 }
+
 
 @media only screen and (max-width: 1200px) {
     .container {
@@ -337,29 +292,7 @@ main{
         margin-block: 5px 35px;
     }
 }
-@media only screen and (max-width: 616px) {
-    .pagenation .before, .pagenation .after{
-        width: 35px;
-        height: 35px;
-    }
-    .pagenation >div{
-        width: 30px;
-        height: 30px;
-        padding-top: 4px;
-        padding-left: 11px;
-    }
-    .pagenation .action{
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
-        padding-left: 13px;
-    }
-    .pagenation .before span, .pagenation span{
-        font-size: 25px;
-        left: 50%;
-        top: 40%;
-    }
-}
+
 @media only screen and (max-width: 610px) {
     .popularTitleIcon{
         position: relative;
@@ -389,5 +322,72 @@ main{
 @media only screen and (max-width: 504px) {
     .popularArticle >div:nth-child(2),.popularArticle >div:nth-child(3),.popularArticle >div:nth-child(4){
         display: none;
+    }
+}
+
+.cvf-universal-pagination ul{
+    padding: 0;
+    margin-inline: auto;
+    width: fit-content;
+}
+.cvf-universal-pagination ul li img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.cvf-universal-pagination ul li span{
+    font-size: 25px;
+    left: 38%;
+    top: 39%;
+    transform: translate(-50%, -50%);
+}
+.cvf-universal-pagination ul li{
+    display: inline;
+    position: relative;
+    padding: 5px 12px;
+    background-color: #FFF;
+    border-radius: 50%;
+    margin-inline: 5px;
+    box-shadow: 0 0 5px #0000004a;
+}
+.cvf-universal-pagination ul li.active:hover {cursor: pointer; background: #1E8CBE; color: white; }
+.cvf-universal-pagination ul li.selected {
+    background-color: var(--seeMore-button);
+    padding: 6px 15px;
+    font-size: 20px;
+    padding-left: 14px;
+}
+.cvf-universal-pagination ul li.inactive {
+    background-color: var(--seeMore-button);
+    padding: 6px 15px;
+    font-size: 20px;
+    padding-left: 14px;
+    color: #ffffff;
+}
+@media only screen and (max-width: 616px) {
+    .cvf-universal-pagination ul li{
+        width: 35px;
+        height: 35px;
+    }
+    .pagenation >div{
+        width: 30px;
+        height: 30px;
+        padding-top: 4px;
+        padding-left: 11px;
+    }
+    .cvf-universal-pagination ul li.selected{
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+        padding-left: 13px;
+    }
+    .cvf-universal-pagination ul li span{
+        font-size: 25px;
+        left: 50%;
+        top: 40%;
     }
 }

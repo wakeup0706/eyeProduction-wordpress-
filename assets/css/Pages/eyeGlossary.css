@@ -9,7 +9,7 @@
 /*  all visionDictionary content */
 .allVision{
     position: relative;
-    padding-top: 140px;
+    padding-top: 70px;
 }
 .visionDictionaryTitle{
     position: relative;
@@ -29,37 +29,18 @@
     gap: 20px;
     justify-content: flex-end;
 }
-@media only screen and (max-width: 610px) {
-    .visionDictionaryIcon{
-        width: 40px;
-        top: -12px;
-    }
-}
-@media only screen and (max-width: 725px) {
-    .allVision{
-        padding-top: 105px;
-    }
-}
-@media only screen and (max-width: 797px) {
-    .allVision .sortButton{
-        top: 55px;
-        color: var(--text-black);
-        gap: 10px;
-        font-size: 12px;
-    }
-}
 
-.allVisionArticles{
+
+.cvf-universal-content{
     margin-block: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(244px, 1fr)); /* Ensures equal width */
     gap: 20px;
     margin-inline: auto;
     padding-inline: 20px;
-    margin-top: 35px;
     justify-items: center;
 }
-.allVisionArticles .seeMoreArticle{
+.seeMoreArticle{
     border-radius:5px;
     max-width: 340px;
     height: 340px;
@@ -69,19 +50,19 @@
     cursor: pointer;
     background-color: white;
 }
-.allVisionArticles .seeMoreArticle img{
+.seeMoreArticle img{
     height: 55%;
     overflow: hidden;
 }
-.allVisionArticles .articleContent{
+.articleContent{
     position: relative;
     max-height: 25px;
 }
-.allVisionArticles .articleContent .articleType{
+.articleContent .articleType{
     margin-top: -10px;
     position: relative;
 }
-.allVisionArticles .articleContent .articleType .articleType-text {
+.articleContent .articleType .articleType-text {
     max-width: 180px;
     width: fit-content;
     margin-inline: auto;
@@ -92,47 +73,32 @@
     border: 1px solid var(--card-type);
 }
 
-.allVisionArticles .articleContent .articleType .articleType-mark{
+.articleContent .articleType .articleType-mark{
     max-width: 28px;
     max-height: 28px;
     position: absolute;
     right: 13px;
     bottom: 0;
 }
-.allVisionArticles .articleContent .articleContent-text{
+.articleContent .articleContent-text{
     max-height: 150px;
     padding: 10px 20px;
     font-size: 16px;
     overflow: hidden;
 }
-.allVisionArticles .articleContent .articleContent-date{
+.articleContent .articleContent-date{
     color: #888888;
     font-size: 14px;
     padding-left: 20px;
     padding-top: 5px;
 }
-@media only screen and (max-width: 847px) {
-    .allVisionArticles .seeMoreArticle:nth-child(7),.allVisionArticles .seeMoreArticle:nth-child(8),.allVisionArticles .seeMoreArticle:nth-child(9){
-        display: none;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .allVisionArticles .seeMoreArticle{
-        height: 350px;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    }
-}
-@media only screen and (max-width: 504px) {
-    .allVisionArticles .seeMoreArticle:nth-child(4),.allVisionArticles .seeMoreArticle:nth-child(5),.allVisionArticles .seeMoreArticle:nth-child(6),.allVisionArticles .seeMoreArticle:nth-child(7),.allVisionArticles .seeMoreArticle:nth-child(8),.allVisionArticles .seeMoreArticle:nth-child(9){
-        display: none;
-    }
-}
+
 /* end all visionDictionary content */
 
 /* searchByCategory content */
 .searchByCategory{
     position: relative;
-    padding-block: 100px 300px;
+    padding-block: 70px 300px;
 }
 .eyeTestTitle{
     position: relative;
@@ -197,7 +163,7 @@
 
 /* byInitial content */
 .byInitial{
-    margin-block: 60px;
+    margin-block: 25px;
 }
 .byInitial .categoryLists{
     color: #21726A;
@@ -297,6 +263,12 @@
         border-width: 10px;
     }
 }
+@media only screen and (max-width: 847px) {
+    .seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
+        display: none;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .visionImproment{
         height: auto;
@@ -314,16 +286,47 @@
         height: 180px;
     }
 }
+@media only screen and (max-width: 725px) {
+    .allVision{
+        padding-top: 60px;
+    }
+}
+@media only screen and (max-width: 797px) {
+    .allVision .sortButton{
+        top: 55px;
+        color: var(--text-black);
+        gap: 10px;
+        font-size: 12px;
+    }
+}
 @media only screen and (max-width: 610px) {
+    .visionDictionaryIcon{
+        width: 40px;
+        top: -12px;
+    }
+    .cvf-universal-content{
+        margin-top: 25px;
+    }
     .visionImproment .backgroundImg{
         margin-top: -335px;
     }
     .searchByCategory{
-        padding-block: 100px 200px;
+        padding-block: 70px 200px;
     }
     .testResultIcon{
         width: 40px;
         top: -1px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .seeMoreArticle{
+        height: 350px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    }
+}
+@media only screen and (max-width: 504px) {
+    .seeMoreArticle:nth-child(4),.seeMoreArticle:nth-child(5),.seeMoreArticle:nth-child(6),.seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
+        display: none;
     }
 }
 @media screen and (max-width: 560px) {
@@ -368,7 +371,7 @@
     .allVision{
         padding-top: 60px;
     }
-    .allVisionArticles .seeMoreArticle{
+    .seeMoreArticle{
         height: 275px;
     }
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Common/style.css" />
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Layout/header.css" />
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Layout/footer.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <?php wp_head(); ?> 
 </head>
 <body>

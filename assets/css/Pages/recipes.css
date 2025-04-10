@@ -10,7 +10,7 @@
 /*  all visionDictionary content */
 .allVision{
     position: relative;
-    padding-block: 140px 280px;
+    padding-block: 70px 280px;
 }
 .visionDictionaryTitle{
     position: relative;
@@ -38,10 +38,13 @@
 }
 @media only screen and (max-width: 725px) {
     .allVision{
-        padding-block: 105px 280px;
+        padding-block: 40px 280px;
     }
 }
 @media only screen and (max-width: 797px) {
+    .navtabs{
+        margin-top: 35px;
+    }
     .allVision .sortButton{
         top: 55px;
         color: var(--text-black);
@@ -53,7 +56,6 @@
 .navtabs {
     display: flex;
     justify-content: center;
-    margin-top: 70px;
     position: relative;
   }
   .navtabs .navtab {
@@ -95,7 +97,7 @@ display: block;
 display: none;
 }
 
-.allVisionArticles{
+.cvf-universal-content{
     display: none;
     margin-block: 10px;
     display: grid;
@@ -103,10 +105,10 @@ display: none;
     gap: 20px;
     margin-inline: auto;
     padding-inline: 20px;
-    margin-top: 35px;
+    margin-top: 15px;
     justify-items: center;
 }
-.allVisionArticles .seeMoreArticle{
+.seeMoreArticle{
     border-radius:5px;
     max-width: 340px;
     width: 100%;
@@ -116,19 +118,19 @@ display: none;
     overflow: hidden;
     cursor: pointer;
 }
-.allVisionArticles .seeMoreArticle img{
+.seeMoreArticle img{
     height: 55%;
     overflow: hidden;
 }
-.allVisionArticles .articleContent{
+.articleContent{
     position: relative;
     max-height: 25px;
 }
-.allVisionArticles .articleContent .articleType{
+.articleContent .articleType{
     margin-top: -10px;
     position: relative;
 }
-.allVisionArticles .articleContent .articleType .articleType-text {
+.articleContent .articleType .articleType-text {
     max-width: 180px;
     width: fit-content;
     margin-inline: auto;
@@ -139,40 +141,40 @@ display: none;
     border: 1px solid var(--card-type);
 }
 
-.allVisionArticles .articleContent .articleType .articleType-mark{
+.articleContent .articleType .articleType-mark{
     max-width: 28px;
     max-height: 28px;
     position: absolute;
     right: 13px;
     bottom: 0;
 }
-.allVisionArticles .articleContent .articleContent-text{
+.articleContent .articleContent-text{
     max-height: 150px;
     padding: 20px;
     font-size: 16px;
     overflow: hidden;
 }
-.allVisionArticles .articleContent .articleContent-date{
+.articleContent .articleContent-date{
     color: #888888;
     font-size: 14px;
     padding-left: 20px;
 }
 
 @media only screen and (max-width: 847px) {
-    .allVisionArticles .seeMoreArticle:nth-child(7),.allVisionArticles .seeMoreArticle:nth-child(8),.allVisionArticles .seeMoreArticle:nth-child(9){
+    .seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
         display: none;
     }
 }
 @media only screen and (max-width: 600px) {
-    .allVisionArticles{
+    .cvf-universal-content{
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
     }
-    .allVisionArticles .seeMoreArticle{
+    .seeMoreArticle{
         height: 350px;
     }
 }
 @media only screen and (max-width: 504px) {
-    .allVisionArticles .seeMoreArticle:nth-child(4),.allVisionArticles .seeMoreArticle:nth-child(5),.allVisionArticles .seeMoreArticle:nth-child(6),.allVisionArticles .seeMoreArticle:nth-child(7),.allVisionArticles .seeMoreArticle:nth-child(8),.allVisionArticles .seeMoreArticle:nth-child(9){
+    .seeMoreArticle:nth-child(4),.seeMoreArticle:nth-child(5),.seeMoreArticle:nth-child(6),.seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
         display: none;
     }
 }
@@ -262,10 +264,10 @@ display: none;
     .leftBaner, .rightBaner{
         border-width: 10px;
     }
-    .allVisionArticles .seeMoreArticle{
+    .seeMoreArticle{
         height: 300px;
     }
-    .allVisionArticles .articleContent .articleContent-text{
+    .articleContent .articleContent-text{
         font-size: 14px;
     }
 }
@@ -294,9 +296,9 @@ display: none;
         padding: 5px;
     }
     .allVision{
-        padding-block: 60px 280px;
+        padding-block: 30px 280px;
     }
-    .allVisionArticles .seeMoreArticle{
+    .seeMoreArticle{
         height: 275px;
     }
 }

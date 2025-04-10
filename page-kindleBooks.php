@@ -14,52 +14,36 @@
                 <div class="popularTitleIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/popular.png" alt="testResult"></div>
                 <div class="section-title"><p class="text-top">人気の書籍</p></div>
             </div>
-            <div class="popularArticle">
-            <?php
-                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $args = array(
-                    'post_type' => 'all_kindlebooks',
-                    'posts_per_page' => 3,
-                    'paged' => $paged,
-                    'category_name' => 'Kindleブックス', // Add your category slug here
-                    // $args['meta_key'] = 'post_views';
-                    'orderby' => 'meta_value_num',
-                    'order' => 'DESC'
-                );
-                $query = new WP_Query($args);
-
-                if ($query->have_posts()) :
-                    while ($query->have_posts()) : $query->the_post();
-                        $category = get_the_category();
-                        ?>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo get_permalink(); ?>';">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
-                    <?php else : ?>
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
-                    <?php endif; ?>
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p><?php echo esc_html($category[0]->name); ?></p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p><?php echo get_the_date('Y.m.d'); ?></p></div>
-                        <div class="articleContent-text">
-                            <p><?php echo the_title(); ?></p>
-                        </div>
+            <div>
+                <script type="text/javascript">
+                    $(document).ready(function($) {
+                        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+                        function cvf_load_all_posts(page){
+                            $(".cvf_pag_loading").fadeIn().css('background','#ccc');// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
+                            var data = {
+                                page: page,
+                                action: "demo-popular-load-posts",
+                                post_type: "all_kindlebooks",
+                                sort: "post_date DESC",
+                                category: "all",
+                                per_page: 3,
+                            };
+                            $.post(ajaxurl, data, function(response) {
+                                $(".cvf_universal_container1").html(response);
+                                $(".cvf_pag_loading1").css({'background':'none', 'transition':'all 1s ease-out'});
+                            });
+                        }
+                        cvf_load_all_posts(1);
+                        $(document).on('click', '.cvf_universal_container1 .cvf-universal-pagination li.active', function(){ 
+                            var page = $(this).attr('p');
+                            cvf_load_all_posts(page);
+                        });
+                    });
+                </script>
+                <div class = "cvf_pag_loading1">
+                    <div class = "cvf_universal_container1">
                     </div>
                 </div>
-                <?php
-                    endwhile;
-                    wp_reset_postdata();
-                else :
-                    ?>
-                    <div class="no-articles">
-                        <p>記事が見つかりませんでした。</p>
-                    </div>
-                <?php
-                endif;
-                ?>
             </div>
             </div>
         </section>
@@ -75,111 +59,53 @@
                 </div>
                 
                 <div class="navtabs">
-                    <div class="navtab active" data-target="newest" >新しい順</div>
-                    <div class="navtab" data-target="oldest" >古い順</div>
+                    <div class="navtab active" data-target="newest" id="newest">新しい順</div>
+                    <div class="navtab" data-target="oldest" id="oldest">古い順</div>
                     <div class="underline"></div>
                 </div>
 
                 <div id="newest" class="vision_articles card-wrapper active">
-                    <?php
-                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-
-                        // Set up query arguments based on sort
-                        $args = array(
-                        'post_type' => 'all_kindlebooks',
-                        'posts_per_page' => 8,
-                        'paged' => $paged,
-                        'category_name' => 'Kindleブックス', // Add your category slug here
-                        'orderby' => 'date',
-                        'order' => 'DESC',
-                        );
-
-                    $query = new WP_Query($args);
-
-                    if ($query->have_posts()) :
-                        while ($query->have_posts()) : $query->the_post();
-                            $category = get_the_category();
-                            ?>
-                        <div class="card" onclick="location.href='<?php echo get_permalink(); ?>';">
-                            <div class="card-front">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
-                            <?php else : ?>
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
-                            <?php endif; ?>
-                            </div>
-                            <div class="card-back">
-                                <h3><?php echo the_title(); ?></h3>
-                            </div>
+                    <script type="text/javascript">
+                    $(document).ready(function($) {
+                        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+                        let sort = "post_date DESC";
+                        let category = "all";
+                        $('#newest').click(function(){
+                            sort = "post_date DESC";
+                            cvf_load_all_posts(1);
+                        });
+                        $('#oldest').click(function(){
+                            sort = "post_date ASC";
+                            cvf_load_all_posts(1);
+                        });
+                        function cvf_load_all_posts(page){
+                            $(".cvf_pag_loading").fadeIn().css('background','#ccc');// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
+                            var data = {
+                                page: page,
+                                action: "demo-pagination-load-posts",
+                                post_type: "all_kindlebooks",
+                                sort: sort,
+                                category: category,
+                                per_page: 8,
+                            };
+                            $.post(ajaxurl, data, function(response) {
+                                $(".cvf_universal_container").html(response);
+                                $(".cvf_pag_loading").css({'background':'none', 'transition':'all 1s ease-out'});
+                            });
+                        }
+                        cvf_load_all_posts(1);
+                        $(document).on('click', '.cvf_universal_container .cvf-universal-pagination li.active', function(){ 
+                            var page = $(this).attr('p');
+                            cvf_load_all_posts(page);
+                        });      
+                    });
+                    </script>
+                    <div class = "cvf_pag_loading">
+                        <div class = "cvf_universal_container">
+                            <div class="cvf-universal-all_articles-content"></div>
                         </div>
-                        <?php
-                        endwhile;
-                        wp_reset_postdata();
-                    else :
-                        ?>
-                        <div class="no-articles">
-                            <p>記事が見つかりませんでした。</p>
-                        </div>
-                    <?php
-                    endif;
-                    ?>
+                    </div>
                 </div>
-                <div id="oldest" class="vision_articles card-wrapper">
-                    <?php
-                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                        // Set up query arguments based on sort
-                        $args = array(
-                        'post_type' => 'all_kindlebooks',
-                        'posts_per_page' => 8,
-                        'paged' => $paged,
-                        'category_name' => 'Kindleブックス', // Add your category slug here
-                        'orderby' => 'date',
-                        'order' => 'ASC'
-                        );
-
-                    $query = new WP_Query($args);
-
-                    if ($query->have_posts()) :
-                        while ($query->have_posts()) : $query->the_post();
-                            $category = get_the_category();
-                            ?>
-                        <div class="card" onclick="location.href='<?php echo get_permalink(); ?>';">
-                            <div class="card-front">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
-                            <?php else : ?>
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
-                            <?php endif; ?>
-                            </div>
-                            <div class="card-back">
-                                <h3><?php echo the_title(); ?></h3>
-                            </div>
-                        </div>
-                        <?php
-                        endwhile;
-                        wp_reset_postdata();
-                    else :
-                        ?>
-                        <div class="no-articles">
-                            <p>記事が見つかりませんでした。</p>
-                        </div>
-                    <?php
-                    endif;
-                    ?>
-                </div>
-                <div class="pagenation flex">
-                <?php
-                echo paginate_links(array(
-                    'total' => $query->max_num_pages,
-                    'current' => $paged,
-                    'prev_text' => '<div class="before"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/before.png" alt="«"><span>«</span></div>',
-                    'next_text' => '<div class="after"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/after.png" alt="»"><span>»</span></div>',
-                    'type' => 'list',
-                    'before_page_number' => '<div>',
-                    'after_page_number' => '</div>'
-                ));
-                ?>
-            </div>
             </div>
         </section>
         <section class="visionImproment">

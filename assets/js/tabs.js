@@ -12,14 +12,6 @@ tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     tabs.forEach(t => t.classList.remove('active'));
     tab.classList.add('active');
-    const target = tab.getAttribute('data-target');
-    contents.forEach(content => {
-      if (content.id === target) {
-        content.classList.add('active');
-      } else {
-        content.classList.remove('active');
-      }
-    });
     updateUnderline();
   });
 });

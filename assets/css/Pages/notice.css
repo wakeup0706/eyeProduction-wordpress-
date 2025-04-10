@@ -15,7 +15,7 @@
 .allVision{
     margin-top: 5px;
     position: relative;
-    padding-block: 120px 280px;
+    padding-block: 70px 280px;
 }
 .noticeTitle{
     position: relative;
@@ -29,7 +29,7 @@
 .navtabs {
     display: flex;
     justify-content: center;
-    margin-block: 35px 20px;
+    margin-block: 15px 10px;
     position: relative;
 }
 .navtabs .navtab {
@@ -53,9 +53,9 @@
     background: var(--seeMore-button);
     transition: left 0.3s ease, width 0.3s ease;
 }
-.popularArticle .seeMoreArticle img{
+.seeMoreArticle img{
     object-fit: contain;
-    padding: 25px;
+    padding: 25px 25px 0 25px;
 }
 .vision_articles.active{
     display: block;
@@ -77,6 +77,19 @@
     margin-bottom: 10px;
     background-color: #FFFFFF;
     cursor: pointer;
+}
+
+.seeMoreArticle .articleContent-date{
+    color: #888888;
+    font-size: 14px;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+.seeMoreArticle .contentText{
+    max-height: 121px;
+    padding: 5px 20px;
+    font-size: 16px;
+    overflow: hidden;
 }
 .vision_articles .content .contentDate{
     font-size: 16px;
@@ -177,9 +190,6 @@
     }
 }
 @media only screen and (max-width: 730px) {
-    .navtabs{
-        margin-block: 30px 20px;
-    }
     .navtabs .navtab {
         padding: 10px 17px;
     }
@@ -194,10 +204,9 @@
 }
 @media only screen and (max-width: 616px) {
     .allVision{
-        padding-block: 100px 280px;
+        padding-block: 35px 280px;
     }
     .navtabs{
-        margin-block: 30px 20px;
         font-size: 14px;
     }
     .navtabs .navtab {
@@ -253,7 +262,6 @@
 }
 @media only screen and (max-width: 490px) {
     .navtabs{
-        margin-block: 30px 20px;
         font-size: 12px;
     }
     .navtabs .navtab {
@@ -278,7 +286,7 @@
         margin-top: -60px;
         font-size: 16px;
     }
-    .vision_articles .content .contnetImage{
+    .vision_articles .content .article-thumbnail{
         width: 46px;
         margin-left: 20px;
     }

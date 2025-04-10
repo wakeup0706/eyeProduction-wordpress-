@@ -14,54 +14,36 @@
                 <div class="popularTitleIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/popular.png" alt="testResult"></div>
                 <div class="section-title"><p class="text-top">人気のアイケア商品</p></div>
             </div>
-            <div class="popularArticle">
-            <?php
-                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                $args = array(
-                    'post_type' => 'all_products',
-                    'posts_per_page' => 3,
-                    'paged' => $paged,
-                    'category_name' => 'アイケア商品', // Add your category slug here
-                    // $args['meta_key'] = 'post_views';
-                    'orderby' => 'meta_value_num',
-                    'order' => 'DESC'
-                );
-                
-                $query = new WP_Query($args);
-
-                if ($query->have_posts()) :
-                    while ($query->have_posts()) : $query->the_post();
-                        $category = get_the_category();
-                        ?>
-                <div class="seeMoreArticle" onclick="location.href='<?php echo get_permalink(); ?>';">
-                    <?php if (has_post_thumbnail()) : ?>
-                        <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
-                    <?php else : ?>
-                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
-                    <?php endif; ?>
-                    <div class="articleContent">
-                        <div class="articleType">
-                            <div class="articleType-text"><p><?php echo esc_html($category[0]->name); ?></p></div>
-                            <div class="articleType-mark"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark"></div>
-                        </div>
-                        <div class="articleContent-date"><p><?php echo get_the_date('Y.m.d'); ?></p></div>
-                        <div class="articleContent-text">
-                            <p><?php echo the_title(); ?></p>
-                        </div>
+            <div>
+                <script type="text/javascript">
+                    $(document).ready(function($) {
+                        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+                        function cvf_load_all_posts(page){
+                            $(".cvf_pag_loading").fadeIn().css('background','#ccc');// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
+                            var data = {
+                                page: page,
+                                action: "demo-popular-load-posts",
+                                post_type: "all_products",
+                                sort: "post_date DESC",
+                                category: "all",
+                                per_page: 3,
+                            };
+                            $.post(ajaxurl, data, function(response) {
+                                $(".cvf_universal_container1").html(response);
+                                $(".cvf_pag_loading1").css({'background':'none', 'transition':'all 1s ease-out'});
+                            });
+                        }
+                        cvf_load_all_posts(1);
+                        $(document).on('click', '.cvf_universal_container1 .cvf-universal-pagination li.active', function(){ 
+                            var page = $(this).attr('p');
+                            cvf_load_all_posts(page);
+                        });
+                    });
+                </script>
+                <div class = "cvf_pag_loading1">
+                    <div class = "cvf_universal_container1">
                     </div>
                 </div>
-                <?php
-                    endwhile;
-                    wp_reset_postdata();
-                else :
-                    ?>
-                    <div class="no-articles">
-                        <p>記事が見つかりませんでした。</p>
-                    </div>
-                <?php
-                endif;
-                ?>
-            </div>
             <div class="fromShop">
                 <p>商品の詳細は、同じ運営会社の<br class="space"/>「デスクライト名品館」でご覧いただけます。</p>
                 <a href=""><div class="goProducts">→</div></a>
@@ -73,90 +55,43 @@
                 <div class="section-title"><p class="text-top">すべてのアイケア商品</p></div>
             </div>
             <div class="allVisionArticles">
-            <?php
-                // Get current page number
-                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                
-                // Get sort parameter from URL
-                $sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'newest';
-                
-                // Set up query arguments based on sort
-                $args = array(
-                    'post_type' => 'all_products',
-                    'posts_per_page' => 6,
-                    'paged' => $paged,
-                    'category_name' => 'アイケア商品' // Add your category slug here
-                );
-                
-                switch($sort) {
-                    case 'popular':
-                        $args['meta_key'] = 'post_views';
-                        $args['orderby'] = 'meta_value_num';
-                        $args['order'] = 'DESC';
-                        break;
-                    case 'oldest':
-                        $args['orderby'] = 'date';
-                        $args['order'] = 'ASC';
-                        break;
-                    default: // newest
-                        $args['orderby'] = 'date';
-                        $args['order'] = 'DESC';
-                }
-                
-                $query = new WP_Query($args);
+                <script type="text/javascript">
+                    $(document).ready(function($) {
+                        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
+                        function cvf_load_all_posts(page){
+                            $(".cvf_pag_loading").fadeIn().css('background','#ccc');
+                            var data = {
+                                page: page,
+                                action: "demo-pagination-load-posts",
+                                post_type: "all_products",
+                                sort: "post_date DESC",
+                                category: "all",
+                                per_page: 9,
+                            };
+                        
+                            // Send the data
+                            $.post(ajaxurl, data, function(response) {
+                                // If successful Append the data into our html container
+                                $(".cvf_universal_container").html(response);
+                                // End the transition
+                                $(".cvf_pag_loading").css({'background':'none', 'transition':'all 1s ease-out'});
+                            });
+                        }
 
-                if ($query->have_posts()) :
-                    while ($query->have_posts()) : $query->the_post();
-                        $category = get_the_category();
-                        ?>
-                        <div class="seeMoreArticle" onclick="location.href='<?php echo get_permalink(); ?>';">
-                            <?php if (has_post_thumbnail()) : ?>
-                                <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
-                            <?php else : ?>
-                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
-                            <?php endif; ?>
-                            <div class="articleContent">
-                                <div class="articleType">
-                                    <div class="articleType-text">
-                                        <p><?php echo esc_html($category[0]->name); ?></p>
-                                    </div>
-                                    <div class="articleType-mark">
-                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/mark.png" alt="mark">
-                                    </div>
-                                </div>
-                                <div class="articleContent-date">
-                                    <p><?php echo get_the_date('Y.m.d'); ?></p>
-                                </div>
-                                <div class="articleContent-text">
-                                    <p><?php echo the_title(); ?></p>
-                                </div>
-                            </div>
-                        </div>
-                    <?php
-                    endwhile;
-                    wp_reset_postdata();
-                else :
-                    ?>
-                    <div class="no-articles">
-                        <p>記事が見つかりませんでした。</p>
+                        // Load page 1 as the default
+                        cvf_load_all_posts(1);
+
+                        $(document).on('click', '.cvf_universal_container .cvf-universal-pagination li.active', function(){ 
+                            var page = $(this).attr('p');
+                            cvf_load_all_posts(page);
+                        });      
+                    });
+                </script>
+                <div class = "cvf_pag_loading">
+                    <div class = "cvf_universal_container">
+                        <div class="cvf-universal-all_products-content"></div>
                     </div>
-                <?php
-                endif;
-                ?>
-            </div>
-
-            <div class="pagenation flex">
-                <?php
-                echo paginate_links(array(
-                    'total' => $query->max_num_pages,
-                    'current' => $paged,
-                    'prev_text' => '<div class="before"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/before.png" alt="«"><span>«</span></div>',
-                    'next_text' => '<div class="after"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/after.png" alt="»"><span>»</span></div>',
-                    'type' => 'list',
-                    'before_page_number' => '<div>',
-                    'after_page_number' => '</div>'
-                ));
-                ?>
+                </div>
             </div>
         </section>
         <section class="visionImproment">

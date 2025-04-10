@@ -17,7 +17,7 @@
 }
 .allVision{
     position: relative;
-    padding-block: 100px 280px;
+    padding-block: 50px 280px;
 }
 .noticeTitle{
     position: relative;
@@ -31,7 +31,7 @@
 .navtabs {
     display: flex;
     justify-content: center;
-    margin-block: 25px 20px;
+    margin-block: 5px 20px;
     position: relative;
 }
 .navtabs .navtab {
@@ -60,15 +60,17 @@
 }
 .vision_articles{
     display: none;
+}
+.cvf-universal-content{
+    display: grid;
     margin-block: 10px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ensures equal width */
     gap: 20px;
     justify-items: center;
     margin-inline: auto;
     padding-inline: 50px;
-    margin-top: 35px;
 }
-.vision_articles .card {
+.card {
     cursor: pointer;
     width: 100%;
     max-width: 255px;
@@ -91,8 +93,7 @@
         }
     }   
 }
-.vision_articles .card-front,
-.vision_articles .card-back {
+.card-front,.card-back {
     aspect-ratio: inherit;
     transition: inherit;
     width: 100%;
@@ -102,7 +103,7 @@
     transform-style: preserve-3d;
     transition: transform 0.8s ease;
 }
-.vision_articles .card-front {
+.card-front {
     z-index: 2;
 
     & > img {
@@ -110,7 +111,7 @@
         max-width: 100%;
     }
 }
-.vision_articles .card-back {
+.card-back {
     background-color: #000000cc;
     backface-visibility: hidden;
     padding: 1.5rem;
@@ -176,7 +177,7 @@
 }
 
 @media screen and (max-width: 780px) {
-    .vision_articles{
+    .cvf-universal-content{
         grid-template-columns: repeat(auto-fit, minmax(179px, 1fr));
     }
 }
@@ -198,14 +199,14 @@
     }
 }
 @media only screen and (max-width: 616px) {
-    .vision_articles{
+    .cvf-universal-content{
         padding-inline: 0;
     }
     .allVision{
-        padding-block: 55px 280px;
+        padding-block: 40px 280px;
     }
     .navtabs{
-        margin-block: 30px 20px;
+        margin-block: 15px 10px;
     }
     .navtabs .navtab {
         padding: 10px 40px;
@@ -237,7 +238,7 @@
     }
 }
 @media screen and (max-width: 520px) {
-    .vision_articles{
+    .cvf-universal-content{
         grid-template-columns: repeat(auto-fit, minmax(147px, 1fr));
     }
 }
@@ -252,7 +253,7 @@
     }
 }
 @media screen and (max-width: 380px) {
-    .vision_articles{
+    .cvf-universal-content{
         grid-template-columns: repeat(auto-fit, minmax(138px, 1fr));
         gap: 10px;
     }
@@ -268,7 +269,7 @@
     }
 }
 @media screen and (max-width: 325px) {
-    .vision_articles{
+    .cvf-universal-content{
         grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
         gap: 10px;
     }
