@@ -66,20 +66,25 @@
                         var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
                         let sort = "post_date DESC";
                         let category = "all";
+                        let initials = "";
                         $('#newest').click(function(){
                             sort = "post_date DESC";
+                            initials = "";
                             cvf_load_all_posts(1);
                         });
                         $('#oldest').click(function(){
                             sort = "post_date ASC";
+                            initials = "";
                             cvf_load_all_posts(1);
                         });
                         $('#popular').click(function(){
                             sort = "post_title";
+                            initials = "";
                             cvf_load_all_posts(1);
                         });
                         $('#alphabeta').click(function(){
                             sort = "post_title";
+                            initials = "";
                             cvf_load_all_posts(1);
                         });
                         function cvf_load_all_posts(page){
@@ -92,6 +97,7 @@
                                 category: category,
                                 per_page: 9,
                                 search_key: $("#hot_search").val(),
+                                initials : initials,
                             };
                             $.post(ajaxurl, data, function(response) {
                                 $(".cvf_universal_container").html(response);
@@ -104,6 +110,10 @@
                             cvf_load_all_posts(page);
                         });
                         $("#btn_hot_search").on('click', function() {
+                            cvf_load_all_posts(1);
+                        });
+                        $(".byInitial .categoryLists .row .row-list div").on('click', function(){
+                            initials = $(this).text().trim();
                             cvf_load_all_posts(1);
                         });
                     });
@@ -120,7 +130,7 @@
                 <div class="testResultIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/testResult.png" alt="testResult"></div>
                 <div class="section-title"><p class="text-top">分類や頭文字から探す</p></div>
             </div>
-            <div class="byCategory SBC">
+            <!-- <div class="byCategory SBC">
                 <div class="categoryName"><p>分類から探す</p></div>
                 <div class="categoryLists">
                     <div>分類から探す</div>
@@ -134,7 +144,7 @@
                     <div>分類から探す</div>
                     <div>分類から探す</div>
                 </div>
-            </div>
+            </div> -->
             <div class="byInitial SBC">
                 <div class="categoryName"><p>頭文字から探す</p></div>
                 <div class="categoryLists">

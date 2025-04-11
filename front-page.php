@@ -149,7 +149,7 @@
                 </div>
             </div>
             <div class="seeMoreButton">
-                <a href="<?php echo site_url();?>/visionDictionary"><span>最新記事をもっと見る</span></a>
+                <a href="<?php echo site_url();?>/recent"><span>最新記事をもっと見る</span></a>
             </div>
         </section>
         <section class="youtube inConteiner">
