@@ -18,25 +18,24 @@
                 <script type="text/javascript">
                     $(document).ready(function($) {
                         var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-                        function cvf_load_all_posts(page){
+                        function cvf_load_all_posts(){
                             $(".cvf_pag_loading").fadeIn().css('background','#ccc');// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
                             var data = {
-                                page: page,
+                                page: 1,
                                 action: "demo-popular-load-posts",
                                 post_type: "all_products",
                                 sort: "post_date DESC",
-                                category: "all",
                                 per_page: 3,
+                                search_key: $("#hot_search").val(),
                             };
                             $.post(ajaxurl, data, function(response) {
                                 $(".cvf_universal_container1").html(response);
                                 $(".cvf_pag_loading1").css({'background':'none', 'transition':'all 1s ease-out'});
                             });
                         }
-                        cvf_load_all_posts(1);
-                        $(document).on('click', '.cvf_universal_container1 .cvf-universal-pagination li.active', function(){ 
-                            var page = $(this).attr('p');
-                            cvf_load_all_posts(page);
+                        cvf_load_all_posts();
+                        $("#btn_hot_search").on('click', function() {
+                            cvf_load_all_posts();
                         });
                     });
                 </script>
@@ -67,6 +66,7 @@
                                 sort: "post_date DESC",
                                 category: "all",
                                 per_page: 9,
+                                search_key: $("#hot_search").val(),
                             };
                         
                             // Send the data
@@ -84,7 +84,10 @@
                         $(document).on('click', '.cvf_universal_container .cvf-universal-pagination li.active', function(){ 
                             var page = $(this).attr('p');
                             cvf_load_all_posts(page);
-                        });      
+                        });
+                        $("#btn_hot_search").on('click', function() {
+                            cvf_load_all_posts(1);
+                        }); 
                     });
                 </script>
                 <div class = "cvf_pag_loading">

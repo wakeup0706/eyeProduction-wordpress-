@@ -19,6 +19,7 @@ function cvf_demo_pagination_load_posts() {
         $order = sanitize_text_field($_POST['sort']);
         $category = sanitize_text_field($_POST['category']);
         $per_page = sanitize_text_field($_POST['per_page']);
+        $search_key = sanitize_text_field($_POST['search_key']);
         $cur_page = $page;
         $page -= 1;
         $previous_btn = true;
@@ -31,14 +32,14 @@ function cvf_demo_pagination_load_posts() {
         $table_name = $wpdb->prefix . "posts";
         if($category != 'all'){
             $all_blog_posts = $wpdb->get_results($wpdb->prepare("
-                SELECT p.* FROM wp_posts p JOIN wp_term_relationships tr ON p.ID = tr.object_id JOIN wp_term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id JOIN wp_terms t ON tt.term_id = t.term_id WHERE t.name = '$category' ORDER BY $order LIMIT %d, %d;", $start, $per_page));
+                SELECT p.* FROM wp_posts p JOIN wp_term_relationships tr ON p.ID = tr.object_id JOIN wp_term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id JOIN wp_terms t ON tt.term_id = t.term_id WHERE t.name = '$category' AND (`post_content` LIKE '%$search_key%' OR `post_title` LIKE '%$search_key%') ORDER BY $order LIMIT %d, %d;", $start, $per_page));
             $count = $wpdb->get_var($wpdb->prepare("
-                SELECT COUNT(ID) FROM wp_posts p JOIN wp_term_relationships tr ON p.ID = tr.object_id JOIN wp_term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id JOIN wp_terms t ON tt.term_id = t.term_id WHERE t.name = '$category'", array() ) );
+                SELECT COUNT(ID) FROM wp_posts p JOIN wp_term_relationships tr ON p.ID = tr.object_id JOIN wp_term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id JOIN wp_terms t ON tt.term_id = t.term_id WHERE t.name = '$category' AND (`post_content` LIKE '%$search_key%' OR `post_title` LIKE '%$search_key%')", array() ) );
         } else {
             $all_blog_posts = $wpdb->get_results($wpdb->prepare("
-                SELECT * FROM " . $table_name . " WHERE post_type = '$post_type' AND post_status = 'publish' ORDER BY $order LIMIT %d, %d", $start, $per_page ) );
+                SELECT * FROM " . $table_name . " WHERE post_type = '$post_type' AND post_status = 'publish' AND (`post_content` LIKE '%$search_key%' OR `post_title` LIKE '%$search_key%') ORDER BY $order LIMIT %d, %d", $start, $per_page ) );
             $count = $wpdb->get_var($wpdb->prepare("
-                SELECT COUNT(ID) FROM " . $table_name . " WHERE post_type = '$post_type' AND post_status = 'publish'", array() ) );
+                SELECT COUNT(ID) FROM " . $table_name . " WHERE post_type = '$post_type' AND post_status = 'publish' AND (`post_content` LIKE '%$search_key%' OR `post_title` LIKE '%$search_key%')", array() ) );
         }
         
         // Loop into all the posts
@@ -167,8 +168,8 @@ function cvf_demo_popular_load_posts() {
         $page = sanitize_text_field($_POST['page']);
         $post_type = sanitize_text_field($_POST['post_type']);
         $order = sanitize_text_field($_POST['sort']);
-        $category = sanitize_text_field($_POST['category']);
         $per_page = sanitize_text_field($_POST['per_page']);
+        $search_key = sanitize_text_field($_POST['search_key']);
         $cur_page = $page;
         $page -= 1;
         $previous_btn = true;
@@ -179,18 +180,8 @@ function cvf_demo_popular_load_posts() {
        
         // Set the table where we will be querying data
         $table_name = $wpdb->prefix . "posts";
-        if($category != 'all'){
-            $all_blog_posts = $wpdb->get_results($wpdb->prepare("
-                SELECT p.* FROM wp_posts p JOIN wp_term_relationships tr ON p.ID = tr.object_id JOIN wp_term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id JOIN wp_terms t ON tt.term_id = t.term_id WHERE t.name = '$category' ORDER BY $order LIMIT %d, %d;", $start, $per_page));
-            $count = $wpdb->get_var($wpdb->prepare("
-                SELECT COUNT(ID) FROM wp_posts p JOIN wp_term_relationships tr ON p.ID = tr.object_id JOIN wp_term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id JOIN wp_terms t ON tt.term_id = t.term_id WHERE t.name = '$category'", array() ) );
-        } else {
-            $all_blog_posts = $wpdb->get_results($wpdb->prepare("
-                SELECT * FROM " . $table_name . " WHERE post_type = '$post_type' AND post_status = 'publish' ORDER BY $order LIMIT %d, %d", $start, $per_page ) );
-            $count = $wpdb->get_var($wpdb->prepare("
-                SELECT COUNT(ID) FROM " . $table_name . " WHERE post_type = '$post_type' AND post_status = 'publish'", array() ) );
-        }
-        
+        $all_blog_posts = $wpdb->get_results($wpdb->prepare("
+            SELECT * FROM " . $table_name . " WHERE post_type = '$post_type' AND post_status = 'publish' AND (`post_content` LIKE '%$search_key%' OR `post_title` LIKE '%$search_key%') ORDER BY $order LIMIT %d, %d", $start, $per_page ) );
         // Loop into all the posts
         foreach($all_blog_posts as $key => $post):
            

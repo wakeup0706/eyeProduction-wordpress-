@@ -80,8 +80,8 @@
             <div class="searchmenu">
                 <div class="container">
                     <div class="search-Button">
-                        <input type="text" placeholder="Search.." name="search">
-                        <button type="submit">検 索</button>
+                        <input type="text" placeholder="Search.." name="search" id="hot_search">
+                        <button id="btn_hot_search">検 索</button>
                     </div>
                 </div>
             </div>
@@ -89,11 +89,11 @@
                 <div class="container">
                     <div class="latest-link-title flex">
                         <div class="hotKeyword">HOTワード</div>
-                        <div><p>視力回復</p></div>
-                        <div><p>視力検査</p></div>
-                        <div><p>サプリ</p></div>
-                        <div><p>ホームワーク</p></div>
-                        <div><p>近視</p></div>
+                        <div id = "hot_word1" class="hot_word"><p>視力回復</p></div>
+                        <div id = "hot_word2" class="hot_word"><p>視力検査</p></div>
+                        <div id = "hot_word3" class="hot_word"><p>サプリ</p></div>
+                        <div id = "hot_word4" class="hot_word"><p>ホームワーク</p></div>
+                        <div id = "hot_word5" class="hot_word"><p>近視</p></div>
                     </div>
                 </div>
             </div>

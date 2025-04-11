@@ -108,21 +108,28 @@ let siryoku_r_ran = localStorage.getItem('siryoku_r_ran');
 let siryoku_l_rg = localStorage.getItem('siryoku_l_rg');
 let siryoku_r_rg = localStorage.getItem('siryoku_r_rg');
 
-if (siryoku_l_result !== null) {
+if (siryoku_l_result !== null && document.getElementById("view_r_result")) {
   document.getElementById("view_r_result").innerHTML = siryoku_l_result;
 }
-if (siryoku_r_result !== null) {
+if (siryoku_r_result !== null && document.getElementById("view_l_result")) {
   document.getElementById("view_l_result").innerHTML = siryoku_r_result;
 }
-if (siryoku_l_ran !== null) {
+if (siryoku_l_ran !== null && document.getElementById("view_r_kinshi")) {
   document.getElementById("view_r_kinshi").innerHTML = siryoku_l_ran;
 }
-if (siryoku_r_ran !== null) {
+if (siryoku_r_ran !== null && document.getElementById("view_l_kinshi")) {
   document.getElementById("view_l_kinshi").innerHTML = siryoku_r_ran;
 }
-if (siryoku_l_rg !== null) {
+if (siryoku_l_rg !== null && document.getElementById("view_r_ranshi")) {
   document.getElementById("view_r_ranshi").innerHTML = siryoku_l_rg;
 }
-if (siryoku_r_rg !== null) {
+if (siryoku_r_rg !== null && document.getElementById("view_l_ranshi")) {
   document.getElementById("view_l_ranshi").innerHTML = siryoku_r_rg;
 }
+
+
+$('.hot_word').on('click', function() {
+  const text = $(this).text().trim();
+  $("#hot_search").val(text);
+});
+
