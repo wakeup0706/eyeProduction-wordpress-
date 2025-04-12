@@ -90,7 +90,7 @@
                     <div class="content">
                         <div class="articleType"><?php echo esc_html($category[0]->name); ?></div>
                         <div class="articleSubject"><p><?php echo get_the_title(); ?></p></div>
-                        <div class="articleContent"><p><?php echo get_the_content(); ?></p></div>
+                        
                         <div class="articleDate"><p><?php echo get_the_date('Y/m/d'); ?></p></div>
                     </div>
                 <?php

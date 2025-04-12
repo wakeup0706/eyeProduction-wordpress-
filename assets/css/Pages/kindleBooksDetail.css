@@ -319,11 +319,8 @@ main .sns-content img:hover{
 }
 
 
-.vision_articles.active{
+.cvf-universal-content{
     display: grid;
-}
-.vision_articles{
-    display: none;
     margin-block: 10px;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ensures equal width */
     gap: 20px;
@@ -332,7 +329,7 @@ main .sns-content img:hover{
     padding-inline: 50px;
     margin-top: 35px;
 }
-.vision_articles .card {
+.cvf-universal-content .card {
     cursor: pointer;
     width: 100%;
     max-width: 255px;
@@ -355,8 +352,8 @@ main .sns-content img:hover{
         }
     }   
 }
-.vision_articles .card-front,
-.vision_articles .card-back {
+.cvf-universal-content .card-front,
+.cvf-universal-content .card-back {
     aspect-ratio: inherit;
     transition: inherit;
     width: 100%;
@@ -366,7 +363,7 @@ main .sns-content img:hover{
     transform-style: preserve-3d;
     transition: transform 0.8s ease;
 }
-.vision_articles .card-front {
+.cvf-universal-content .card-front {
     z-index: 2;
     
     & > img {
@@ -374,7 +371,7 @@ main .sns-content img:hover{
         max-width: 100%;
     }
 }
-.vision_articles .card-back {
+.cvf-universal-content .card-back {
     background-color: #000000cc;
     backface-visibility: hidden;
     padding: 1.5rem;
@@ -388,7 +385,7 @@ main .sns-content img:hover{
 }
 /* end all visionDictionary content */
 @media only screen and (max-width: 353px) {
-    .vision_articles{
+    .cvf-universal-content{
         padding-inline: 0;
     }
 }

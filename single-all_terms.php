@@ -1,13 +1,17 @@
-<?php  get_header();?>
+<?php
+get_header();
+?>
+
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/eyeGlossaryDetail.css" />
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Common/like-button.css" />
-    <main>
+    <main class="single-all_terms">
         <div class="container">
-            <div class="breadcrumb"><span><a href="<?php echo home_url(); ?>">TOP</a></span><span>> <a href="<?php echo site_url();?>/eyeGlossary">目の用語辞典</a></span><span>> ハーフタイム</span></div>
+        <?php while ( have_posts() ) : the_post(); ?>
+            <div class="breadcrumb"><span><a href="<?php echo home_url(); ?>">TOP</a></span><span>> <a href="<?php echo site_url();?>/eyeGlossary">目の用語辞典</a></span><span>> <?php the_title(); ?></span></div>
             <div class="kindleBooksDetail-content flex space-between">
                 <div class="flex-left">
                     <div class="title flex space-between">
-                        <div class="text">ハーフタイム</div>
+                        <div class="text"><?php the_title(); ?></div>
                         <div class="sns-content flex">
                             <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></div>
                             <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></div>
@@ -43,15 +47,13 @@
                             <div class="date">22021</div>
                         </div>
                     </div>
-                    <div class="banner"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeGlossary/eyeGlossary1.webp" alt=""></div>
+                    <div class="banner"><?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?></div>
                     <div class="infor">
                         <div class="infor-content">
-                            <p>長時間近くのものを見続けると、ピント調節のための筋肉が凝ってきて、自由な調節ができにくくなります。</p>
-                            <p>効果的な休憩方法は、10～30分間スマホやテレビ、読書・パソコン等を行ったら、10～30秒間でいいので、裸眼で見える範囲で、一番遠く（<a href="#">最大明視距離</a>）をリラックスした状態で眺める方法です。</p>
-                            <p>近視の進行を防ぐために、私たちが推奨しているのが、この<a href="#">「ハーフタイム」</a>です。</p>
-                            <p>凝視の合間に<a href="#">眺視</a>（ちょうし）をすることで、凝り固まった目の筋肉を伸ばします。</p>
+                            <?php  the_content();  ?>
                         </div>
                     </div>
+                    <?php endwhile; ?>
                     <div class="searchBox">
                         <div class="search-Button">
                             <input type="text" placeholder="Search.." name="search">
@@ -59,7 +61,7 @@
                         </div>
                     </div>
                     <div class="searchByCategory">
-                        <div class="byCategory SBC">
+                        <!-- <div class="byCategory SBC">
                             <div class="categoryName"><p>分類から探す</p></div>
                             <div class="categoryLists">
                                 <div>分類から探す</div>
@@ -73,7 +75,7 @@
                                 <div>分類から探す</div>
                                 <div>分類から探す</div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="byInitial SBC">
                             <div class="categoryName"><p>頭文字から探す</p></div>
                             <div class="categoryLists">
@@ -140,19 +142,32 @@
                             </div>
                         </div>
                     </div>
+                    <?php 
+                        global $post;
+                    ?>
                     <div class="under-button">
-                        <a href="<?php echo site_url();?>/eyeGlossaryDetail">
-                            <div class="buttons beforeButton">
-                                <div class="button-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article1.webp" alt=""></div>
-                                <div class="button-text">アイパワー</div>
-                            </div>
-                        </a>
-                        <a href="<?php echo site_url();?>/eyeGlossaryDetail">
-                            <div class="buttons nextButton">
-                                <div class="button-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article3.jpg" alt=""></div>
-                                <div class="button-text">アイトレインＭ18型</div>    
-                            </div>
-                        </a>
+                        <?php
+                            $prev_post = get_adjacent_post(false, '', true);
+                            if (!empty($prev_post)) {
+                                echo '<a href=\'' . get_permalink($prev_post->ID) . '\'>
+                                        <div class="buttons beforeButton">
+                                            <div class="button-img">'. get_the_post_thumbnail($prev_post->ID) .'</div>
+                                            <div class="button-text">' . get_the_title($prev_post->ID) . '</div>
+                                        </div>
+                                    </a>';
+                            }
+                        ?>
+                        <?php
+                            $next_post = get_adjacent_post(false, '', false);
+                            if (!empty($next_post)) {
+                                echo '<a href=\''.get_permalink($post->ID+1).'\'>
+                                        <div class="buttons nextButton">
+                                            <div class="button-img">'. get_the_post_thumbnail($next_post->ID) .'</div>
+                                        <div class="button-text">' . get_the_title($next_post->ID) . '</div>
+                                        </div>
+                                    </a>';
+                            }
+                        ?>
                     </div>
                 </div>
                 <div class="flex-right">
@@ -220,66 +235,64 @@
                     </div>
                     <div class="viewRanking">
                         <p>閲覧ランキング</p>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/eyeGlossaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeGlossary/eyeGlossary2.webp" alt="">
-                            <div class="item-title"><p>ドライアイ</p></div>
-                            <div class="populerOrder"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/order1.png" alt=""></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/eyeGlossaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeGlossary/eyeGlossary3.webp" alt="">
-                            <div class="item-title"><p>望遠発見法</p></div>
-                            <div class="populerOrder"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/order2.png" alt=""></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/eyeGlossaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeGlossary/eyeGlossary4.webp" alt="">
-                            <div class="item-title"><p>ＭＣレンズ</p></div>
-                            <div class="populerOrder"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/order3.png" alt=""></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/eyeGlossaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeGlossary/eyeGlossary5.webp" alt="">
-                            <div class="item-title"><p>輻輳運動</p></div>
-                            <div class="populerOrder"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/order4.png" alt=""></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/eyeGlossaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeGlossary/eyeGlossary6.webp" alt="">
-                            <div class="item-title"><p>アイリスＣＬ-Ｉ</p></div>
-                            <div class="populerOrder"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/order5.png" alt=""></div>
-                        </div>
+                        <?php
+                        $args = array(
+                            'post_type' => 'all_terms',
+                            'posts_per_page' => 5,
+                            'orderby' => 'date',
+                            'order' => 'DESC'
+                        );
+                        
+                        $featured_query = new WP_Query($args);
+                        $i = 1;
+                        if ($featured_query->have_posts()) :
+                            while ($featured_query->have_posts()) : $featured_query->the_post();
+                                $category = get_the_category();
+                        ?>
+                            <div class="item" onclick="location.href='<?php the_permalink(); ?>';">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <?php the_post_thumbnail('full', array('alt' => get_the_title())); ?>
+                                <?php else : ?>
+                                    <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                                <?php endif; ?>
+                                <div class="item-title"><p><?php echo get_the_title(); ?></p></div>
+                                <div class="populerOrder"><img src="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/assets/img/Icons/order<?php echo $i++?>.png" alt=""></div>
+                            </div>
+                        <?php
+                        endwhile;
+                            wp_reset_postdata();
+                        endif;
+                        ?>
                     </div>
                     <div class="relativeArticles">
                         <p>関連記事</p>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/visionDictionaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article5.png" alt="">
-                            <div class="item-title"><p>【連載その1】XWRITEでWordPressブログをはじめよう！「インストール編」</p></div>
+                        <?php
+                        $args = array(
+                            'post_type' => 'all_articles',
+                            'posts_per_page' => 8,
+                            'orderby' => 'date',
+                            'order' => 'DESC'
+                        );
+                        
+                        $featured_query = new WP_Query($args);
+                        $i = 1;
+                        if ($featured_query->have_posts()) :
+                            while ($featured_query->have_posts()) : $featured_query->the_post();
+                                $category = get_the_category();
+                        ?>
+                        <div class="item" onclick="location.href='<?php the_permalink(); ?>';">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('full', array('alt' => get_the_title())); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                            <?php endif; ?>
+                            <div class="item-title"><p><?php echo get_the_title(); ?></p></div>
                         </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/visionDictionaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article6.png" alt="">
-                            <div class="item-title"><p>【連載その2】XWRITEでWordPressブログをはじめよう！「初期設定編」</p></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/visionDictionaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article7.png" alt="">
-                            <div class="item-title"><p>【連載その3】XWRITEでWordPressブログをはじめよう！「トップページのデザイン編」</p></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/visionDictionaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article8.png" alt="">
-                            <div class="item-title"><p>【連載その4】XWRITEでWordPressブログをはじめよう！「投稿記事の作成編」</p></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/visionDictionaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article9.png" alt="">
-                            <div class="item-title"><p>【連載その5】XWRITEでWordPressブログをはじめよう！「サイドバーの設定編」</p></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/visionDictionaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article10.png" alt="">
-                            <div class="item-title"><p>【連載その6】XWRITEでWordPressブログをはじめよう！「固定ページの作成編」</p></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/visionDictionaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article11.png" alt="">
-                            <div class="item-title"><p>【連載その4】XWRITEでWordPressブログをはじめよう！「投稿記事の作成編」</p></div>
-                        </div>
-                        <div class="item" onclick="location.href='.<?php echo site_url();?>/detailPages/visionDictionaryDetail';">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/article12.png" alt="">
-                            <div class="item-title"><p>【連載その5】XWRITEでWordPressブログをはじめよう！「サイドバーの設定編」</p></div>
-                        </div>
+                        <?php
+                        endwhile;
+                            wp_reset_postdata();
+                        endif;
+                        ?>
                     </div>
                 </div>
             </div>

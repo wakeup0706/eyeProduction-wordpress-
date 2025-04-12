@@ -63,7 +63,7 @@ function cvf_demo_pagination_load_posts() {
            
             if(wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "Kindleブックス"){
                 $msg .= '
-                <div class="card" onclick="location.href=' . get_permalink($post->ID) . ';">
+                <div class="card" onclick="location.href=\'' . get_permalink($post->ID) . '\';">
                     <div class="card-front">
                     ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
                     </div>
@@ -73,7 +73,7 @@ function cvf_demo_pagination_load_posts() {
                 </div>';
             }else if(wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "すべてのお知らせ" || wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "お知らせ" || wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "プレスリリース" || wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "メディア掲載"){
                 $msg .= '
-                <div class="content" onclick="location.href=' . get_permalink($post->ID) . ';">
+                <div class="content" onclick="location.href=\'' . get_permalink($post->ID) . '\';">
                     ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
                     <div class="contentDate">'. get_the_date('Y.m.d', $post->ID) .'</div>
                     <div class="contentText">
@@ -82,7 +82,7 @@ function cvf_demo_pagination_load_posts() {
                 </div>';
             }else{
                 $msg .= '
-                <div class="seeMoreArticle" onclick="location.href=' . get_permalink($post->ID) . ';">
+                <div class="seeMoreArticle" onclick="location.href=\'' . get_permalink($post->ID) . '\';">
                     ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
                     <div class="articleContent">
                         <div class="articleType">
@@ -203,7 +203,7 @@ function cvf_demo_popular_load_posts() {
            
             if(wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "Kindleブックス"){
                 $msg .= '
-                <div class="card" onclick="location.href=' . get_permalink($post->ID) . ';">
+                <div class="card" onclick="location.href=\'' . get_permalink($post->ID) . '\';">
                     <div class="card-front">
                     ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
                     </div>
@@ -213,7 +213,7 @@ function cvf_demo_popular_load_posts() {
                 </div>';
             }else if(wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "すべてのお知らせ" || wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "お知らせ" || wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "プレスリリース" || wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "メディア掲載"){
                 $msg .= '
-                <div class="seeMoreArticle" onclick="location.href=' . get_permalink($post->ID) . ';">
+                <div class="seeMoreArticle" onclick="location.href=\'' . get_permalink($post->ID) . '\';">
                     ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
                     <div class="articleContent-date">'. get_the_date('Y.m.d', $post->ID) .'</div>
                     <div class="contentText">
@@ -222,7 +222,7 @@ function cvf_demo_popular_load_posts() {
                 </div>';
             }else{
                 $msg .= '
-                <div class="seeMoreArticle" onclick="location.href=' . get_permalink($post->ID) . ';">
+                <div class="seeMoreArticle" onclick="location.href=\'' . get_permalink($post->ID) . '\';">
                     ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
                     <div class="articleContent">
                         <div class="articleType">
@@ -275,7 +275,7 @@ function cvf_demo_all_load_posts() {
             SELECT COUNT(ID) FROM " . $table_name . " WHERE (post_type = 'all_articles' OR post_type = 'all_terms' OR post_type = 'all_recipes') AND post_status = 'publish' AND (`post_content` LIKE '%$search_key%' OR `post_title` LIKE '%$search_key%')", array() ) );
         foreach($all_blog_posts as $key => $post):
             $msg .= '
-                <div class="seeMoreArticle" onclick="location.href=' . get_permalink($post->ID) . ';">
+                <div class="seeMoreArticle" onclick="location.href=\'' . get_permalink($post->ID) . '\';">
                     ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
                     <div class="articleContent">
                         <div class="articleType">
