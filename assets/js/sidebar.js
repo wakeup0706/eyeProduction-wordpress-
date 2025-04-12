@@ -133,3 +133,13 @@ $('.hot_word').on('click', function() {
   $("#hot_search").val(text);
 });
 
+
+$('.btn_hot_search').on('click',function(){
+  let hot_word = $('#hot_search').val();
+  let url = './searchResult?search_key=' + hot_word;
+  console.log(hot_word);
+  if(hot_word.trim()){
+    document.location.href=url;
+    // searchWrite(hot_word);
+  }
+});

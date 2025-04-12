@@ -26,7 +26,7 @@
                                 post_type: "all_recipes",
                                 sort: "post_date DESC",
                                 per_page: 6,
-                                search_key: $("#hot_search").val(),
+                                search_key: "",
                             };
                             $.post(ajaxurl, data, function(response) {
                                 $(".cvf_universal_container1").html(response);
@@ -34,10 +34,6 @@
                             });
                         }
                         cvf_load_all_posts();
-
-                        $("#btn_hot_search").on('click', function() {
-                            cvf_load_all_posts();
-                        });
                     });
                 </script>
                 <div class = "cvf_pag_loading1">
@@ -122,7 +118,7 @@
                                 sort: sort,
                                 category: category,
                                 per_page: 9,
-                                search_key: $("#hot_search").val(),
+                                search_key: "",
                             };
                             $.post(ajaxurl, data, function(response) {
                                 $(".cvf_universal_container").html(response);
@@ -133,9 +129,6 @@
                         $(document).on('click', '.cvf_universal_container .cvf-universal-pagination li.active', function(){ 
                             var page = $(this).attr('p');
                             cvf_load_all_posts(page);
-                        });
-                        $("#btn_hot_search").on('click', function() {
-                            cvf_load_all_posts(1);
                         });
                     });
                 </script>

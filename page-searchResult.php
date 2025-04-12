@@ -1,16 +1,23 @@
 <?php  get_header();?>
+<?php 
+    $search_key = $_GET["search_key"];
+?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/recent.css" />   
     <main>
         <section class="allVision inConteiner">
             <div class="breadcrumb"><span><a href="<?php echo home_url(); ?>">TOP</a></span><span>> すべてのカテゴリ</span></div>
             <div class="space"></div>
             <div class="visionDictionaryTitle">
-                <div class="visionDictionaryIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/Allrecent.png" alt="testResult"></div>
-                <div class="section-title"><p class="text-top">すべてのカテゴリ</p></div>
+                <div class="visionDictionaryIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/testResult.png" alt="testResult"></div>
+                <div class="section-title"><div id="searchID"><p class='text-top'>検索結果 : <span style='font-size:14px'><?php echo $search_key ?></span><span style='font-size:18px'>の検索結果</span></p></div></div>
             </div>
             <div>
                 <script type="text/javascript">
                     $(document).ready(function($) {
+                        const url = new URL(window.location.href);
+                        const params = new URLSearchParams(url.search);
+                        const search_key = params.get('search_key');
+
                         var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
                         let sort = "post_date DESC";
                         function cvf_load_all_posts(page){
@@ -20,7 +27,7 @@
                                 action: "demo-all-load-posts",
                                 sort: sort,
                                 per_page: 15,
-                                search_key: "",
+                                search_key: search_key,
                             };
                             $.post(ajaxurl, data, function(response) {
                                 $(".cvf_all_universal_container").html(response);
@@ -29,7 +36,6 @@
                         }
                         $(document).on('click', '.cvf_all_universal_container .cvf-universal-pagination li.active', function(){ 
                             var page = $(this).attr('p');
-                            console.log(page);
                             cvf_load_all_posts(page);
                         });
                         cvf_load_all_posts(1);

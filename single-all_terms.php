@@ -57,7 +57,7 @@ get_header();
                     <div class="searchBox">
                         <div class="search-Button">
                             <input type="text" placeholder="Search.." name="search">
-                            <button type="submit">検 索</button>
+                            <button class="btn_hot_search">検 索</button>
                         </div>
                     </div>
                     <div class="searchByCategory">
@@ -202,7 +202,7 @@ get_header();
                     <div class="searchBox">
                         <div class="search-Button">
                             <input type="text" placeholder="Search.." name="search">
-                            <button type="submit">検 索</button>
+                            <button class="btn_hot_search">検 索</button>
                         </div>
                     </div>
                     <div class="categoryTag">

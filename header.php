@@ -81,7 +81,7 @@
                 <div class="container">
                     <div class="search-Button">
                         <input type="text" placeholder="Search.." name="search" id="hot_search">
-                        <button id="btn_hot_search">検 索</button>
+                        <button class="btn_hot_search">検 索</button>
                     </div>
                 </div>
             </div>
