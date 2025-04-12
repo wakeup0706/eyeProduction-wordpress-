@@ -1,4 +1,5 @@
 <?php  get_header();?>
+<?php set_post_views( get_the_ID() ); ?>
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/kindleBooksDetail.css" />
     <main>
         <div class="container">
@@ -94,7 +95,7 @@
                                 sort: sort,
                                 category: category,
                                 per_page: 8,
-                                search_key: $("#hot_search").val(),
+                                search_key: "",
                             };
                             $.post(ajaxurl, data, function(response) {
                                 $(".cvf_universal_container").html(response);
@@ -105,10 +106,7 @@
                         $(document).on('click', '.cvf_universal_container .cvf-universal-pagination li.active', function(){ 
                             var page = $(this).attr('p');
                             cvf_load_all_posts(page);
-                        });   
-                        $("#btn_hot_search").on('click', function() {
-                            cvf_load_all_posts(1);
-                        });   
+                        }); 
                     });
                     </script>
                     <div class = "cvf_pag_loading">

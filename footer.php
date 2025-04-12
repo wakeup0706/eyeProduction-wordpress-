@@ -10,11 +10,10 @@
                         <p>電話応対時間：11～14時（土日祝休）</p>
                     </div>
                     <div class="sns-content flex space-between">
-                        <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></div>
-                        <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></div>
-                        <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></div>
-                        <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></div>
-                        <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns5.png" alt=""></div>
+                        <div><a href="https://twitter.com/meikusouken2001"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                        <div><a href="https://www.instagram.com/dreamteam2001.12.17/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                        <div><a href="https://www.youtube.com/channel/UCyj1GCzlS7yTmjm2moSMt1w"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                        <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
                     </div>
                 </div>
                 <div class="footer-content-right">

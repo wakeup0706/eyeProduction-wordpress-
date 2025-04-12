@@ -348,4 +348,29 @@ function cvf_demo_all_load_posts() {
     exit();
 }
 
-?>
+
+// Function to get post views
+function get_post_views( $postID ) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta( $postID, $count_key, true );
+    if ( $count == '' ) {
+        delete_post_meta( $postID, $count_key );
+        add_post_meta( $postID, $count_key, '1' );
+        return 1;
+    }
+    return $count;
+}
+
+// Function to set/increment post views
+function set_post_views( $postID ) {
+    $count_key = 'post_views_count';
+    $count = get_post_meta( $postID, $count_key, true );
+    if ( $count == '' ) {
+        $count = 1;
+        delete_post_meta( $postID, $count_key );
+        add_post_meta( $postID, $count_key, '1' );
+    } else {
+        $count++;
+        update_post_meta( $postID, $count_key, $count );
+    }
+}

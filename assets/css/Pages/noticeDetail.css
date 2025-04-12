@@ -95,7 +95,6 @@ main .sns-content img:hover{
     font-size: 14px;
     font-weight: 700;
     color: var(--text-black);
-    margin-right: 30px;
 }
 
 .flex-left .infor{

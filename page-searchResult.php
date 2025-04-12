@@ -1,4 +1,5 @@
 <?php  get_header();?>
+<?php set_post_views( get_the_ID() ); ?>
 <?php 
     $search_key = $_GET["search_key"];
 ?>
@@ -6,10 +7,38 @@
     <main>
         <section class="allVision inConteiner">
             <div class="breadcrumb"><span><a href="<?php echo home_url(); ?>">TOP</a></span><span>> すべてのカテゴリ</span></div>
+            <div class="categoryTag">
+                <p>おすすめタグ</p>
+                <div>
+                    <a href="#" class="side-tag-list-trick">#お金</a>
+                    <a href="#" class="side-tag-list-trick">#カードゲーム</a>
+                    <a href="#" class="side-tag-list-trick">#かず</a>
+                    <a href="#" class="side-tag-list-trick">#カタカナ</a>
+                    <a href="#" class="side-tag-list-trick">#クイズ</a>
+                    <a href="#" class="side-tag-list-trick">#ゲーム</a>
+                    <a href="#" class="side-tag-list-trick">#こうさく</a>
+                    <a href="#" class="side-tag-list-trick">#シール</a>
+                    <a href="#" class="side-tag-list-trick">#ちえ</a>
+                    <a href="#" class="side-tag-list-trick">#なぞなぞ</a>
+                    <a href="#" class="side-tag-list-trick">#パズル</a>
+                    <a href="#" class="side-tag-list-trick">#ひらがな</a>
+                    <a href="#" class="side-tag-list-trick">#図鑑</a>
+                    <a href="#" class="side-tag-list-trick">#好奇心</a>
+                    <a href="#" class="side-tag-list-trick">#実験</a>
+                    <a href="#" class="side-tag-list-trick">#工作</a>
+                    <a href="#" class="side-tag-list-trick">#文字</a>
+                    <a href="#" class="side-tag-list-trick">#科学遊び</a>
+                    <a href="#" class="side-tag-list-trick">#算数</a>
+                    <a href="#" class="side-tag-list-trick">#色彩感覚</a>
+                    <a href="#" class="side-tag-list-trick">#言葉</a>
+                    <a href="#" class="side-tag-list-trick">#語彙力</a>
+                    <a href="#" class="side-tag-list-trick">#遊び</a>
+                </div>
+            </div>
             <div class="space"></div>
             <div class="visionDictionaryTitle">
                 <div class="visionDictionaryIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/testResult.png" alt="testResult"></div>
-                <div class="section-title"><div id="searchID"><p class='text-top'>検索結果 : <span style='font-size:14px'><?php echo $search_key ?></span><span style='font-size:18px'>の検索結果</span></p></div></div>
+                <div class="section-title"><div id="searchID"><p class='text-top'>検索結果 : <span style='font-size:14px'>"<?php echo $search_key ?>"</span><span style='font-size:18px'>の検索結果</span></p></div></div>
             </div>
             <div>
                 <script type="text/javascript">

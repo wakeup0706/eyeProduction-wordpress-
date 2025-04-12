@@ -64,7 +64,7 @@
                                 sort: "post_date DESC",
                                 category: "all",
                                 per_page: 9,
-                                search_key: $("#hot_search").val(),
+                                search_key: "",
                             };
                         
                             // Send the data
@@ -75,16 +75,10 @@
                                 $(".cvf_pag_loading").css({'background':'none', 'transition':'all 1s ease-out'});
                             });
                         }
-
-                        // Load page 1 as the default
                         cvf_load_all_posts(1);
-
                         $(document).on('click', '.cvf_universal_container .cvf-universal-pagination li.active', function(){ 
                             var page = $(this).attr('p');
                             cvf_load_all_posts(page);
-                        });
-                        $("#btn_hot_search").on('click', function() {
-                            cvf_load_all_posts(1);
                         }); 
                     });
                 </script>

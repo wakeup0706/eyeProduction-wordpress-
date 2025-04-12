@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-
+<?php set_post_views( get_the_ID() ); ?>
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/eyeGlossaryDetail.css" />
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Common/like-button.css" />
     <main class="single-all_terms">
@@ -13,11 +13,10 @@ get_header();
                     <div class="title flex space-between">
                         <div class="text"><?php the_title(); ?></div>
                         <div class="sns-content flex">
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns5.png" alt=""></div>
+                            <div><a href="https://twitter.com/meikusouken2001"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                            <div><a href="https://www.instagram.com/dreamteam2001.12.17/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                            <div><a href="https://www.youtube.com/channel/UCyj1GCzlS7yTmjm2moSMt1w"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                            <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
                         </div>
                     </div>
                     <div class="releaseDate">
@@ -44,7 +43,7 @@ get_header();
                         <div class="view">
                             <span>👁</span>
                             <div class="tag">閲覧数：</div>
-                            <div class="date">22021</div>
+                            <div class="date"><?php echo get_post_meta( get_the_ID(), 'post_views_count', true ); ?></div>
                         </div>
                     </div>
                     <div class="banner"><?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?></div>
@@ -56,26 +55,39 @@ get_header();
                     <?php endwhile; ?>
                     <div class="searchBox">
                         <div class="search-Button">
-                            <input type="text" placeholder="Search.." name="search">
-                            <button class="btn_hot_search">検 索</button>
+                            <input type="text" placeholder="Search.." name="search" id="hot_search_term" >
+                            <button class="btn_hot_search_term">検 索</button>
                         </div>
                     </div>
                     <div class="searchByCategory">
-                        <!-- <div class="byCategory SBC">
+                        <div class="byCategory SBC">
                             <div class="categoryName"><p>分類から探す</p></div>
                             <div class="categoryLists">
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
-                                <div>分類から探す</div>
+                                <div>お金</div>
+                                <div>カードゲーム</div>
+                                <div>かず</div>
+                                <div>カタカナ</div>
+                                <div>クイズ</div>
+                                <div>ゲーム</div>
+                                <div>こうさく</div>
+                                <div>シール</div>
+                                <div>ちえ</div>
+                                <div>なぞなぞ</div>
+                                <div>パズル</div>
+                                <div>ひらがな</div>
+                                <div>図鑑</div>
+                                <div>好奇心</div>
+                                <div>実験</div>
+                                <div>工作</div>
+                                <div>文字</div>
+                                <div>科学遊び</div>
+                                <div>算数</div>
+                                <div>色彩感覚</div>
+                                <div>言葉</div>
+                                <div>語彙力</div>
+                                <div>遊び</div>
                             </div>
-                        </div> -->
+                        </div>
                         <div class="byInitial SBC">
                             <div class="categoryName"><p>頭文字から探す</p></div>
                             <div class="categoryLists">
@@ -201,8 +213,8 @@ get_header();
                     </div>
                     <div class="searchBox">
                         <div class="search-Button">
-                            <input type="text" placeholder="Search.." name="search">
-                            <button class="btn_hot_search">検 索</button>
+                            <input type="text" placeholder="Search.." name="search" id="hot_search_detail">
+                            <button class="btn_hot_search_detail">検 索</button>
                         </div>
                     </div>
                     <div class="categoryTag">

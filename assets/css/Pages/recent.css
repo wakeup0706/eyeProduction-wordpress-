@@ -36,6 +36,36 @@
     }
 }
 
+.categoryTag{
+    margin-block: 30px -10px;
+    display: flex;
+}
+.categoryTag p {
+    font-size: 16px;
+    min-width: 112px;
+    font-weight: bold;
+    border-right: 3px solid var(--seeMore-button);
+    text-align: center;
+    color: var(--text-black);
+}
+.categoryTag div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: .3em;
+    padding: 0;
+    margin: 0;
+}
+.categoryTag a {
+    color: #fff;
+    font-size: 13px;
+    background: var(--seeMore-button);
+    padding: .2em .7em;
+    margin: 4px 3px;
+    border-radius: 100vw;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 .allVisionArticles{
     margin-block: 10px;
     display: grid;

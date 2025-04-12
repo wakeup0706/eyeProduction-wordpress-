@@ -26,11 +26,10 @@
                 </div>
             </div>
             <div class="sns-content flex">
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></div>
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></div>
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></div>
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></div>
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns5.png" alt=""></div>
+                <div><a href="https://twitter.com/meikusouken2001"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                <div><a href="https://www.instagram.com/dreamteam2001.12.17/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                <div><a href="https://www.youtube.com/channel/UCyj1GCzlS7yTmjm2moSMt1w"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
             </div>
         </div>
         <div class="menu">
@@ -151,13 +150,13 @@
                   </a>
                 </li>
                 <li class="list">
-                  <a href="<?php echo site_url();?>/template-parts/inquiry" class="nav-link">
+                  <a href="<?php echo site_url();?>/inquiry" class="nav-link">
                       <span class="link">お問い合わせ</span>
                       <span class="icon">&#10095;</span>
                   </a>
                 </li>
                 <li class="list">
-                  <a href="<?php echo site_url();?>/template-parts/company" class="nav-link">
+                  <a href="<?php echo site_url();?>/company" class="nav-link">
                       <span class="link">会社概要</span>
                       <span class="icon">&#10095;</span>
                   </a>

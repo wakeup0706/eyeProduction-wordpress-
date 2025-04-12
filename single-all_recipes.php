@@ -1,4 +1,5 @@
 <?php  get_header();?>
+<?php set_post_views( get_the_ID() ); ?>
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Common/like-button.css" />
     <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/recipesDetail.css" />
     <main class="single-all_recipes">
@@ -10,11 +11,10 @@
                     <div class="title flex space-between">
                         <div class="text"><?php the_title(); ?></div>
                         <div class="sns-content flex">
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns5.png" alt=""></div>
+                            <div><a href="https://twitter.com/meikusouken2001"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                            <div><a href="https://www.instagram.com/dreamteam2001.12.17/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                            <div><a href="https://www.youtube.com/channel/UCyj1GCzlS7yTmjm2moSMt1w"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                            <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
                         </div>
                     </div>
                     <div class="releaseDate">
@@ -25,7 +25,7 @@
                         <div class="view">
                             <span>👁</span>
                             <div class="tag">閲覧数：</div>
-                            <div class="date">22021</div>
+                            <div class="date"><?php echo get_post_views( get_the_ID() ); ?></div>
                         </div>
                     </div>
                     <div class="banner"><?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?></div>
@@ -112,8 +112,8 @@
                     </div>
                     <div class="searchBox">
                         <div class="search-Button">
-                            <input type="text" placeholder="Search.." name="search">
-                            <button class="btn_hot_search">検 索</button>
+                            <input type="text" placeholder="Search.." name="search" id="hot_search_detail">
+                            <button class="btn_hot_search_detail">検 索</button>
                         </div>
                     </div>
                     <div class="categoryTag">

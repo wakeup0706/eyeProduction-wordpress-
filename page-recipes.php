@@ -14,32 +14,37 @@
                 <div class="popularTitleIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/popular.png" alt="testResult"></div>
                 <div class="section-title"><p class="text-top">人気のレシピ</p></div>
             </div>
-            <div>
-                <script type="text/javascript">
-                    $(document).ready(function($) {
-                        var ajaxurl = '<?php echo admin_url('admin-ajax.php'); ?>';
-                        function cvf_load_all_posts(){
-                            $(".cvf_pag_loading").fadeIn().css('background','#ccc');// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
-                            var data = {
-                                page: 1,
-                                action: "demo-popular-load-posts",
-                                post_type: "all_recipes",
-                                sort: "post_date DESC",
-                                per_page: 6,
-                                search_key: "",
-                            };
-                            $.post(ajaxurl, data, function(response) {
-                                $(".cvf_universal_container1").html(response);
-                                $(".cvf_pag_loading1").css({'background':'none', 'transition':'all 1s ease-out'});
-                            });
-                        }
-                        cvf_load_all_posts();
-                    });
-                </script>
-                <div class = "cvf_pag_loading1">
-                    <div class = "cvf_universal_container1">
-                    </div>
-                </div>
+            <div class="popularArticle">
+                <?php
+                $popular_posts_args = array(
+                    'posts_per_page' => 6,
+                    'meta_key' => 'post_views_count',
+                    'orderby' => 'meta_value_num',
+                    'order' => 'DESC',
+                    'post_type' => "all_recipes"
+                );
+
+                $popular_posts = new WP_Query( $popular_posts_args );
+                if ( $popular_posts->have_posts() ) {
+                    while ( $popular_posts->have_posts() ) {
+                        $popular_posts->the_post();
+                        echo '<div class="seeMoreArticle" onclick="location.href=\'' . get_permalink() . '\';">
+                                ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
+                                <div class="articleContent">
+                                    <div class="articleType">
+                                        <div class="articleType-text"><p>' . wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] . '</p></div>
+                                        <div class="articleType-mark"><img src="'.get_stylesheet_directory_uri().'/assets/img/Icons/mark.png" alt="mark"></div>
+                                    </div>
+                                    <div class="articleContent-date"><p>'. get_the_date('Y.m.d', $post->ID) .'</p></div>
+                                    <div class="articleContent-text">
+                                        <p>' . get_the_title() . '</p>
+                                    </div>
+                                </div>
+                            </div>';
+                    }
+                }
+                wp_reset_postdata();
+                ?>
             </div>
         </section>
         <section class="allVision inConteiner">

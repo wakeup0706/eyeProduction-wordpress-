@@ -185,12 +185,12 @@ main .sns-content img:hover{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ensures equal width */
     gap: 20px;
-    margin-inline: auto;
+    margin-inline: 40px;
 }
 .byCategory .categoryLists >div{
     padding-left: 20px;
     position: relative;
-    margin-inline: auto;
+    cursor: pointer;
 }
 .byCategory .categoryLists >div::before{
     content: "❯";

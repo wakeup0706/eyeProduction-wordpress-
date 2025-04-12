@@ -1,4 +1,5 @@
 <?php  get_header();?>
+<?php set_post_views( get_the_ID() ); ?>
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/visionDictionaryDetail.css" />
     <main class="single-all_articles">
         <div class="container">
@@ -9,11 +10,10 @@
                     <div class="title flex space-between">
                         <div class="text"><?php the_title(); ?></div>
                         <div class="sns-content flex">
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns5.png" alt=""></div>
+                            <div><a href="https://twitter.com/meikusouken2001"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                            <div><a href="https://www.instagram.com/dreamteam2001.12.17/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                            <div><a href="https://www.youtube.com/channel/UCyj1GCzlS7yTmjm2moSMt1w"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                            <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
                         </div>
                     </div>
                     <div class="releaseDate">
@@ -23,11 +23,11 @@
                         </div>
                         <div class="openingDay">
                             <div class="tag">🖍 公開日：</div>
-                            <div class="date">2019.11.12</div>
+                            <div class="date"><?php echo get_the_date('Y.m.d', $post->ID) ?></div>
                         </div>
                         <div class="update">
                             <div class="tag">↺ 更新日：</div>
-                            <div class="date">2025.03.16</div>
+                            <div class="date"><?php echo get_the_modified_date('Y.m.d', $post->ID) ?></div>
                         </div>
                     </div>
                     <div class="banner"><?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?></div>
@@ -85,7 +85,6 @@
                     ?>
                     </div>
                 </div>
-                
                 <div class="flex-right">
                     <div class="title"><p>視力回復辞典(視力回復の真実)</p></div>
                     <div class="banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
@@ -118,8 +117,8 @@
                     <div class="banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-registration.jpg" alt=""></a></div>
                     <div class="searchBox">
                         <div class="search-Button">
-                            <input type="text" placeholder="Search.." name="search">
-                            <button class="btn_hot_search">検 索</button>
+                            <input type="text" placeholder="Search.." name="search" id="hot_search_detail">
+                            <button class="btn_hot_search_detail">検 索</button>
                         </div>
                     </div>
                     <div class="categoryTag">

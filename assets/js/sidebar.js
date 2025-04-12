@@ -133,13 +133,36 @@ $('.hot_word').on('click', function() {
   $("#hot_search").val(text);
 });
 
-
+/////////////////////// search item ///////////
 $('.btn_hot_search').on('click',function(){
   let hot_word = $('#hot_search').val();
+  gotoSearchPage(hot_word);
+});
+$('.btn_hot_search_detail').on('click',function(){
+  let hot_word = $('#hot_search_detail').val();
+  gotoSearchPage(hot_word);
+});
+$('.btn_hot_search_term').on('click',function(){
+  let hot_word = $('#hot_search_term').val();
+  gotoSearchPage(hot_word);
+});
+$('.categoryTag div a').on('click',function(){
+  let hot_word = $(this).text();
+  gotoSearchPage(hot_word.slice(1));
+})
+$('.categoryLists .row .row-list div').on('click',function(){
+  let hot_word = $(this).text();
+  gotoSearchPage(hot_word);
+})
+$('.categoryLists >div').on('click',function(){
+  let hot_word = $(this).text();
+  gotoSearchPage(hot_word);
+})
+
+function gotoSearchPage(hot_word){
   let url = './searchResult?search_key=' + hot_word;
   console.log(hot_word);
   if(hot_word.trim()){
     document.location.href=url;
-    // searchWrite(hot_word);
   }
-});
+}
