@@ -409,7 +409,7 @@ function chk9() {
       resultview(pattern + ekr_pat*15);
       handleSubmit();
   } else{
-    alert(errmsg);
+    showToast(errmsg, "error")
   }
 }
 

@@ -1,9 +1,7 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/eyeGlossaryDetail.css" />
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Common/like-button.css" />
 <?php set_post_views( get_the_ID() ); ?>
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/eyeGlossaryDetail.css" />
-    <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Common/like-button.css" />
     <main class="single-all_terms">
         <div class="container">
         <?php while ( have_posts() ) : the_post(); ?>
@@ -22,25 +20,10 @@ get_header();
                     <div class="releaseDate">
                         <div class="like">
                             <div class="tag">❤お役立ち度：</div>
-                            <div class="name">80％</div>
+                            <div class="name"></div>
                         </div>
-                        <button class="like-button">
-                            <div class="like-wrapper">
-                                <div class="ripple"></div>
-                                <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
-                                </svg>
-                                <div class="particles" style="--total-particles: 6">
-                                <div class="particle" style="--i: 1; --color: #7642F0"></div>
-                                <div class="particle" style="--i: 2; --color: #AFD27F"></div>
-                                <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
-                                <div class="particle" style="--i: 4; --color: #D0516B"></div>
-                                <div class="particle" style="--i: 5; --color: #5686F2"></div>
-                                <div class="particle" style="--i: 6; --color: #D53EF3"></div>
-                                </div>
-                            </div>
-                        </button>
-                        <div class="view">
+                        <?php render_like_button(); ?>
+                        <div class="view" view-count="<?php echo get_post_meta( get_the_ID(), 'post_views_count', true ); ?>">
                             <span>👁</span>
                             <div class="tag">閲覧数：</div>
                             <div class="date"><?php echo get_post_meta( get_the_ID(), 'post_views_count', true ); ?></div>
@@ -48,9 +31,7 @@ get_header();
                     </div>
                     <div class="banner"><?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?></div>
                     <div class="infor">
-                        <div class="infor-content">
-                            <?php  the_content();  ?>
-                        </div>
+                        <div class="infor-content"><?php  the_content();  ?></div>
                     </div>
                     <?php endwhile; ?>
                     <div class="searchBox">

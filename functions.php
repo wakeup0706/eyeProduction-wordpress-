@@ -374,3 +374,62 @@ function set_post_views( $postID ) {
         update_post_meta( $postID, $count_key, $count );
     }
 }
+
+/////////////////////////////
+function initialize_vote_meta($post_id) {
+    if (!get_post_meta($post_id, '_good_votes', true)) {
+        update_post_meta($post_id, '_good_votes', 0);
+    }
+}
+add_action('save_post', 'initialize_vote_meta');
+
+function render_like_button($post_id = null) {
+    if (!$post_id) $post_id = get_the_ID();
+    $count = get_post_meta($post_id, '_good_votes', true);
+
+    echo '
+    <div class="like-container" data-postid="' . esc_attr($post_id) . '" like-count="' . esc_html($count) . '">
+        <button type="button" class="like-button">
+            <div class="like-wrapper">
+                <div class="ripple"></div>
+                <svg class="heart" width="24" height="24" viewBox="0 0 24 24">
+                    <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5
+                    C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08
+                    C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5
+                    C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"></path>
+                </svg>
+                <div class="particles" style="--total-particles: 6">
+                    <div class="particle" style="--i: 1; --color: #7642F0"></div>
+                    <div class="particle" style="--i: 2; --color: #AFD27F"></div>
+                    <div class="particle" style="--i: 3; --color: #DE8F4F"></div>
+                    <div class="particle" style="--i: 4; --color: #D0516B"></div>
+                    <div class="particle" style="--i: 5; --color: #5686F2"></div>
+                    <div class="particle" style="--i: 6; --color: #D53EF3"></div>
+                </div>
+            </div>
+        </button>
+    </div>';
+}
+
+function handle_good_vote_ajax() {
+    check_ajax_referer('vote_nonce', 'nonce');
+
+    $post_id = intval($_POST['post_id']);
+    $count = (int) get_post_meta($post_id, '_good_votes', true);
+    $count++;
+    update_post_meta($post_id, '_good_votes', $count);
+
+    wp_send_json_success(['new_count' => $count]);
+}
+
+add_action('wp_ajax_nopriv_vote_good', 'handle_good_vote_ajax');
+add_action('wp_ajax_vote_good', 'handle_good_vote_ajax');
+
+function enqueue_vote_script() {
+    wp_enqueue_script('vote-js', get_template_directory_uri() . '/assets/js/vote.js', array('jquery'), null, true);
+    wp_localize_script('vote-js', 'voteData', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+        'nonce' => wp_create_nonce('vote_nonce')
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_vote_script');
