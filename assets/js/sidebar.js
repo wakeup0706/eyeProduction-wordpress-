@@ -150,7 +150,8 @@ $('.categoryTag div a').on('click',function(){
   let hot_word = $(this).text();
   gotoSearchPage(hot_word.slice(1));
 })
-$('.categoryLists .row .row-list div').on('click',function(){
+$('.categoryLists .row .row-list div').on('click',function(e){
+  e.stopPropagation();
   let hot_word = $(this).text();
   gotoSearchPage(hot_word);
 })

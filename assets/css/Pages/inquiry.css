@@ -65,8 +65,8 @@ main .sns-content img:hover{
     margin-block: 20px;
 }
 .flex-left .title .text{
-    max-width: 675px;
-    width: 675px;
+    max-width: 640px;
+    width: 640px;
     font-size: 22px;
     font-weight: 700;
     color: var(--text-black);
@@ -166,7 +166,7 @@ main .sns-content img:hover{
     box-shadow: inset 0 0 0 0 transparent;
     color: rgba(0, 0, 0, .87);
     font-size: 1em;
-    line-height: 1.2857;
+    line-height: 0.7;
     outline: none;
     padding: .78571429em 1em;
     resize: vertical;
@@ -180,7 +180,7 @@ main .sns-content img:hover{
 .now-content .flex .gist{
     width: 200px;
 }
-button{
+.wpcf7-submit{
     width: 100px;
     height: 40px;
     background-color: var(--seeMore-button);

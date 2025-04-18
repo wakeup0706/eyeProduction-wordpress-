@@ -21,11 +21,9 @@ const button19 = document.querySelector('#button-19');
 const buttonBefore = document.querySelector('#button-before');
 const buttonBefore2 = document.querySelector('#button-before2');
 const buttonBefore3 = document.querySelector('#button-before3');
-const buttonBefore4 = document.querySelector('#button-before4');
 const buttonBefore5 = document.querySelector('#button-before5');
 
 const indicator = document.querySelectorAll('.indicator');
-
 let step = 1;
 
 function handleSubmit(event) {  
@@ -211,6 +209,7 @@ function toStep18(){
   CorrectedRight = $("#CorrectedRight").val();
   CorrectedLeft = $("#CorrectedLeft").val();
   if(refractiveRight && refractiveLeft && AstigmatismRight && AstigmatismLeft && CorrectedRight && CorrectedLeft){
+    console.log(refractiveRight);
     handleSubmit();
   }else{
     showToast("正確に入力してください！", "error");
@@ -247,7 +246,6 @@ button18.addEventListener('click', toStep19);
 buttonBefore.addEventListener('click', handleSubmit);
 buttonBefore2.addEventListener('click', handleSubmit);
 buttonBefore3.addEventListener('click', handleSubmit);
-buttonBefore4.addEventListener('click', handleSubmit);
 buttonBefore5.addEventListener('click', handleSubmit);
 
 //////////////////////////////////////////////////////////////
@@ -260,35 +258,36 @@ btn.onclick = function() {
   let isChecked = $("#okay").is(":checked")
   if(emailAdress && isChecked){
     if(isValidEmail(emailAdress)){
-      $("#re_age").val(age);
-      $("#re_shiryukuRight").val(shiryukuRight);
-      $("#re_shiryukuLeft").val(shiryukuLeft);
-      $("#re_nearsightedRight").val(nearsightedRight);
-      $("#re_nearsightedLeft").val(nearsightedLeft);
-      $("#re_astigmatismRight").val(astigmatismRight);
-      $("#re_astigmatismLeft").val(astigmatismLeft);
-      $("#re_begin").val(begin);
-      $("#re_confirmed").val(confirmed);
+      $("input[name='re_age']").val(age);
+      $("input[name='re_shiryukuRight']").val(shiryukuRight);
+      $("input[name='re_shiryukuLeft']").val(shiryukuLeft);
+      $("select[name='re_nearsightedRight']").val(nearsightedRight);
+      $("select[name='re_nearsightedLeft']").val(nearsightedLeft);
+      $("select[name='re_astigmatismRight']").val(astigmatismRight);
+      $("select[name='re_astigmatismLeft']").val(astigmatismLeft);
+      $("select[name='re_begin']").val(begin);
+      $("select[name='re_confirmed']").val(confirmed);
 
-      $('input[name="re_causing"]').each(function() { // Iterate through each checkbox
+      $('input[name="re_causing[]"]').each(function() { // Iterate through each checkbox
         if (checkedValues.includes($(this).val())) { // Check if the checkbox value is in the array
           $(this).prop('checked', true); // If it is, check the box
         }
       });
-      $("#re_squinting").val(squinting);
-      $("#re_glasses").val(glasses);
-      $("#re_temperament").val(temperament);
-      $("#re_deteriorate").val(deteriorate);
-      $("#re_parents").val(parents);
-      $("#re_refraction").val(refraction);
-      $("#re_refractiveRight").val(refractiveRight);
-      $("#re_refractiveLeft").val(refractiveLeft);
-      $("#re_AstigmatismRight").val(AstigmatismRight);
-      $("#re_AstigmatismLeft").val(AstigmatismLeft);
-      $("#re_CorrectedRight").val(CorrectedRight);
-      $("#re_CorrectedLeft").val(CorrectedLeft);
-      $("#re_fullName").val(fullName);
-      $("#re_emailAdress").val(emailAdress);
+      $("select[name='re_squinting']").val(squinting);
+      $("select[name='re_glasses']").val(glasses);
+      $("select[name='re_temperament']").val(temperament);
+      $("select[name='re_deteriorate']").val(deteriorate);
+      $("select[name='re_parents']").val(parents);
+      $("select[name='re_parentsMyopia']").val(parentsMyopia);
+      $("select[name='re_refraction']").val(refraction);
+      $("input[name='re_refractiveRight']").val(refractiveRight);
+      $("input[name='re_refractiveLeft']").val(refractiveLeft);
+      $("input[name='re_AstigmatismRight']").val(AstigmatismRight);
+      $("input[name='re_AstigmatismLeft']").val(AstigmatismLeft);
+      $("input[name='re_CorrectedRight']").val(CorrectedRight);
+      $("input[name='re_CorrectedLeft']").val(CorrectedLeft);
+      $("input[name='re_fullName']").val(fullName);
+      $("input[name='re_emailAddress']").val(emailAdress);
       modal.style.display = "block";
     }else{
       showToast("メールを正確に入力してください。", "error");
@@ -311,30 +310,3 @@ function isValidEmail(email) {
   const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return regex.test(email);
 }
-$('#button-before3').click(()=>{
-  age = $("#re_age").val();
-  shiryukuRight = $("#re_shiryukuRight").val();
-  shiryukuLeft = $("#re_shiryukuLeft").val();
-  nearsightedRight = $("#re_nearsightedRight").val();
-  nearsightedLeft = $("#re_nearsightedLeft").val();
-  astigmatismRight = $("#re_astigmatismRight").val();
-  astigmatismLeft = $("#re_astigmatismLeft").val();
-  begin = $("#re_begin").val();
-  confirmed = $("#re_confirmed").val();
-  checkedValues = getCheckedCheckboxesValues('re_causing');
-  squinting = $("#re_squinting").val();
-  glasses = $("#re_glasses").val();
-  temperament = $("#re_temperament").val();
-  deteriorate = $("#re_deteriorate").val();
-  parents = $("#re_parents").val();
-  parentsMyopia = $("#re_parentsMyopia").val();
-  refraction = $("#re_refraction").val();
-  refractiveRight = $("#re_refractiveRight").val();
-  refractiveLeft = $("#re_refractiveLeft").val();
-  AstigmatismRight = $("#re_AstigmatismRight").val();
-  AstigmatismLeft = $("#re_AstigmatismLeft").val();
-  CorrectedRight = $("#re_CorrectedRight").val();
-  CorrectedLeft = $("#re_CorrectedLeft").val();
-  fullName = $("#re_fullName").val();
-  emailAdress = $("#re_emailAdress").val(); 
-})

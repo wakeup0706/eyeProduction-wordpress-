@@ -221,7 +221,49 @@ main .sns-content img:hover{
     right: 10px;
     min-width:100px;
 }
+/*  */
+.modal {
+display: none;
+position: fixed;
+z-index: 100;
+left: 0;
+top: 0px;
+width: 100%;
+height: 100vh;
+overflow: auto;
+background-color: #23262c70;
+}
 
+.modal-content {
+position: relative;
+background-color: #fefefe;
+margin: 40vh auto auto auto;
+border: 1px solid #888;
+width: 250px;
+padding: 18px;
+}
+
+.close {
+position: absolute;
+right: -35px;
+top: -35px;
+font-size: 30px;
+font-weight: bold;
+color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+color: #f44336;
+cursor: pointer;
+}
+
+@media screen and (max-width: 300px) {
+.cancelbtn, .deletebtn {
+    width: 100%;
+}
+}
+/*  */
 .flex-left .beforeButton{
     left: 0;
 }

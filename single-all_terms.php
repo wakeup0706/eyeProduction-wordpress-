@@ -1,7 +1,7 @@
 <?php get_header(); ?>
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/eyeGlossaryDetail.css" />
-<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Common/like-button.css" />
 <?php set_post_views( get_the_ID() ); ?>
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Common/like-button.css" />
+<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Pages/eyeGlossaryDetail.css" />
     <main class="single-all_terms">
         <div class="container">
         <?php while ( have_posts() ) : the_post(); ?>
@@ -11,10 +11,10 @@
                     <div class="title flex space-between">
                         <div class="text"><?php the_title(); ?></div>
                         <div class="sns-content flex">
-                            <div><a href="https://twitter.com/meikusouken2001"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
-                            <div><a href="https://www.instagram.com/dreamteam2001.12.17/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
-                            <div><a href="https://www.youtube.com/channel/UCyj1GCzlS7yTmjm2moSMt1w"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
-                            <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
+                            <div><a href="https://twitter.com/meikusouken2001" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                            <div><a href="https://www.instagram.com/dreamteam2001.12.17/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                            <div><a href="https://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Qhttps://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Q" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                            <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
                         </div>
                     </div>
                     <div class="releaseDate">
@@ -22,11 +22,11 @@
                             <div class="tag">❤お役立ち度：</div>
                             <div class="name"></div>
                         </div>
-                        <?php render_like_button(); ?>
+                        <?php render_like_button();?>
                         <div class="view" view-count="<?php echo get_post_meta( get_the_ID(), 'post_views_count', true ); ?>">
                             <span>👁</span>
                             <div class="tag">閲覧数：</div>
-                            <div class="date"><?php echo get_post_meta( get_the_ID(), 'post_views_count', true ); ?></div>
+                            <div class="date"><?php echo get_post_views( get_the_ID() ); ?></div>
                         </div>
                     </div>
                     <div class="banner"><?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?></div>
@@ -165,16 +165,16 @@
                 </div>
                 <div class="flex-right">
                     <div class="title"><p>目の用語辞典</p></div>
-                    <div class="banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
+                    <div class="banner"><a href="https://www.heallite.com/c/desklight/gentlite/M0002" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
                     <div class="otherCategory">
                         <div class="otherCategory-item">
-                            <a href="<?php echo site_url();?>/visionPossibility">
+                            <a href="<?php echo site_url();?>/visionpossibility">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconResult.png" alt=""></div>
                                 <div class="otherCategory-item-text">視力向上可能性判定</div>
                             </a>
                         </div>
                         <div class="otherCategory-item">
-                            <a href="<?php echo site_url();?>/visionDictionary">
+                            <a href="<?php echo site_url();?>/visiondictionary">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconMdic.png" alt=""></div>
                                 <div class="otherCategory-item-text">視力回復辞典</div>
                             </a>

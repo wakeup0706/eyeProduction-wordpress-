@@ -1,17 +1,17 @@
 $(document).ready(function() {
 
+    
     var postID1 = $('.like-container').attr('data-postid');
     if(localStorage.getItem('liked_' + postID1)){
         $(".heart > path").css("fill","#EA442B");
     }
-
+    
     let view_count = $('.releaseDate .view').attr('view-count');
     let like_count = $('.like-container').attr('like-count');
     
-    let result = (like_count/view_count);
+    let result = ((like_count/view_count)*100);
     $('.like .name').text(result.toString().slice(0, 4)+"%");
     $(document).on('click', '.like-container', function(e) {
-        
         var $container = $(this).closest('.like-container');
         var postID = $container.data('postid');
         e.stopPropagation();

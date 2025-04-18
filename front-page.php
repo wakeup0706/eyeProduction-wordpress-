@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/css/Layout/main.css" />
     <main>
         <section class="first container">
-            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyetest_baner.jpg" alt="eyetest_baner"></div>
+            <div><a href="<?php echo site_url();?>/visiontest"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyetest_baner.jpg" alt="eyetest_baner"></a></div>
         </section>
         <section class="testResult inConteiner">
             <div class="bg vector1"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/backgrounds/Vector1.png" alt=""></div>
@@ -80,7 +80,7 @@
                     while ($featured_query->have_posts()) : $featured_query->the_post();
                         $category = get_the_category();
                 ?>
-                    <div class="baner">
+                    <div class="baner" onclick="location.href='<?php echo get_permalink() ?>';">
                         <?php if (has_post_thumbnail()) : ?>
                             <?php the_post_thumbnail('full', array('alt' => get_the_title())); ?>
                         <?php else : ?>
@@ -118,7 +118,7 @@
                         while ($latest_query->have_posts()) : $latest_query->the_post();
                             $category = get_the_category();
                     ?>
-                        <div class="seeMoreArticle">
+                        <div class="seeMoreArticle" onclick="location.href='<?php echo get_permalink() ?>';">
                             <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('full', array('alt' => get_the_title())); ?>
                             <?php else : ?>
@@ -159,15 +159,10 @@
                 <div class="section-title"><p class="text-top">視力回復相談室</p></div>
             </div>
             <div class="youtube-iframe">
-                <iframe 
-                src="https://www.youtube.com/embed/kaKXJQZZa9w?autoplay=1&mute=1&controls=0&loop=1&playlist=kaKXJQZZa9w" 
-                frameborder="0"
-                allow="autoplay; encrypted-media"
-                allowfullscreen>
-            </iframe>
+                <iframe src="https://www.youtube.com/embed/kaKXJQZZa9w?autoplay=1&mute=1&controls=0&loop=1&playlist=kaKXJQZZa9w" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             </div>
             <div class="seeMoreButton">
-                <a href="#"><span>視力回復相談室の動画を見る</span></a>
+                <a href="https://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Q" target="_blank"><span>視力回復相談室の動画を見る</span></a>
             </div>
         </section>
         <section class="visionDictionary container">
@@ -246,14 +241,14 @@
                 <div class="swiper-pagination swiper-pagination-vision"></div>
             </div>
             <div class="seeMoreButton">
-                <a href="<?php echo site_url();?>/visionDictionary"><span>視力回復辞典をもっと見る</span></a>
+                <a href="<?php echo site_url();?>/visiondictionary"><span>視力回復辞典をもっと見る</span></a>
             </div>
         </section>
         <section class="visionImproment">
             <div class="backgroundImg"></div>
             <div class="baners flex space-between">
-                <div class="baner leftBaner"></div>
-                <div class="baner rightBaner"></div>
+                <div class="baner leftBaner" onclick="javascript:window.open('https://www.heallite.com/c/desklight/gentlite/M0002', '_blank');"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></div>
+                <div class="baner rightBaner" onclick="location.href='<?php echo site_url();?>/visionpossibility';"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt=""></div>
             </div>
         </section>
         <section class="eyeGlossary container">
@@ -310,7 +305,7 @@
                         ?>
 
                     <li class="card-item swiper-slide">
-                        <a href="<?php echo site_url();?>/detailPages/eyeGlossaryDetail" class="card-link">
+                        <a href="<?php echo get_permalink(); ?>" class="card-link">
                         <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
                             <?php else : ?>
@@ -393,7 +388,7 @@
                         ?>
 
                     <li class="card-item swiper-slide">
-                        <a href="<?php echo site_url();?>/detailPages/eyeGlossaryDetail" class="card-link">
+                        <a href="<?php echo get_permalink(); ?>" class="card-link">
                         <?php if (has_post_thumbnail()) : ?>
                                 <?php the_post_thumbnail('full', array('class' => 'article-thumbnail')); ?>
                             <?php else : ?>
@@ -440,17 +435,17 @@
                         <div class="corner bottom left"></div>
                         <div class="corner bottom right"></div>
                         <div class="corner-img">
-                            <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProdect-top.jpg" alt="">
+                            <a href="https://www.heallite.com/c/option/M0002" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProdect-top.jpg" alt=""></a>
                         </div>
                     </div>
                 </div>
                 <div class="eyeProductCardRow">
-                    <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct1.jpg" alt=""></div>
-                    <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct2.jpg" alt=""></div>
-                    <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct3.jpg" alt=""></div>
-                    <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct4.jpg" alt=""></div>
-                    <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct5.jpg" alt=""></div>
-                    <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct6.jpg" alt=""></div>
+                    <div><a href="https://www.heallite.com/c/option/M0002-2" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct1.jpg" alt=""></a></div>
+                    <div><a href="https://www.heallite.com/c/desklight/maker/MS0001-1" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct2.jpg" alt=""></a></div>
+                    <div><a href="https://www.heallite.com/c/desklight/maker/MC00" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct3.jpg" alt=""></a></div>
+                    <div><a href="https://www.heallite.com/c/desklight/gentlite/D0007" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct4.jpg" alt=""></a></div>
+                    <div><a href="https://www.heallite.com/c/desklight/maker/227"  target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct5.jpg" alt=""></a></div>
+                    <div><a href="https://www.heallite.com/c/desklight/maker/eye7" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/eyeProducts/eyeProduct6.jpg" alt=""></a></div>
                 </div>
             </div>
             <div class="seeMoreButton">
@@ -468,9 +463,9 @@
                     子供から大人まで利用可能で、目のケアに最適です。</p>
             </div>
             <div class="banners">
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/aboutHomework1.jpg" alt=""></div>
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/aboutHomework2.jpg" alt=""></div>
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/aboutHomework3.jpg" alt=""></div>
+                <div><a href="https://www.homewac.com/clinical.html" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/aboutHomework1.jpg" alt=""></a></div>
+                <div><a href="https://www.homewac.com/develop.html" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/aboutHomework2.jpg" alt=""></a></div>
+                <div><a href="https://www.homewac.com/principle.html" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/aboutHomework3.jpg" alt=""></a></div>
             </div>
         </section>
         <section class="kindleBooks inConteiner">
@@ -479,9 +474,39 @@
             <div class="bg vector2"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/backgrounds/Vector1.png" alt=""></div>
             <div class="title Homework-kindle"><p>Kindleブックス</p></div>
             <div class="books">
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook1.png" alt="kindleBook1"></div>
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook2.png" alt="kindleBook2"></div>
-                <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/kindleBooks/kindleBook3.png" alt="kindleBook3"></div>
+                <?php
+                    // Get the latest 3 posts
+                    $args = array(
+                        'post_type' => 'all_kindlebooks',
+                        'posts_per_page' => 3,
+                        'orderby' => 'date',
+                        'order' => 'DESC'
+                    );
+                    
+                    $latest_query = new WP_Query($args);
+                    
+                    if ($latest_query->have_posts()) :
+                        while ($latest_query->have_posts()) : $latest_query->the_post();
+                            $category = get_the_category();
+                    ?>
+                        <div  onclick="location.href='<?php echo get_permalink() ?>';">
+                            <?php if (has_post_thumbnail()) : ?>
+                                <?php the_post_thumbnail('full', array('alt' => get_the_title())); ?>
+                            <?php else : ?>
+                                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/articles/default-article.jpg" alt="<?php echo esc_attr(get_the_title()); ?>">
+                            <?php endif; ?>
+                        </div>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else :
+                    ?>
+                    <div class="no-posts">
+                        <p>記事が見つかりませんでした。</p>
+                    </div>
+                <?php
+                endif;
+                ?>
             </div>
             <div class="seeMoreButton">
                 <a href="<?php echo site_url();?>/kindleBooks"><span>Kindleブックスをもっと見る</span></a>
@@ -489,8 +514,8 @@
         </section>
         <section class="line-youtube-registration">
             <div class="inConteiner">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-registration.jpg" alt="line-youtube-registration">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/youtube-registration.jpg" alt="line-youtube-registration">
+                <a href="https://line.me/ti/p/@959ejwxf" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-registration.jpg" alt="line-youtube-registration"></a>
+                <a href="https://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Q" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/youtube-registration.jpg" alt="line-youtube-registration"></a>
             </div>
         </section>
         <section class="staffRecommended inConteiner">
@@ -508,7 +533,7 @@
                 $args = array(
                     'post_type' => 'staff_recommended',
                     'posts_per_page' => 3,
-                    'category_name' => 'スタッフのおすすめ記事', // Make sure this category exists
+                    'category_name' => '働き方・生き方', // Make sure this category exists
                     'orderby' => 'date',
                     'order' => 'DESC'
                 );
@@ -520,7 +545,7 @@
                     while ($query->have_posts()) : $query->the_post();
                         $category = get_the_category();
                 ?>
-                    <div class="content">
+                    <div class="content" onclick="location.href='<?php echo get_permalink() ?>';">
                         <div class="contentNumber"><p><?php echo $counter; ?></p></div>
                         <div class="contnetImage">
                             <?php if (has_post_thumbnail()) : ?>
@@ -530,8 +555,8 @@
                             <?php endif; ?>
                         </div>
                         <div class="contentText">
-                            <div class="contentTitle"><p><?php echo get_the_title(); ?></p></div>
-                            <div class="contentText-content"><p><?php echo get_the_content(); ?></p></div>
+                            <div class="contentTitle"><p><?php echo esc_html($category[0]->name); ?></p></div>
+                            <div class="contentText-content"><p><?php echo get_the_title(); ?></p></div>
                             <div class="contentDate"><p>&#9201; <?php echo get_the_date('Y.m.d'); ?></p></div>
                         </div>
                     </div>
@@ -551,8 +576,8 @@
         </section>
         <section class="subscriptionGuide">
             <div class="container">
-                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt="line-youtube-registration"></a>
-                <a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt="line-youtube-registration"></a>
+                <a href="https://www.heallite.com/c/desklight/gentlite/M0002" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt="line-youtube-registration"></a>
+                <a href="<?php echo site_url();?>/visionpossibility"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt="line-youtube-registration"></a>
             </div>
         </section>
         <section class="notice">
@@ -581,7 +606,7 @@
                         while ($query->have_posts()) : $query->the_post();
                             $category = get_the_category();
                     ?>
-                        <div class="notice-content-text">
+                        <div class="notice-content-text" onclick="location.href='<?php echo get_permalink() ?>';">
                             <div><p><?php echo get_the_title(); ?></p></div>
                             <div class="notice-content-text-date"><p>&#9201; <?php echo get_the_date('Y.m.d'); ?></p></div>
                         </div>

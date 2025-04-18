@@ -80,6 +80,21 @@ function cvf_demo_pagination_load_posts() {
                         <p>' . esc_html($post->post_title) . '</p>
                     </div> 
                 </div>';
+            }else if(wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "アイケア商品"){
+                $msg .= '
+                <div class="seeMoreArticle" onClick="javascript:window.open(\''.get_post_meta($post->ID, "url", true).'\', \'_blank\');" >
+                    ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
+                    <div class="articleContent">
+                        <div class="articleType">
+                            <div class="articleType-text"><p>' . wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] . '</p></div>
+                            <div class="articleType-mark"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/mark.png" alt="mark"></div>
+                        </div>
+                        <div class="articleContent-date"><p>' . get_the_date('Y.m.d', $post->ID) . '</p></div>
+                        <div class="articleContent-text">
+                        <p>' . esc_html($post->post_title) . '</p>
+                        </div>
+                    </div>
+                </div>';
             }else{
                 $msg .= '
                 <div class="seeMoreArticle" onclick="location.href=\'' . get_permalink($post->ID) . '\';">
@@ -219,6 +234,21 @@ function cvf_demo_popular_load_posts() {
                     <div class="contentText">
                         <p>' . esc_html($post->post_title) . '</p>
                     </div> 
+                </div>';
+            }else if(wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] == "アイケア商品"){
+                $msg .= '
+                <div class="seeMoreArticle" onClick="javascript:window.open(\''.get_post_meta($post->ID, "url", true).'\', \'_blank\');">
+                    ' . (has_post_thumbnail($post->ID) ? get_the_post_thumbnail($post->ID, 'full', array('class' => 'article-thumbnail')) : '<img src="' . get_stylesheet_directory_uri() . '/assets/img/articles/default-article.jpg" alt="' . esc_attr(get_the_title($post->ID)) . '">') . '
+                    <div class="articleContent">
+                        <div class="articleType">
+                            <div class="articleType-text"><p>' . wp_get_post_terms($post->ID, 'category', array('fields' => 'names'))[0] . '</p></div>
+                            <div class="articleType-mark"><img src="' . get_stylesheet_directory_uri() . '/assets/img/Icons/mark.png" alt="mark"></div>
+                        </div>
+                        <div class="articleContent-date"><p>' . get_the_date('Y.m.d', $post->ID) . '</p></div>
+                        <div class="articleContent-text">
+                        <p>' . esc_html($post->post_title) . '</p>
+                        </div>
+                    </div>
                 </div>';
             }else{
                 $msg .= '

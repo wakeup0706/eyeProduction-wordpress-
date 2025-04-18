@@ -141,35 +141,33 @@
     background-position: center;
 }
 .baners{
-    max-width: 900px;
+    max-width: 1090px;
     margin-inline: auto;
     position: relative;
-    margin-top: -150px;
+    margin-top: -140px;
     gap: 10px;
 }
+.baners .baner img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
 .baners .baner{
-    width: 400px;
+    width: 510px;
     max-height: 280px;
-    height: 240px;
-    cursor: pointer;
+    height: 280px;
+    overflow: hidden;
 }
 .leftBaner{
-    background-image: url('../../img/land_banner1.jpg');
-    background-size: cover;
-    background-position: center;
     left: 0;
     border-radius: 0 40px 0 40px;
     border: 10px solid var(--seeMore-button);
 }
 .rightBaner{
-    background-image: url('../../img/land_banner2.jpg');
-    background-size: cover;
-    background-position: center;
     right: 0;
     border-radius: 40px 0 40px 0;
     border: 10px solid var(--seeMore-button);
 }
-
 @media screen and (max-width: 1200px) {
     .leftBaner, .rightBaner{
         border-width: 10px;

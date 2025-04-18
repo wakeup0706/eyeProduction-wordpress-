@@ -8,11 +8,10 @@
                     <div class="title flex space-between">
                         <div class="text">お問い合わせ</div>
                         <div class="sns-content flex">
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></div>
-                            <div><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns5.png" alt=""></div>
+                            <div><a href="https://twitter.com/meikusouken2001" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                            <div><a href="https://www.instagram.com/dreamteam2001.12.17/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                            <div><a href="https://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Qhttps://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Q" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                            <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
                         </div>
                     </div>
                     <div class="banner"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/inquiry.png" alt=""></div>
@@ -49,31 +48,11 @@
                     </div>
                     <div class="under-banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt="" class="sp-banner" /></a></div>
                     <div class="now">お問い合わせフォーム
-                        <div class="now-content">
-                            <div class="flex">
-                                <div class="gist">お名前（必須）</div>
-                                <div><input type="text" placeholder="" class="el-input__inner"></div>
-                            </div>
-                            <div class="flex">
-                                <div class="gist">フリガナ（任意）</div>
-                                <div><input type="text" placeholder="" class="el-input__inner"></div>
-                            </div>
-                            <div class="flex">
-                                <div class="gist">メールアドレス（必須）</div>
-                                <div><input type="text" placeholder="" class="el-input__inner"></div>
-                            </div>
-                            <div class="flex">
-                                <div class="gist">相談内容（必須）</div>
-                                <div><textarea rows="NaN" placeholder="" class="el-textarea__inner" style="min-height: 42px;"></textarea></div>
-                            </div>
-                            <div>
-                                <button>送信</button>
-                            </div>
-                        </div>
+                        <?php echo do_shortcode('[contact-form-7 id="a4f5d1d" title="contact inquiry"]'); ?>
                     </div>
                     <div class="line-youtube">
                         <div>
-                            <a href="#">
+                            <a href="https://line.me/ti/p/@959ejwxf" target="_blank">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-registration.jpg" alt="line-youtube-registration">
                             </a>
                         </div>
@@ -86,16 +65,16 @@
                 </div>
                 <div class="flex-right">
                     <div class="title"><p>お問合せ</p></div>
-                    <div class="banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
+                    <div class="banner"><a href="https://www.heallite.com/c/desklight/gentlite/M0002" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
                     <div class="otherCategory">
                         <div class="otherCategory-item">
-                            <a href="<?php echo site_url();?>/visionDictionary">
+                            <a href="<?php echo site_url();?>/visiondictionary">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconMdic.png" alt=""></div>
                                 <div class="otherCategory-item-text">視力回復辞典</div>
                             </a>
                         </div>
                         <div class="otherCategory-item">
-                            <a href="<?php echo site_url();?>/eyeGlossary">
+                            <a href="<?php echo site_url();?>/eyeglossary">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconDic.png" alt=""></div>
                                 <div class="otherCategory-item-text">目の用語辞典</div>
                             </a>
@@ -107,13 +86,13 @@
                             </a>
                         </div>
                         <div class="otherCategory-item">
-                            <a href="<?php echo site_url();?>/visionPossibility">
+                            <a href="<?php echo site_url();?>/visionpossibility">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconResult.png" alt=""></div>
                                 <div class="otherCategory-item-text">視力向上可能性判定 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-registration.jpg" alt=""></a></div>
+                    <div class="banner"><a href="https://line.me/ti/p/@959ejwxf" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-registration.jpg" alt=""></a></div>
                 </div>
             </div>
         </div>

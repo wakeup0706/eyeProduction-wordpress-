@@ -30,12 +30,8 @@
     color: var(--text-black);
 }
 
-@media only screen and (max-width: 610px) {
-    .popularTitleIcon{
-        position: relative;
-        width: 50px;
-        top: -17px;
-    }
+.presentment{
+  text-align: center;
 }
 
 .visionPossibiliting {
@@ -169,6 +165,19 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.bnbutton .wpcf7-submit{
+  position: relative;
+  width: 200px;
+  height: 40px;
+  background-color: var(--seeMore-button);
+  border-radius: 30px;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  margin-inline: 10px;
+  cursor: pointer;
+}
 .bnbutton button{
   position: relative;
   width: 200px;
@@ -182,15 +191,21 @@
   margin-inline: 10px;
   cursor: pointer;
 }
-.bnbutton button::after{
-  content: "";
+.bnbutton .wpcf7-submit::after{
+  content: "→";
   position: absolute;
   width: 8px;
   height: 8px;
-  background-color: #ffffff;
   border-radius: 50%;
   right: 26px;
-  top: 50%;
+}
+.bnbutton button::after{
+  content: "→";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  right: 26px;
 }
 .bnbutton .beforeButton{
   background-color: #EE6354;
@@ -198,6 +213,10 @@
 @media only screen and (max-width: 768px) {
   .bnbutton{
       margin-block: 35px;
+  }
+  .bnbutton .wpcf7-submit{
+      width: 150px;
+      height: 40px;
   }
   .bnbutton button{
       width: 150px;
@@ -210,6 +229,15 @@
       margin-block: 20px;
       width: 300px;
       bottom: 60px;
+  }
+  .bnbutton .wpcf7-submit{
+      width: 150px;
+      height: 35px;
+      padding-top: 5px;
+      margin-block: 10px;
+  }
+  .bnbutton .wpcf7-submit::after{
+      display: none;
   }
   .bnbutton button{
       width: 150px;
@@ -644,6 +672,9 @@ input{
   animation-name: animatetop;
   animation-duration: 0.4s
 }
+.modal-content p{
+  display: inline;
+}
 .modal-content input[type='text'], .modal-content select{
   padding-block: 3px;
   width: 100px;
@@ -666,7 +697,7 @@ input{
 .modal-body .row2 >div:nth-child(2):before, .modal-body .row3 >div:nth-child(2):before{
   content: "左";
 }
-.causes{
+.causes .wpcf7-validates-as-required{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -840,7 +871,13 @@ input{
     right: 100%;
   }
 }
-
+@media only screen and (max-width: 610px) {
+  .popularTitleIcon{
+      position: relative;
+      width: 50px;
+      top: -17px;
+  }
+}
 /* Toast Type Colors */
 .toast.success .icon { color: rgb(25 135 84); }
 .toast.error .icon { color: rgb(220 53 69); }

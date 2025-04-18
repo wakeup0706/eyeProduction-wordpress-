@@ -387,5 +387,8 @@ main .sns-content img:hover{
 @media only screen and (max-width: 353px) {
     .cvf-universal-content{
         padding-inline: 0;
+        grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+        gap: 13px;
+        margin-inline: -10px;
     }
 }

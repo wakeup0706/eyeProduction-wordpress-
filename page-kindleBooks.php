@@ -107,8 +107,8 @@
         <section class="visionImproment">
             <div class="backgroundImg"></div>
             <div class="baners flex space-between">
-                <div class="baner leftBaner" onclick="location.href='#';"></div>
-                <div class="baner rightBaner" onclick="location.href='#';"></div>
+                <div class="baner leftBaner" onclick="javascript:window.open('https://www.heallite.com/c/desklight/gentlite/M0002', '_blank');"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></div>
+                <div class="baner rightBaner" onclick="location.href='<?php echo site_url();?>/visionpossibility';"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt=""></div>
             </div>
         </section>
         <section class="endBanner">

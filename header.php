@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>視力のお悩み解決サイトの決定版！</title>
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     
@@ -26,10 +27,10 @@
                 </div>
             </div>
             <div class="sns-content flex">
-                <div><a href="https://twitter.com/meikusouken2001"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
-                <div><a href="https://www.instagram.com/dreamteam2001.12.17/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
-                <div><a href="https://www.youtube.com/channel/UCyj1GCzlS7yTmjm2moSMt1w"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
-                <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
+                <div><a href="https://twitter.com/meikusouken2001" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                <div><a href="https://www.instagram.com/dreamteam2001.12.17/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                <div><a href="https://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Q" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
             </div>
         </div>
         <div class="menu">
@@ -41,25 +42,25 @@
                     </a>
                 </div>
                 <div class="menuButton">
-                    <a href="<?php echo site_url();?>/visionTest">
+                    <a href="<?php echo site_url();?>/visiontest">
                         <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconTest.png" alt="test"></div>
                         <p>ウェブで視力検査</p>
                     </a>
                 </div>
                 <div class="menuButton">
-                    <a href="<?php echo site_url();?>/visionPossibility">
+                    <a href="<?php echo site_url();?>/visionpossibility">
                         <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconResult.png" alt="result"></div>
                         <p>視力向上可能性判定</p>
                     </a>
                 </div>
                 <div class="menuButton">
-                    <a href="<?php echo site_url();?>/visionDictionary">
+                    <a href="<?php echo site_url();?>/visiondictionary">
                         <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconMdic.png" alt="mdic"></div>
                         <p>視力回復辞典</p>
                     </a>
                 </div>
                 <div class="menuButton">
-                    <a href="<?php echo site_url();?>/eyeGlossary">
+                    <a href="<?php echo site_url();?>/eyeglossary">
                         <div class="icon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconDic.png" alt="dic"></div>
                         <p>目の用語辞典</p>
                     </a>
@@ -102,25 +103,25 @@
             <div class="category"><p>カテゴリ</p></div>
             <ul class="lists">
                 <li class="list">
-                  <a href="<?php echo site_url();?>/visionTest" class="nav-link">
+                  <a href="<?php echo site_url();?>/visiontest" class="nav-link">
                       <span class="link">webで視力検査</span>
                       <span class="icon">&#10095;</span>
                   </a>
                 </li>
                 <li class="list">
-                  <a href="<?php echo site_url();?>/visionPossibility" class="nav-link">
+                  <a href="<?php echo site_url();?>/visionpossibility" class="nav-link">
                       <span class="link">視力向上可能性判定</span>
                       <span class="icon">&#10095;</span>
                   </a>
                 </li>
                 <li class="list">
-                  <a href="<?php echo site_url();?>/visionDictionary" class="nav-link">
+                  <a href="<?php echo site_url();?>/visiondictionary" class="nav-link">
                       <span class="link">視力回復辞典</span>
                       <span class="icon">&#10095;</span>
                   </a>
                 </li>
                 <li class="list">
-                  <a href="<?php echo site_url();?>/eyeGlossary" class="nav-link">
+                  <a href="<?php echo site_url();?>/eyeglossary" class="nav-link">
                       <span class="link">目の用語辞典</span>
                       <span class="icon">&#10095;</span>
                   </a>
@@ -132,7 +133,7 @@
                   </a>
                 </li>
                 <li class="list">
-                  <a href="<?php echo site_url();?>/kindleBooks" class="nav-link">
+                  <a href="<?php echo site_url();?>/kindlebooks" class="nav-link">
                       <span class="link">Kindleブックス</span>
                       <span class="icon">&#10095;</span>
                   </a>

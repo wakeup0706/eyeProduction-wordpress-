@@ -8,9 +8,18 @@ const button7 = document.querySelector('#button-7');
 const button8 = document.querySelector('#button-8');
 const button9 = document.querySelector('#button-9');
 
+const scrollToTop1 = () => {
+    window.scroll({
+      top: 90,
+      left: 0,
+      behavior: 'smooth'
+    }); 
+};
+
 const indicator = document.querySelectorAll('.indicator');
 let step = 1;
-function handleSubmit(event) {  
+function handleSubmit(event) { 
+  scrollToTop1();
   let stepClass = `.step-${step}`;
   let stepElm = document.querySelector(stepClass);
   stepElm.classList.remove('visible__no-animation');
@@ -57,6 +66,7 @@ buttonBefore.addEventListener('click', ()=>{
   title.classList.remove("show-none");
 });
 function handleSubmit2(event) {  
+  scrollToTop1();
   let stepClass = `.step-${step}`;
   let stepElm = document.querySelector(stepClass);
   stepElm.classList.remove('visible__no-animation');
@@ -107,24 +117,25 @@ function setMovileViewClass(){
 var errmsg = "選択して下さい。";
 
 // 視力 日本語表示用
-var siryoku = new Object();
-siryoku[1] = "0.01";
-siryoku[2] = "0.02";
-siryoku[3] = "0.04";
-siryoku[4] = "0.06";
-siryoku[5] = "0.08";
-siryoku[6] = "0.1";
-siryoku[7] = "0.2";
-siryoku[8] = "0.3";
-siryoku[9] = "0.4";
-siryoku[10] = "0.5";
-siryoku[11] = "0.6";
-siryoku[12] = "0.7";
-siryoku[13] = "0.8";
-siryoku[14] = "0.9";
-siryoku[15] = "1.0";
-siryoku[16] = "1.5";
-siryoku[17] = "2.0";
+// var siryoku = new Object();
+// siryoku[1] = "0.01";
+// siryoku[2] = "0.02";
+// siryoku[3] = "0.04";
+// siryoku[4] = "0.06";
+// siryoku[5] = "0.08";
+// siryoku[6] = "0.1";
+// siryoku[7] = "0.2";
+// siryoku[8] = "0.3";
+// siryoku[9] = "0.4";
+// siryoku[10] = "0.5";
+// siryoku[11] = "0.6";
+// siryoku[12] = "0.7";
+// siryoku[13] = "0.8";
+// siryoku[14] = "0.9";
+// siryoku[15] = "1.0";
+// siryoku[16] = "1.5";
+// siryoku[17] = "2.0";
+const siryoku = ["0", "0.01", "0.02", "0.04", "0.06", "0.08", "0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7", "0.8", "0.9", "1.0", "1.5", "2.0"];
 
 // 視力 視力計算用(100倍)
 var siryoku_int = new Object();
@@ -334,6 +345,9 @@ function chk8() {
     showToast(errmsg, "error")
   }
 }
+function checkAdult(val,index) {
+  if(val == l_result) return index;
+ } 
 function chk9() {
   let chk = $("input[name='l_ran']:checked").val();
   if (chk) {
@@ -342,6 +356,16 @@ function chk9() {
 
       document.getElementById("view_r_result").innerHTML = r_result;
       document.getElementById("view_l_result").innerHTML = l_result;
+
+      let siryoku_l_number;
+      let siryoku_r_number;
+      for (let index in siryoku) {
+        if(siryoku[index] == l_result) siryoku_l_number=index;
+      }
+      for (let index in siryoku) {
+        if(siryoku[index] == r_result) siryoku_r_number=index;
+      }
+
       localStorage.setItem('siryoku_r_result', r_result);
       localStorage.setItem('siryoku_l_result', l_result);
 
@@ -390,7 +414,7 @@ function chk9() {
       if (r_ran == 1 || l_ran == 1) ranshi = 1;
 
       // 視力の結果に応じたパターン分岐番号
-      var pattern = eyes2pattern(Number(siryoku_int[l_result]), Number(siryoku_int[r_result]));
+      var pattern = eyes2pattern(siryoku_l_number, siryoku_r_number);
       var ekr_pat = 0;
 
       // 遠視で乱視がある場合
@@ -406,7 +430,7 @@ function chk9() {
       } else {
           ekr_pat = 0;                // ①
       }
-      resultview(pattern + ekr_pat*15);
+      resultview(Number(pattern) + Number(ekr_pat*15));
       handleSubmit();
   } else{
     showToast(errmsg, "error")

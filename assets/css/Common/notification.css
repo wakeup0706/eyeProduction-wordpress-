@@ -93,7 +93,7 @@
 }
  /* If you edit the timeout variable in the JS, be sure to edit this too */
 .progress.active:before {
-  animation: progress 5s linear forwards;
+  animation: progress 2s linear forwards;
 }
 
 @keyframes progress {

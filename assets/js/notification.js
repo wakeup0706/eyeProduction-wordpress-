@@ -1,4 +1,4 @@
-const timeout = 5000;
+const timeout = 2000;
 
 function showToast(message, type = "success") {
   const toastContainer = document.querySelector(".toast-container");

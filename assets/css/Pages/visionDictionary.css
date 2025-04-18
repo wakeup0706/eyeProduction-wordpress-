@@ -50,24 +50,7 @@
     overflow: hidden;
     cursor: pointer;
 }
-@media only screen and (max-width: 847px) {
-    .seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
-        display: none;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .seeMoreArticle{
-        height: 350px;
-    }
-    .allVisionArticles{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-    }
-}
-@media only screen and (max-width: 504px) {
-    .seeMoreArticle:nth-child(4),.seeMoreArticle:nth-child(5),.seeMoreArticle:nth-child(6),.seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
-        display: none;
-    }
-}
+
 .seeMoreArticle img{
     height: 55%;
 }
@@ -131,24 +114,24 @@
     margin-top: -150px;
     gap: 10px;
 }
+.baners .baner img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
 .baners .baner{
+    overflow: hidden;
     width: 400px;
     max-height: 280px;
     height: 240px;
     cursor: pointer;
 }
 .leftBaner{
-    background-image: url('../../img/land_banner1.jpg');
-    background-size: cover;
-    background-position: center;
     left: 0;
     border-radius: 0 40px 0 40px;
     border: 10px solid var(--seeMore-button);
 }
 .rightBaner{
-    background-image: url('../../img/land_banner2.jpg');
-    background-size: cover;
-    background-position: center;
     right: 0;
     border-radius: 40px 0 40px 0;
     border: 10px solid var(--seeMore-button);
@@ -157,6 +140,11 @@
 @media screen and (max-width: 1200px) {
     .leftBaner, .rightBaner{
         border-width: 10px;
+    }
+}
+@media only screen and (max-width: 847px) {
+    .seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
+        display: none;
     }
 }
 @media only screen and (max-width: 797px) {
@@ -201,6 +189,14 @@
         margin-top: 30px;
     }
 }
+@media only screen and (max-width: 600px) {
+    .seeMoreArticle{
+        height: 350px;
+    }
+    .allVisionArticles{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    }
+}
 @media screen and (max-width: 560px) {
     .visionImproment .backgroundImg{
         height: 370px;
@@ -218,6 +214,11 @@
     }
     .leftBaner, .rightBaner{
         border-width: 10px;
+    }
+}
+@media only screen and (max-width: 504px) {
+    .seeMoreArticle:nth-child(6),.seeMoreArticle:nth-child(7),.seeMoreArticle:nth-child(8),.seeMoreArticle:nth-child(9){
+        display: none;
     }
 }
 @media screen and (max-width: 490px) {

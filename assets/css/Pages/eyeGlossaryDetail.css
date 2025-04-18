@@ -142,6 +142,9 @@ main .sns-content img:hover{
     float: right;
     font-size: 26px;
 }
+.like-container{
+    float: right;
+}
 /* searchByCategory content */
 .flex-left .searchBox{
     width: 100%;
@@ -537,7 +540,9 @@ main .sns-content img:hover{
 }
 @media only screen and (max-width: 470px) {
     .byCategory .categoryLists{
-        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Ensures equal width */
+        grid-template-columns: repeat(auto-fit, minmax(116px, 1fr));
+        margin-inline: 10px;
+        gap: 14px;
     }
     .byCategory .categoryName{
         padding-block: 20px 10px;

@@ -29,10 +29,10 @@
                 <?php endwhile; ?>
                 <div class="flex-right">
                     <div class="title"><p>関連書籍</p></div>
-                    <div class="banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
+                    <div class="banner"><a href="https://www.heallite.com/c/desklight/gentlite/M0002" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
                     <div class="otherCategory">
                         <div class="otherCategory-item">
-                            <a href=".<?php echo site_url();?>/visionDictionary">
+                            <a href=".<?php echo site_url();?>/visiondictionary">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconMdic.png" alt=""></div>
                                 <div class="otherCategory-item-text">視力回復辞書</div>
                             </a>
@@ -56,7 +56,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="banner"><a href="#"><img src=".<?php echo site_url();?>/<?php echo site_url();?>/assets/img/line-registration.jpg" alt=""></a></div>
+                    <div class="banner"><a href="https://line.me/ti/p/@959ejwxf" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-registration.jpg" alt=""></a></div>
                     <div class="banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt=""></a></div>
                 </div>
             </div>

@@ -10,15 +10,15 @@
                         <p>電話応対時間：11～14時（土日祝休）</p>
                     </div>
                     <div class="sns-content flex space-between">
-                        <div><a href="https://twitter.com/meikusouken2001"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
-                        <div><a href="https://www.instagram.com/dreamteam2001.12.17/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
-                        <div><a href="https://www.youtube.com/channel/UCyj1GCzlS7yTmjm2moSMt1w"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
-                        <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
+                        <div><a href="https://twitter.com/meikusouken2001" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns1.png" alt=""></a></div>
+                        <div><a href="https://www.instagram.com/dreamteam2001.12.17/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns2.png" alt=""></a></div>
+                        <div><a href="https://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Q" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns3.png" alt=""></a></div>
+                        <div><a href="https://www.facebook.com/Dreamteam-Inc-988153384589165/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/sns4.png" alt=""></a></div>
                     </div>
                 </div>
                 <div class="footer-content-right">
                     <ul class="flex space-around">
-                        <li><a href="<?php echo site_url();?>/agreement" >利用規約</a></li>
+                        <li><a href="<?php echo site_url();?>/agreement">利用規約</a></li>
                         <li><a href="<?php echo site_url();?>/terms" >特定商取引</a></li>
                         <li><a href="<?php echo site_url();?>/privacy" >プライバシーポリシー</a></li>
                         <li><a href="<?php echo site_url();?>/company" >運営会社&nbsp;&nbsp;&nbsp;&nbsp;</a></li>

@@ -4,7 +4,7 @@
     <main class="single-all_articles">
         <div class="container">
             <?php while ( have_posts() ) : the_post(); ?>
-            <div class="breadcrumb"><span><a href="<?php echo home_url(); ?>">TOP</a></span><span>> <a href="<?php echo site_url();?>/visiondictionary">視力回復辞典</a></span><span>> <?php the_title(); ?></span></div>
+            <div class="breadcrumb"><span><a href="<?php echo home_url(); ?>">TOP</a></span><span>> <a href="<?php echo site_url();?>/staffrecommended">おすすめ記事</a></span><span>> <?php the_title(); ?></span></div>
             <div class="kindleBooksDetail-content flex space-between">
                 <div class="flex-left">
                     <div class="title flex space-between">
@@ -34,22 +34,6 @@
                     <div class="index">
                         <div class="index-title"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/index.png" alt="null" />目次</div>
                         <div class="index-content"><?php echo get_post_meta(get_the_ID(), "index", true); ?></div>
-                    </div>
-                    <div class="writer">
-                        <div class="photo">
-                            <?php
-                                $image = get_field('author_mark');
-                                if($image) {
-                                    $url = $image['url'];
-                                    $alt = $image['alt'];
-                                    echo '<img src="' . $url . '" alt="' . $alt . '" />';
-                                }
-                            ?> 
-                        </div>
-                        <div class="name-job">
-                            <div class="name"><?php echo get_post_meta(get_the_ID(), "author", true); ?></div>
-                            <div class="job"><?php echo get_post_meta(get_the_ID(), "author_content", true); ?></div>
-                        </div>
                     </div>
                     <?php the_content(); ?>
                     <?php endwhile; ?>
@@ -82,7 +66,7 @@
                     </div>
                 </div>
                 <div class="flex-right">
-                    <div class="title"><p>視力回復辞典(視力回復の真実)</p></div>
+                    <div class="title"><p>おすすめ記事</p></div>
                     <div class="banner"><a href="https://www.heallite.com/c/desklight/gentlite/M0002" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
                     <div class="otherCategory">
                         <div class="otherCategory-item">
@@ -146,10 +130,10 @@
                         </div>
                     </div>
                     <div class="popularArticles">
-                        <p>人気記事ランキング</p>
+                        <p>従業員推薦記事ランキング</p>
                         <?php
                         $args = array(
-                            'post_type' => 'all_articles',
+                            'post_type' => 'staff_recommended',
                             'posts_per_page' => 5,
                             'orderby' => 'date',
                             'order' => 'DESC'

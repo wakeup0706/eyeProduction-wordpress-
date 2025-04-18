@@ -320,7 +320,7 @@ main{
     }
 }
 @media only screen and (max-width: 504px) {
-    .popularArticle >div:nth-child(2),.popularArticle >div:nth-child(3),.popularArticle >div:nth-child(4){
+    .popularArticle >div:nth-child(4){
         display: none;
     }
 }
