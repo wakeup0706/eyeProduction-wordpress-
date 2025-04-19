@@ -173,12 +173,14 @@ main .sns-content img:hover{
     transition: color .1s ease, border-color .1s ease;
     min-height: 42px;
     vertical-align: top;
+    width: 100%;
 }
 .now-content .flex{
     margin-block: 10px;
 }
 .now-content .flex .gist{
     width: 200px;
+    min-width: 200px;
 }
 .wpcf7-submit{
     width: 100px;

@@ -117,7 +117,7 @@ main .sns-content img:hover{
     flex-direction: row-reverse;
 }
 .flex-left .nextButton::after{
-    content: "次の記事 ⮚";
+    content: "次の記事 ➡";
     position: absolute;
     top: -25px;
     right: 10px;
@@ -127,7 +127,7 @@ main .sns-content img:hover{
     left: 0;
 }
 .flex-left .beforeButton::after{
-    content: "⮘ 前の記事";
+    content: "⬅ 前の記事";
     position: absolute;
     top: -25px;
     left: 10px;

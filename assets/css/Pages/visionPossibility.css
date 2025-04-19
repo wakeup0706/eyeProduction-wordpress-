@@ -210,48 +210,7 @@
 .bnbutton .beforeButton{
   background-color: #EE6354;
 }
-@media only screen and (max-width: 768px) {
-  .bnbutton{
-      margin-block: 35px;
-  }
-  .bnbutton .wpcf7-submit{
-      width: 150px;
-      height: 40px;
-  }
-  .bnbutton button{
-      width: 150px;
-      height: 40px;
-  }
-}
-@media only screen and (max-width: 485px) {
-  .bnbutton{
-      height:30px;
-      margin-block: 20px;
-      width: 300px;
-      bottom: 60px;
-  }
-  .bnbutton .wpcf7-submit{
-      width: 150px;
-      height: 35px;
-      padding-top: 5px;
-      margin-block: 10px;
-  }
-  .bnbutton .wpcf7-submit::after{
-      display: none;
-  }
-  .bnbutton button{
-      width: 150px;
-      height: 35px;
-      padding-top: 5px;
-      margin-block: 10px;
-  }
-  .bnbutton button::after{
-      display: none;
-  }
-  .visionPossibiliting .content .content__box {
-    padding: 30px 30px;
-  }
-}
+
 .sectionBack{
   position: absolute;
   bottom: -100px;
@@ -308,14 +267,7 @@ input{
 .naVision .left-eye::before{
   content: "左";
 }
-@media only screen and (max-width: 768px) {
-  .naVision{
-    flex-direction: column;
-  }
-  /* .year-input {
-    margin-top: 20px;
-  } */
-}
+
 
 /* step-3, step-4 */
 .step-3 .description::before, .step-4 .description::before{
@@ -343,13 +295,6 @@ input{
 }
 .step-3 .statuses input, .step-4 .statuses input{
   margin: 15px;
-}
-@media only screen and (max-width: 560px) {
-  .step-3 .statuses, .step-4 .statuses, .step-13 .statuses{
-    flex-direction: column;
-    margin-block: 50px;
-    align-items: center;
-  }
 }
 
 /* step-5, step-6, step-8, step-10, step-11 */
@@ -379,14 +324,7 @@ input{
 .step-5 .statuses input, .step-6 .statuses input{
   margin: 15px;
 }
-@media only screen and (max-width: 768px) {
-  .step-8 .statuses{
-    margin-block: 50px;
-  }
-  .visionPossibiliting  .step-8 .description{
-    font-size: 28px;
-  }
-}
+
 
 /* step-7*/
 .step-7 .statuses, .step-14 .statuses{
@@ -400,14 +338,6 @@ input{
 }
 .step-7 .statuses input{
   margin: 15px;
-}
-@media only screen and (max-width: 855px) {
-  .step-7 .statuses, .step-14 .statuses{
-    flex-direction: column;
-    margin-block: 50px;
-    font-size: 22px;
-    align-items: center;
-  }
 }
 
 /* step-9 */
@@ -425,83 +355,18 @@ input{
   justify-content: space-between;
 
 }
-@media only screen and (max-width: 880px) {
-  .visionPossibiliting .step-9 .description{
-    font-size: 24px;
-  }
-  .step-9 .statuses{
-    font-size: 20px;
-  }
-}
-@media only screen and (max-width: 646px) {
-  .visionPossibiliting .step-9 .description{
-    font-size: 24px;
-  }
-  .step-9 .statuses{
-    margin-block: 10px;
-    grid-template-columns: 1fr;
-    gap: 5px;
-    align-items: center;
-  }
-  .step-9 .bnbutton{
-    bottom: -25px;
-  }
-}
-@media only screen and (max-width: 485px) {
-  .step-9 .bnbutton{
-    bottom: 25px;
-  }
-  .step-9 .bnbutton button{
-    margin-block: 10px;
-  }
-  .visionPossibiliting .step-9 .description{
-    font-size: 19px;
-  }
-  .step-9 .statuses{
-    font-size: 17px;
-  }
-}
 
 /* step-12 */
 .step-12 .statuses{
   flex-direction: column;
   font-size: 28px;
 }
-@media only screen and (max-width: 532px) {
-  .step-12 .statuses{
-    font-size: 22px;
-    margin-block: 50px;
-  }
-  .visionPossibiliting .content .step-12 .description{
-    font-size: 26px;
-  }
-}
+
 
 /* step-13 */
 .visionPossibiliting .step-13 .description{
   max-width: 900px;
   margin-inline: auto;
-}
-@media only screen and (max-width: 740px) {
-  .visionPossibiliting .step-13 .description{
-    font-size: 26px;
-  }
-  .step-13 .statuses{
-    font-size: 24px;
-    margin-block: 50px;
-  }
-}
-@media only screen and (max-width: 540px) {
-  .visionPossibiliting .step-13 .description{
-    font-size: 20px;
-  }
-  .step-13 .statuses{
-    font-size: 20px;
-    margin-block: 40px;
-  }
-  .visionPossibiliting .indicatorFooter .indicator{
-    margin-left: 7px;
-  }
 }
 
 /* step-15 */
@@ -871,6 +736,71 @@ input{
     right: 100%;
   }
 }
+
+@media only screen and (max-width: 880px) {
+  .visionPossibiliting .step-9 .description{
+    font-size: 24px;
+  }
+  .step-9 .statuses{
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 855px) {
+  .step-7 .statuses, .step-14 .statuses{
+    flex-direction: column;
+    margin-block: 50px;
+    font-size: 22px;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .step-8 .statuses{
+    margin-block: 50px;
+  }
+  .visionPossibiliting  .step-8 .description{
+    font-size: 28px;
+  }
+  .bnbutton{
+      margin-block: 35px;
+  }
+  .bnbutton .wpcf7-submit{
+      width: 150px;
+      height: 40px;
+  }
+  .bnbutton button{
+      width: 150px;
+      height: 40px;
+  }
+  .year-input{
+    margin-top: 25px;
+  }
+  .naVision{
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 740px) {
+  .visionPossibiliting .step-13 .description{
+    font-size: 26px;
+  }
+  .step-13 .statuses{
+    font-size: 24px;
+    margin-block: 50px;
+  }
+}
+@media only screen and (max-width: 646px) {
+  .visionPossibiliting .step-9 .description{
+    font-size: 24px;
+  }
+  .step-9 .statuses{
+    margin-block: 10px;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    align-items: center;
+  }
+  .step-9 .bnbutton{
+    bottom: -25px;
+  }
+}
 @media only screen and (max-width: 610px) {
   .popularTitleIcon{
       position: relative;
@@ -878,6 +808,77 @@ input{
       top: -17px;
   }
 }
+@media only screen and (max-width: 560px) {
+  .step-3 .statuses, .step-4 .statuses, .step-13 .statuses{
+    flex-direction: column;
+    margin-block: 50px;
+    align-items: center;
+  }
+}
+@media only screen and (max-width: 540px) {
+  .visionPossibiliting .step-13 .description{
+    font-size: 20px;
+  }
+  .step-13 .statuses{
+    font-size: 20px;
+    margin-block: 40px;
+  }
+  .visionPossibiliting .indicatorFooter .indicator{
+    margin-left: 7px;
+  }
+}
+@media only screen and (max-width: 532px) {
+  .step-12 .statuses{
+    font-size: 22px;
+    margin-block: 50px;
+  }
+  .visionPossibiliting .content .step-12 .description{
+    font-size: 26px;
+  }
+}
+@media only screen and (max-width: 485px) {
+  .bnbutton{
+      height:30px;
+      margin-block: 20px;
+      width: 300px;
+      bottom: 60px;
+  }
+  .bnbutton .wpcf7-submit{
+      width: 150px;
+      height: 35px;
+      padding-top: 5px;
+      margin-block: 10px;
+  }
+  .bnbutton .wpcf7-submit::after{
+      display: none;
+  }
+  .bnbutton button{
+      width: 150px;
+      height: 35px;
+      padding-top: 5px;
+      margin-block: 10px;
+  }
+  .bnbutton button::after{
+      display: none;
+  }
+  .visionPossibiliting .content .content__box {
+    padding: 30px 30px;
+  }
+  .step-9 .bnbutton{
+    bottom: 25px;
+  }
+  .step-9 .bnbutton button{
+    margin-block: 10px;
+  }
+  .visionPossibiliting .step-9 .description{
+    font-size: 19px;
+  }
+  .step-9 .statuses{
+    font-size: 17px;
+  }
+}
+
+
 /* Toast Type Colors */
 .toast.success .icon { color: rgb(25 135 84); }
 .toast.error .icon { color: rgb(220 53 69); }

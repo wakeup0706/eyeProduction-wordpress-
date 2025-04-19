@@ -21,9 +21,9 @@
             <div class="subjectIcon"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/visionTest.png" alt="testResult"></div>
             <div class="subjectTitle"><p class="subjectText">視力検査のご説明</p></div>
           </div>
-          <div class="description pc">パソコン画面で、簡単に視力検査、レッド・グリーンテスト、乱視検査ができます。 まずは、現状把握から始めましょう！</div>
-          <div class="description mobile">スマホ/タブレットの画面で、簡単に視力検査、レッド・グリーンテスト、乱視検査ができます。 まずは、現状把握から始めましょう！</div>
-          <div class="description">視力検査を行う前に
+          <div class="description pc">パソコン画面で、簡単に視力検査、レッド・グリーンテスト、乱視検査ができます。<br/> まずは、現状把握から始めましょう！</div>
+          <div class="description mobile">スマホ/タブレットの画面で、簡単に視力検査、レッド・グリーンテスト、乱視検査ができます。<br/> まずは、現状把握から始めましょう！</div>
+          <div class="description">視力検査を始める前に
             <ul>
               <li>測定距離は、下のイラストを参考にしてください。</li>
               <li>基本的には裸眼で行ってください。</li>

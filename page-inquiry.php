@@ -48,7 +48,7 @@
                     </div>
                     <div class="under-banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt="" class="sp-banner" /></a></div>
                     <div class="now">お問い合わせフォーム
-                        <?php echo do_shortcode('[contact-form-7 id="a4f5d1d" title="contact inquiry"]'); ?>
+                        <?php echo do_shortcode('[contact-form-7 id="c0b9871" title="contact inquiry_copy"]'); ?>
                     </div>
                     <div class="line-youtube">
                         <div>
