@@ -35,10 +35,15 @@
                             <span>🕑 調理時間</span>&nbsp;&nbsp;&nbsp;
                             <span>10分</span>
                         </div>
+                        <?php $keep_count = get_post_meta(get_the_ID(), '_keep_count', true); ?>
                         <div class="keep">
+                            <span class="keepButton">🔖保存</span>&nbsp;&nbsp;|&nbsp;&nbsp;
+                            <span class="count"><?php echo $keep_count ? intval($keep_count) : 0; ?></span>
+                        </div>
+                        <!-- <div class="keep">
                             <span class="keepButton" onclick="document.getElementById('id01').style.display='block'">🔖 保存</span>&nbsp;&nbsp;|&nbsp;&nbsp;
                             <span>1023</span>
-                        </div>
+                        </div> -->
                         <?php render_like_button(); ?>
                         <div id="id01" class="modal">
                             <div class="modal-content">
@@ -202,5 +207,4 @@
         </div>
     </main>
     <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/like-button.js"></script>
-    <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/qrcode_keep.js"></script>
     <?php get_footer(); ?>
