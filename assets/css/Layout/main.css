@@ -510,6 +510,7 @@ main{
     max-height: 280px;
     height: 280px;
     overflow: hidden;
+    cursor: pointer;
 }
 .leftBaner{
     left: 0;
