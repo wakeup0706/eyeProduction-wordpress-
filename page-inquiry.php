@@ -46,7 +46,7 @@
                                 視力向上可能性判定をメールでご希望の場合は、下記より判定をご利用ください。</p>
                         </div>
                     </div>
-                    <div class="under-banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt="" class="sp-banner" /></a></div>
+                    <div class="under-banner"><a href="<?php echo site_url();?>/visionpossibility"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt="" class="sp-banner" /></a></div>
                     <div class="now">お問い合わせフォーム
                         <?php echo do_shortcode('[contact-form-7 id="c0b9871" title="contact inquiry_copy"]'); ?>
                     </div>
@@ -57,7 +57,7 @@
                             </a>
                         </div>
                         <div>
-                            <a href="#">
+                            <a href="https://www.youtube.com/channel/UCN0xlurLZi2E3m2_Nl5DT8Q">
                                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/youtube-registration.jpg" alt="line-youtube-registration">
                             </a>
                         </div>

@@ -181,7 +181,7 @@ siryoku_img[17] = 2.75;
 let test_ok = 0;  // if
 let test_ng = 0;  // if
 let test_no;      // direction
-let now  = document.getElementById("pobject").value;  // now value
+let now;  // now value
 let l_result = 1.0; // left result
 let r_result = 1.0; // right result
 let start; //start value
@@ -197,11 +197,9 @@ function imgset(now, rl) {
   // 画像描画
   if (rl == 1) {
     document.getElementById("view_r_now").innerHTML = siryoku[now];
-    l_result = siryoku[now];
     landolt(1,(w/2), ran);
   } else {
     document.getElementById("view_l_now").innerHTML = siryoku[now];
-    r_result = siryoku[now];
     landolt(2,(w/2), ran);
   }
 }
@@ -226,20 +224,20 @@ function ans(ans, rl) {
       showToast("正確です。", "success");
     }
   } else {
-      test_ng = test_ng + 1;
-      if (test_ng >= 2 || ans == 0) {
-        test_ng = 0;
-        if (rl == 1) {
-          test_ok = 0;
-          now = start;
-          rl = 2;
-          handleSubmit();
-        } else {
-          handleSubmit();
-        }
+    test_ng = test_ng + 1;
+    if (test_ng >= 2 || ans == 0) {
+      test_ng = 0;
+      if (rl == 1) {
+        test_ok = 0;
+        now = start;
+        rl = 2;
+        handleSubmit();
       } else {
-        showToast("正確ではありません。", "warning");
+        handleSubmit();
       }
+    } else {
+      showToast("正確ではありません。", "warning");
+    }
   }
   imgset(now, rl);
 }
@@ -304,8 +302,8 @@ function chk3() {
     r_result = 1.0;
     l_result = 1.0;
   } else {
-    r_result = chk-1;
-    l_result = chk-1;
+    r_result =siryoku[chk];
+    l_result =siryoku[chk];
   }
   now = chk;
   test_no = 0;
@@ -315,6 +313,7 @@ function chk3() {
   handleSubmit();
 }
 function chk4() {
+  imgset(start, 2);
   ans(0,1);
 }
 ///////////////////
@@ -351,87 +350,88 @@ function checkAdult(val,index) {
 function chk9() {
   let chk = $("input[name='l_ran']:checked").val();
   if (chk) {
-      var r_ran = parseInt($("input[name='r_ran']:checked").val());
-      var l_ran = parseInt($("input[name='l_ran']:checked").val());
+    var r_ran = parseInt($("input[name='r_ran']:checked").val());
+    var l_ran = parseInt($("input[name='l_ran']:checked").val());
 
-      document.getElementById("view_r_result").innerHTML = r_result;
-      document.getElementById("view_l_result").innerHTML = l_result;
+    document.getElementById("view_r_result").innerHTML = r_result;
+    document.getElementById("view_l_result").innerHTML = l_result;
 
-      let siryoku_l_number;
-      let siryoku_r_number;
-      for (let index in siryoku) {
-        if(siryoku[index] == l_result) siryoku_l_number=index;
-      }
-      for (let index in siryoku) {
-        if(siryoku[index] == r_result) siryoku_r_number=index;
-      }
+    let siryoku_l_number;
+    let siryoku_r_number;
 
-      localStorage.setItem('siryoku_r_result', r_result);
-      localStorage.setItem('siryoku_l_result', l_result);
+    for (let index in siryoku) {
+      if(siryoku[index] == l_result) siryoku_l_number=index;
+    }
+    for (let index in siryoku) {
+      if(siryoku[index] == r_result) siryoku_r_number=index;
+    }
 
-      if (r_rg == 1) {
-          document.getElementById("view_r_kinshi").innerHTML = "近視傾向";
-          localStorage.setItem('siryoku_r_rg', "近視傾向");
-      } else if (r_rg == 2) {
-          document.getElementById("view_r_kinshi").innerHTML = "遠視傾向";
-          localStorage.setItem('siryoku_r_rg', "遠視傾向");
-      } else {
-          document.getElementById("view_r_kinshi").innerHTML = "不明";
-          localStorage.setItem('siryoku_r_rg', "不明");
-      }
-      if (l_rg == 1) {
-          document.getElementById("view_l_kinshi").innerHTML = "近視傾向";
-          localStorage.setItem('siryoku_l_rg', "近視傾向");
-      } else if (l_rg == 2) {
-          document.getElementById("view_l_kinshi").innerHTML = "遠視傾向";
-          localStorage.setItem('siryoku_l_rg', "遠視傾向");
-      } else {
-          document.getElementById("view_l_kinshi").innerHTML = "不明";
-          localStorage.setItem('siryoku_l_rg', "不明");
-      }
-      if (r_ran == 1) {
-          document.getElementById("view_r_ranshi").innerHTML = "乱視あり";
-          localStorage.setItem('siryoku_r_ran', "乱視あり");
-      } else {
-          document.getElementById("view_r_ranshi").innerHTML = "乱視なし";
-          localStorage.setItem('siryoku_r_ran', "乱視なし");
-      }
-      if (l_ran == 1) {
-          document.getElementById("view_l_ranshi").innerHTML = "乱視あり";
-          localStorage.setItem('siryoku_l_ran', "乱視あり");
-      } else {
-          document.getElementById("view_l_ranshi").innerHTML = "乱視なし";
-          localStorage.setItem('siryoku_l_ran', "乱視なし");
-      }
-      // 結果をlocalstorageに保存
-      var kinshi = 0;
+    localStorage.setItem('siryoku_r_result', r_result);
+    localStorage.setItem('siryoku_l_result', l_result);
+
+    if (r_rg == 1) {
+        document.getElementById("view_r_kinshi").innerHTML = "近視傾向";
+        localStorage.setItem('siryoku_r_rg', "近視傾向");
+    } else if (r_rg == 2) {
+        document.getElementById("view_r_kinshi").innerHTML = "遠視傾向";
+        localStorage.setItem('siryoku_r_rg', "遠視傾向");
+    } else {
+        document.getElementById("view_r_kinshi").innerHTML = "不明";
+        localStorage.setItem('siryoku_r_rg', "不明");
+    }
+    if (l_rg == 1) {
+        document.getElementById("view_l_kinshi").innerHTML = "近視傾向";
+        localStorage.setItem('siryoku_l_rg', "近視傾向");
+    } else if (l_rg == 2) {
+        document.getElementById("view_l_kinshi").innerHTML = "遠視傾向";
+        localStorage.setItem('siryoku_l_rg', "遠視傾向");
+    } else {
+        document.getElementById("view_l_kinshi").innerHTML = "不明";
+        localStorage.setItem('siryoku_l_rg', "不明");
+    }
+    if (r_ran == 1) {
+        document.getElementById("view_r_ranshi").innerHTML = "乱視あり";
+        localStorage.setItem('siryoku_r_ran', "乱視あり");
+    } else {
+        document.getElementById("view_r_ranshi").innerHTML = "乱視なし";
+        localStorage.setItem('siryoku_r_ran', "乱視なし");
+    }
+    if (l_ran == 1) {
+        document.getElementById("view_l_ranshi").innerHTML = "乱視あり";
+        localStorage.setItem('siryoku_l_ran', "乱視あり");
+    } else {
+        document.getElementById("view_l_ranshi").innerHTML = "乱視なし";
+        localStorage.setItem('siryoku_l_ran', "乱視なし");
+    }
+    // 結果をlocalstorageに保存
+    var kinshi = 0;
 //        if ((r_rg == 2 && l_rg == 2) || (r_rg == 2 && l_rg == 3) || (r_rg == 3 && l_rg == 2)) kinshi = 1;
 //        if ((r_rg == 1 && l_rg == 1) || (r_rg == 1 && l_rg == 3) || (r_rg == 3 && l_rg == 1)) kinshi = 1;
-      // 左右いずれかが近視、もしくは両目とも不明な場合は 近視
-      if ((r_rg == 1 || l_rg == 1) || (r_rg == 3 && l_rg == 3)) kinshi = 1;
+    // 左右いずれかが近視、もしくは両目とも不明な場合は 近視
+    if ((r_rg == 1 || l_rg == 1) || (r_rg == 3 && l_rg == 3)) kinshi = 1;
 
-      var ranshi = 0;
-      if (r_ran == 1 || l_ran == 1) ranshi = 1;
+    var ranshi = 0;
+    if (r_ran == 1 || l_ran == 1) ranshi = 1;
 
-      // 視力の結果に応じたパターン分岐番号
-      var pattern = eyes2pattern(siryoku_l_number, siryoku_r_number);
-      var ekr_pat = 0;
+    // 視力の結果に応じたパターン分岐番号
+    var pattern = eyes2pattern(siryoku_int[siryoku_l_number], siryoku_int[siryoku_r_number]);
+    var ekr_pat = 0;
 
-      // 遠視で乱視がある場合
-      if (kinshi == 0 && ranshi == 1) {
-          ekr_pat = 3;                // ④
-      // 遠視で乱視がない場合
-      } else if (kinshi == 0 && ranshi == 0) {
-          ekr_pat = 2;                // ③
-      // 近視で乱視がある場合
-      } else if (kinshi == 1 && ranshi == 1) {
-          ekr_pat = 1;                // ②
-      // 近視で乱視がない場合
-      } else {
-          ekr_pat = 0;                // ①
-      }
-      resultview(Number(pattern) + Number(ekr_pat*15));
-      handleSubmit();
+    // 遠視で乱視がある場合
+    if (kinshi == 0 && ranshi == 1) {
+        ekr_pat = 3;                // ④
+    // 遠視で乱視がない場合
+    } else if (kinshi == 0 && ranshi == 0) {
+        ekr_pat = 2;                // ③
+    // 近視で乱視がある場合
+    } else if (kinshi == 1 && ranshi == 1) {
+        ekr_pat = 1;                // ②
+    // 近視で乱視がない場合
+    } else {
+        ekr_pat = 0;                // ①
+    }
+    resultview(Number(pattern) + Number(ekr_pat*15));
+    handleSubmit();
   } else{
     showToast(errmsg, "error")
   }

@@ -544,7 +544,7 @@ input::-moz-focus-inner {
       gap: 20px;
   }
 }
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 903px) {
   .visionTesting .content .description {
     font-size: 18px;
     font-weight: 500;
@@ -556,6 +556,11 @@ input::-moz-focus-inner {
   }
 }
 
+@media screen and (max-width: 818px) {
+  .visionTesting .content .content__box{
+    padding: 30px 55px;
+  }
+}
 @media screen and (max-width: 768px) {
   #desktop{
     display: none;

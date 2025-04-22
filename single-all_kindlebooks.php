@@ -4,7 +4,7 @@
     <main>
         <div class="container">
         <?php while ( have_posts() ) : the_post(); ?>
-            <div class="breadcrumb"><span><a href=".<?php echo home_url(); ?>">TOP</a></span><span>> <a href=".<?php echo site_url();?>/kindleBooks">関連書籍</a></span><span>> <?php the_title(); ?></span></div>
+            <div class="breadcrumb"><span><a href=".<?php echo home_url(); ?>">TOP</a></span><span>> <a href="<?php echo site_url();?>/kindleBooks">関連書籍</a></span><span>> <?php the_title(); ?></span></div>
             <div class="kindleBooksDetail-content flex space-between">
                 <div class="flex-left">
                     <div class="bookData">
@@ -32,32 +32,32 @@
                     <div class="banner"><a href="https://www.heallite.com/c/desklight/gentlite/M0002" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner1.jpg" alt=""></a></div>
                     <div class="otherCategory">
                         <div class="otherCategory-item">
-                            <a href=".<?php echo site_url();?>/visiondictionary">
+                            <a href="<?php echo site_url();?>/visiondictionary">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconMdic.png" alt=""></div>
                                 <div class="otherCategory-item-text">視力回復辞書</div>
                             </a>
                         </div>
                         <div class="otherCategory-item">
-                            <a href=".<?php echo site_url();?>/eyeGlossary">
+                            <a href="<?php echo site_url();?>/eyeGlossary">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconDic.png" alt=""></div>
                                 <div class="otherCategory-item-text">目の用語辞典</div>
                             </a>
                         </div>
                         <div class="otherCategory-item">
-                            <a href=".<?php echo site_url();?>/recipes">
+                            <a href="<?php echo site_url();?>/recipes">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconFood.png" alt=""></div>
                                 <div class="otherCategory-item-text">目に優しいレシピ</div>
                             </a>
                         </div>
                         <div class="otherCategory-item">
-                            <a href=".<?php echo site_url();?>/notice">
+                            <a href="<?php echo site_url();?>/notice">
                                 <div class="otherCategory-item-img"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/Icons/iconNotice.png" alt=""></div>
                                 <div class="otherCategory-item-text">お知らせ</div>
                             </a>
                         </div>
                     </div>
                     <div class="banner"><a href="https://line.me/ti/p/@959ejwxf" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/line-registration.jpg" alt=""></a></div>
-                    <div class="banner"><a href="#"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt=""></a></div>
+                    <div class="banner"><a href="location.href='<?php echo site_url();?>/visionpossibility'"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/land_banner2.jpg" alt=""></a></div>
                 </div>
             </div>
             <div class="allVision inConteiner">
