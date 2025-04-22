@@ -255,8 +255,7 @@ let btn = document.getElementById("myBtn");
 
 btn.onclick = function() {
   emailAdress = $("#emailAdress").val();
-  let isChecked = $("#okay").is(":checked")
-  if(emailAdress && isChecked){
+  if(emailAdress){
     if(isValidEmail(emailAdress)){
       $("input[name='re_age']").val(age);
       $("input[name='re_shiryukuRight']").val(shiryukuRight);

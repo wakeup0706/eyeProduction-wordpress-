@@ -236,10 +236,10 @@
               <div class="description">入力が完了しました。</div>
               <div class="presentment">メールアドレスを入力いただきますと、判定結果をメールでお送りいたします。</div>
               <div class="year-input">
+                <p>フォームの上にメールアドレスと記載</p>
                 <input type="text" id="emailAdress">
               </div>
               <div class="bnbutton">
-                <div class="confirm"><input type="checkbox" id="okay"><label for="okay">フォームの上にメールアドレスと記載</label></div>
                 <button id="myBtn">確認画面へ</button>
               </div>
             </div>
