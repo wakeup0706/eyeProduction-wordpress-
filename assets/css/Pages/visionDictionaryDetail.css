@@ -231,6 +231,54 @@ main .sns-content img:hover{
     font-weight: 500;
     color: var(--text-black);
 }
+.flex-left .infor .infor-reply span{
+    color: #c01d1d;
+}
+.flex-left .infor .infor-reply{
+    margin-inline: 20px;
+}
+.flex-left .infor .infor-reply img{
+    width: auto;
+}
+.flex-left .infor .infor-reply-attend .single{
+    position: relative;
+    font-size: 20px;
+    font-weight: 700;
+    padding-block: 4px;
+    margin-inline: 10px;
+    background-color: #c01d1d;
+    color: white;
+}
+.flex-left .infor .infor-reply-attend ul{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(162px, 3fr));
+    margin: 0;
+    padding-inline: 30px;
+    gap: 8px;
+}
+.flex-left .infor .infor-reply-attend li img{
+    max-width: 208px;
+    width: 100%;
+}
+.flex-left .infor .infor-reply-attend li{
+    margin: 1%;
+    display: inline-block;
+    list-style: none;
+}
+.flex-left .infor .infor-reply-attend{
+    border: var(--section-title-underline) 1.5px solid;
+    text-align: center;
+    margin-block: 8px;
+}
+.flex-left .infor .infor-reply-footer{
+    text-align: center;
+}
+.flex-left .infor .infor-reply p{
+    margin-block: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-black);
+}
 .flex-left .infor .infor-content a{
     color: #e39f00;
     text-decoration:underline;
