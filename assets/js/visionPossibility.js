@@ -311,7 +311,33 @@ function isValidEmail(email) {
 }
 
 $("input[type='submit']").click(function(){
+  localStorage.setItem("year", $("input[name='re_age']").val());
+  localStorage.setItem("ragan_R", $("input[name='re_shiryukuRight']").val());
+  localStorage.setItem("ragan_L", $("input[name='re_shiryukuLeft']").val());
+  localStorage.setItem("kinshi_R", $("select[name='re_nearsightedRight']").val());
+  localStorage.setItem("kinshi_L", $("select[name='re_nearsightedLeft']").val());
+  localStorage.setItem("ranshi_R", $("select[name='re_astigmatismRight']").val());
+  localStorage.setItem("ranshi_L", $("select[name='re_astigmatismLeft']").val());
+  localStorage.setItem("q1", $("select[name='re_begin']").val());
+  localStorage.setItem("q2", $("select[name='re_confirmed']").val());
+  checkedValues = getCheckedCheckboxesValues('causing');
+  localStorage.setItem("q3", checkedValues);
+  localStorage.setItem("q4", $("select[name='re_squinting']").val());
+  localStorage.setItem("q5", $("select[name='re_glasses']").val());
+  localStorage.setItem("q6", $("select[name='re_temperament']").val());
+  localStorage.setItem("q7", $("select[name='re_deteriorate']").val());
+  localStorage.setItem("q8", $("select[name='re_parents']").val());
+  localStorage.setItem("q9", $("select[name='re_parentsMyopia']").val());
+  localStorage.setItem("q10", $("select[name='re_refraction']").val());
+  localStorage.setItem("sph_R", $("input[name='re_refractiveRight']").val());
+  localStorage.setItem("sph_L", $("input[name='re_refractiveLeft']").val());
+  localStorage.setItem("cyl_R", $("input[name='re_AstigmatismRight']").val());
+  localStorage.setItem("cyl_L", $("input[name='re_AstigmatismLeft']").val());
+  localStorage.setItem("kyousei_R", $("input[name='re_CorrectedRight']").val());
+  localStorage.setItem("kyousei_L", $("input[name='re_CorrectedLeft']").val());
+  localStorage.setItem("name", $("input[name='re_fullName']").val());
+  localStorage.setItem("email", $("input[name='re_emailAddress']").val());
   setTimeout(() => {
-    document.location.href="./visiontest";
+    document.location.href="./reply";
   }, 2);
 })
